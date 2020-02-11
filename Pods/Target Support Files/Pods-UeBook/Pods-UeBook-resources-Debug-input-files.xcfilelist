@@ -1,0 +1,5 @@
+${PODS_ROOT}/Target Support Files/Pods-UeBook/Pods-UeBook-resources.sh
+${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle
+${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/MessageKit/MessageKitAssets.bundle

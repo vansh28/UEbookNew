@@ -1,0 +1,6 @@
+module Pods_UeBook {
+  umbrella header "Pods-UeBook-umbrella.h"
+
+  export *
+  module * { export * }
+}
