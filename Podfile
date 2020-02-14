@@ -6,14 +6,17 @@ target 'UeBook' do
       pod 'Scaledrone', '~> 0.3.0'
       pod 'Firebase/Analytics'
       pod 'Firebase/Messaging'
-      pod  'IQKeyboardManagerSwift', '~> 6.0'
+      pod 'IQKeyboardManagerSwift', '~> 6.0'
       pod 'JitsiMeetSDK'
       pod 'FBSDKCoreKit/Swift'
       pod 'FBSDKLoginKit/Swift'
       pod 'FBSDKShareKit/Swift'
       pod 'GoogleSignIn'
       pod 'AZTabBar'
+      pod 'SDWebImage/WebP'
+      pod 'HCSStarRatingView', '~> 1.5'
       
+
       end
 
       post_install do |installer|

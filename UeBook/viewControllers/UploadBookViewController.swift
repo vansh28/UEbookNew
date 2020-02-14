@@ -210,6 +210,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         }
         
     @IBAction func btnBack(_ sender: Any) {
+        	
         self.dismiss(animated: true, completion: nil)
 
     }
@@ -301,6 +302,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             {
                 let myColor = UIColor.black
                 txtbookTitle.layer.borderColor = myColor.cgColor
+                
                 
                 txtbookTitle.layer.borderWidth = 1.0
                 

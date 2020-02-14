@@ -110,14 +110,18 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     }
    
     @IBAction func btnBack(_ sender: Any) {
-                let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kBookMarkViewController) as! BookMarkViewController
+//                let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kBookMarkViewController) as! BookMarkViewController
+//
+//                 BookdetailVC.userId = userId
+//                print(BookdetailVC.userId)
+//                BookdetailVC.modalPresentationStyle = .overFullScreen
+//
+//
+//                self.present(BookdetailVC, animated: true, completion: nil)
+        
+        
+        self.dismiss(animated: true, completion: nil)
 
-                 BookdetailVC.userId = userId
-                print(BookdetailVC.userId)
-                BookdetailVC.modalPresentationStyle = .overFullScreen
-
-     
-                self.present(BookdetailVC, animated: true, completion: nil)
                 
             }
         

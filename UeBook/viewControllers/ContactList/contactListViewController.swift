@@ -23,6 +23,12 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
                
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatArr.count
     }

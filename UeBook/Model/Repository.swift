@@ -276,7 +276,160 @@ init(getAllNotebyUser: NSDictionary) {
     }
 }
 
+class AllUserDetails : NSObject {
+    var id: String?
+    var user_name: String?
+    var url: String?
+    var email: String?
+    var about_me: String?
+    var publisher_type: String?
+    var device_token: String?
+    var device_type: String?
+   
+   
 
+    init(getUserDetails: NSDictionary) {
+       
+        self.id                      =   getUserDetails["id"] as? String
+        self.user_name               =   getUserDetails["user_name"] as? String
+        self.url                     =   getUserDetails["url"] as? String
+        self.email                   =   getUserDetails["email"] as? String
+        self.about_me                =   getUserDetails["about_me"] as? String
+        self.publisher_type          =   getUserDetails["publisher_type"] as? String
+        self.device_token            =   getUserDetails["device_token"] as? String
+        self.device_type             =   getUserDetails["device_type"] as? String
+        
+        }
+}
+
+class  AllUserBooklist{
+    var id: String?
+    var book_title: String?
+    var thubm_image: String?
+    var author_name: String?
+ 
+    var book_description: String?
+    var rating: String?
+ 
+   
+init(getAllUserBooklist: NSDictionary) {
+        
+        self.id                           = getAllUserBooklist["id"] as? String
+        self.book_title                   = getAllUserBooklist["book_title"] as? String
+        self.thubm_image                  = getAllUserBooklist["thubm_image"] as? String
+        self.author_name                  = getAllUserBooklist["author_name"] as? String
+        self.book_description             = getAllUserBooklist["book_description"] as? String
+        self.rating                       = getAllUserBooklist["rating"] as? String
+    
+       
+    }
+}
+class  AllCategory{
+    var id: String?
+    var category_name: String?
+    var slug_url: String?
+    var description: String?
+    
+    var status: String?
+    var thum_image: String?
+    var created: String?
+    var created_at: String?
+    var updated_at: String?
+   
+init(getAllCategory: NSDictionary) {
+        
+    self.id                           = getAllCategory["id"] as? String
+    self.category_name                = getAllCategory["category_name"] as? String
+    self.slug_url                     = getAllCategory["slug_url"] as? String
+    self.description                  = getAllCategory["description"] as? String
+    self.status                       = getAllCategory["status"] as? String
+    self.thum_image                   = getAllCategory["thum_image"] as? String
+    
+    self.created                      = getAllCategory["created"] as? String
+    self.created_at                   = getAllCategory["created_at"] as? String
+    self.updated_at                   = getAllCategory["updated_at"] as? String
+    
+    }
+}
+
+class  AllBooksByTypes{
+    var id: String?
+    var book_title: String?
+    var thubm_image: String?
+   
+    var author_name: String?
+    var book_description: String?
+    var rating: String?
+    
+   
+init(getBooksByTypes: NSDictionary) {
+        
+    self.id                           = getBooksByTypes["id"] as? String
+    self.book_title                   = getBooksByTypes["book_title"] as? String
+    self.thubm_image                  = getBooksByTypes["thubm_image"] as? String
+    self.author_name                  = getBooksByTypes["author_name"] as? String
+    self.book_description             = getBooksByTypes["book_description"] as? String
+    self.rating                       = getBooksByTypes["rating"] as? String
+    
+    }
+}
+
+
+
+class  AllgetUserInfo : NSObject{
+    var id: String?
+    var register_id: String?
+    var full_name: String?
+    var user_name: String?
+ 
+    var url: String?
+    var email: String?
+    
+    
+      var gender: String?
+       var phone_no: String?
+       var country: String?
+    
+       var password: String?
+       var date_edited: String?
+       
+ 
+    var status: String?
+         var message_status: String?
+         var publisher_type: String?
+      
+         var about_me: String?
+         var device_token: String?
+    var device_type: String?
+         var address: String?
+         var global_posting: String?
+   
+init(getAllUserInfo: NSDictionary) {
+    
+    self.id                            = getAllUserInfo["id"] as? String
+    self.register_id                   = getAllUserInfo["register_id"] as? String
+    self.full_name                     = getAllUserInfo["full_name"] as? String
+    self.user_name                     = getAllUserInfo["user_name"] as? String
+    self.url                           = getAllUserInfo["url"] as? String
+    self.email                         = getAllUserInfo["email"] as? String
+    
+    self.gender                           = getAllUserInfo["gender"] as? String
+    self.phone_no                   = getAllUserInfo["phone_no"] as? String
+    self.country                  = getAllUserInfo["country"] as? String
+    self.password                  = getAllUserInfo["password"] as? String
+    self.date_edited             = getAllUserInfo["date_edited"] as? String
+    self.status                       = getAllUserInfo["status"] as? String
+    
+    
+    self.message_status                           = getAllUserInfo["message_status"] as? String
+    self.publisher_type                   = getAllUserInfo["publisher_type"] as? String
+    self.about_me                  = getAllUserInfo["about_me"] as? String
+    self.device_token                  = getAllUserInfo["device_token"] as? String
+    self.device_type             = getAllUserInfo["device_type"] as? String
+    self.address                       = getAllUserInfo["address"] as? String
+    self.global_posting                       = getAllUserInfo["global_posting"] as? String
+    }
+}
 
 
 

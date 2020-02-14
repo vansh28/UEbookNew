@@ -36,7 +36,13 @@ let kgetAllbookMarkByUser                =     kBaseUrl +  "getAllbookMarkByUser
 let kgetAllNotebyUser                    =     kBaseUrl +  "getAllNotebyUser"
 let kaddNote                             =     kBaseUrl +   "addNote"
 let kUpdateNoteBook                      =     kBaseUrl +   "UpdateNoteBook"
-
+let kgetUserDetails                      =     kBaseUrl +   "getUserDetails"
+let kgetUserInfo                         =     kBaseUrl +    "getUserInfo"
+let kuserEdit                            =     kBaseUrl +    "userEdit"
+let kgetAllCategory                      =     kBaseUrl +    "getAllCategory"
+let kgetBooksByTypes                     =     kBaseUrl +    "getBooksByTypes"
+let kcontact_us                          =     kBaseUrl +     "contact_us"
+     
 //Idenfier
 
 let kBookDescriptionViewController        =     "BookDescriptionViewController"
@@ -50,3 +56,10 @@ let kEditProfileViewController            =    "EditProfileViewController"
 let kSWRevealViewController               =    "SWRevealViewController"
 let kFirstPageViewController              =    "FirstPageViewController"
 let kAddNotesViewController               =    "AddNotesViewController"
+let kUserInfoViewController               =    "UserInfoViewController"
+let kUserInfoUpdateViewController         =    "UserInfoUpdateViewController"
+let kBooksByTypesViewController           =    "BooksByTypesViewController"
+let kUploadBookViewController             =    "UploadBookViewController"
+let kcontactListViewController            =    "contactListViewController"
+let kHelpUSViewController                 =    "HelpUSViewController"
+let kContactUSViewController              =    "ContactUSViewController"

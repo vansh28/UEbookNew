@@ -12,6 +12,9 @@
 		8403AC3823D701AD008F3A4C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3723D701AD008F3A4C /* Repository.swift */; };
 		8403AC3B23D709CA008F3A4C /* contactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3A23D709CA008F3A4C /* contactListViewController.swift */; };
 		8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */; };
+		840A2FCE23F527E9003212D5 /* CategiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */; };
+		840A2FD023F54E16003212D5 /* BooksByTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */; };
+		840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */; };
 		840D67DA23D035CC00D0DAF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D67D923D035CC00D0DAF6 /* AppDelegate.swift */; };
 		840D67DC23D035CC00D0DAF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D67DB23D035CC00D0DAF6 /* SceneDelegate.swift */; };
 		840D67DE23D035CC00D0DAF6 /* ChatUserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840D67DD23D035CC00D0DAF6 /* ChatUserDetail.swift */; };
@@ -56,6 +59,9 @@
 		84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CF023DEAB1D00F6F1F9 /* Utils.swift */; };
 		84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */; };
 		8456CD8823DAB44800155540 /* ImagePAgingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */; };
+		847FA8D123F6777B00BBB988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */; };
+		847FA8D323F6B71700BBB988 /* ContactUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */; };
+		847FA8D523F6C4DE00BBB988 /* HelpUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */; };
 		84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687223E92FD50027888B /* FirstPageViewController.swift */; };
 		84A5687523E973E70027888B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687423E973E70027888B /* LoginViewController.swift */; };
 		84A5687723E974070027888B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687623E974070027888B /* RegisterViewController.swift */; };
@@ -70,6 +76,9 @@
 		84B8B28F23D5BFF60062B8B9 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B28E23D5BFF60062B8B9 /* BaseCells.swift */; };
 		84B8B29323D5C0760062B8B9 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B29223D5C0760062B8B9 /* ChatCell.swift */; };
 		84B8B29623D5C1100062B8B9 /* UIView + Ext .swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B29523D5C1100062B8B9 /* UIView + Ext .swift */; };
+		84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */; };
+		84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */; };
+		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +107,9 @@
 		8403AC3723D701AD008F3A4C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8403AC3A23D709CA008F3A4C /* contactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactListViewController.swift; sourceTree = "<group>"; };
 		8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategiesTableViewCell.swift; sourceTree = "<group>"; };
+		840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksByTypesTableViewCell.swift; sourceTree = "<group>"; };
+		840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksByTypesViewController.swift; sourceTree = "<group>"; };
 		840D67D623D035CC00D0DAF6 /* UeBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UeBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840D67D923D035CC00D0DAF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		840D67DB23D035CC00D0DAF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +160,9 @@
 		84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewController.swift; sourceTree = "<group>"; };
 		844860D223E7E56C00BA48CD /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePAgingViewController.swift; sourceTree = "<group>"; };
+		847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUSViewController.swift; sourceTree = "<group>"; };
+		847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUSViewController.swift; sourceTree = "<group>"; };
 		84A5687223E92FD50027888B /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		84A5687423E973E70027888B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84A5687623E974070027888B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +177,9 @@
 		84B8B29223D5C0760062B8B9 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		84B8B29523D5C1100062B8B9 /* UIView + Ext .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext .swift"; sourceTree = "<group>"; };
 		84B8B29823D5C2150062B8B9 /* Chat.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Chat.geojson; sourceTree = "<group>"; };
+		84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
+		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
 		84DF09E223E164300025FAA9 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		84DF09E423E187960025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E723E188B00025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,6 +269,7 @@
 				84A5689B23E97A720027888B /* Main.storyboard */,
 				84A568A023E97A810027888B /* LaunchScreen.storyboard */,
 				843D8A6123EAD6E600E3365E /* Response.swift */,
+				847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */,
 			);
 			path = UeBook;
 			sourceTree = "<group>";
@@ -321,6 +340,11 @@
 				8410BC1723F27F4F00A2390D /* AddNotesViewController.swift */,
 				843E8A4123F129670061AAF8 /* EditProfileViewController.swift */,
 				843E8A4323F12EFD0061AAF8 /* SWRevealViewController.swift */,
+				84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */,
+				84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */,
+				840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */,
+				847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */,
+				847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -332,6 +356,9 @@
 				843E8A4523F16CDB0061AAF8 /* BookMarkTableViewCell.swift */,
 				843E8A4723F18DFC0061AAF8 /* NotepadTableViewCell.swift */,
 				8410BC1B23F2CE9200A2390D /* EditUserProfileTableViewCell.swift */,
+				84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */,
+				840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */,
+				840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -548,6 +575,7 @@
 			files = (
 				842B753423D1DC96007E5C4A /* call-recieve.gif in Resources */,
 				84A568A223E97A810027888B /* LaunchScreen.storyboard in Resources */,
+				847FA8D123F6777B00BBB988 /* GoogleService-Info.plist in Resources */,
 				840D67E323D035D000D0DAF6 /* Assets.xcassets in Resources */,
 				84A5689D23E97A720027888B /* Main.storyboard in Resources */,
 			);
@@ -639,11 +667,13 @@
 			files = (
 				8415F97A23D976B8001D84BE /* HomeCollectionViewCell.swift in Sources */,
 				843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */,
+				840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */,
 				8403AC3823D701AD008F3A4C /* Repository.swift in Sources */,
 				8403AC3B23D709CA008F3A4C /* contactListViewController.swift in Sources */,
 				842B753023D1D69D007E5C4A /* ViedoCallReciveViewController.swift in Sources */,
 				8443273523E2A6C900AC233B /* BookDescriptionViewController.swift in Sources */,
 				843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */,
+				84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */,
 				840D67DE23D035CC00D0DAF6 /* ChatUserDetail.swift in Sources */,
 				84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */,
 				842B06E323D6CF840062162A /* ChatDesinViewController.swift in Sources */,
@@ -665,15 +695,20 @@
 				84B8B29623D5C1100062B8B9 /* UIView + Ext .swift in Sources */,
 				84A5687723E974070027888B /* RegisterViewController.swift in Sources */,
 				8410BC1A23F2B38200A2390D /* Navigation.swift in Sources */,
+				840A2FCE23F527E9003212D5 /* CategiesTableViewCell.swift in Sources */,
 				843E8A4023F129500061AAF8 /* NotepadViewController.swift in Sources */,
 				8403AC3423D6F21C008F3A4C /* ServiceManager.swift in Sources */,
 				8456CD8823DAB44800155540 /* ImagePAgingViewController.swift in Sources */,
+				840A2FD023F54E16003212D5 /* BooksByTypesTableViewCell.swift in Sources */,
 				843E8A4223F129670061AAF8 /* EditProfileViewController.swift in Sources */,
+				84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */,
 				843E8A3E23F129400061AAF8 /* CategoriesViewController.swift in Sources */,
 				84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */,
 				8403AC3623D6F403008F3A4C /* Constant.swift in Sources */,
 				843E8A3C23F129210061AAF8 /* BookMarkViewController.swift in Sources */,
+				84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */,
 				8415F97523D96478001D84BE /* RoundedView.swift in Sources */,
+				847FA8D323F6B71700BBB988 /* ContactUSViewController.swift in Sources */,
 				84471CEA23DEA9B600F6F1F9 /*  ViewPager.swift in Sources */,
 				8410BC1C23F2CE9200A2390D /* EditUserProfileTableViewCell.swift in Sources */,
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
@@ -684,6 +719,7 @@
 				84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */,
 				843E8A4623F16CDB0061AAF8 /* BookMarkTableViewCell.swift in Sources */,
 				842B752823D18E14007E5C4A /* Viedo&ChatViewController.swift in Sources */,
+				847FA8D523F6C4DE00BBB988 /* HelpUSViewController.swift in Sources */,
 				84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */,
 				843EB3E723D57C84006773EF /* ChatUsTableViewCell.swift in Sources */,
 			);
@@ -861,6 +897,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				"DEBUG_INFORMATION_FORMAT[sdk=*]" = dwarf;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
@@ -869,7 +906,7 @@
 					"$(PROJECT_DIR)/UeBook",
 				);
 				INFOPLIST_FILE = UeBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -878,7 +915,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Uebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -889,6 +926,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -896,7 +934,7 @@
 					"$(PROJECT_DIR)/UeBook",
 				);
 				INFOPLIST_FILE = UeBook/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -904,7 +942,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Uebook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
