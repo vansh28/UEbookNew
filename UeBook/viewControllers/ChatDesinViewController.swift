@@ -12,14 +12,17 @@ class ChatDesinViewController: UIViewController{
 
     var chatsArray: [Chat] = []
     var ca:[Chat] = []
-
+ 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var txtMsg: UITextField!
     @IBOutlet var inputViewContainerBottomConstraint: NSLayoutConstraint!
 
+    var userId = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
               Register_API_Method()
+        userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
                 self.navigationItem.title = "Chat VC"
                 self.assignDelegates()
                 self.manageInputEventsForTheSubViews()
@@ -64,7 +67,7 @@ class ChatDesinViewController: UIViewController{
        
 
         let dictionary: NSDictionary = [
-            "user_id" : "78"
+            "user_id" : userId
             
         ]
         ServiceManager.POSTServerRequest(String(kuser_list), andParameters: dictionary as! [String : String], success: {response in

@@ -263,22 +263,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2710E62B-F0CA-44C9-9260-2090A3FD9423"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "searchBar(_:textDidChange:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "18B3D7DE-B0CC-4685-A1F9-419E27A2A459"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -286,10 +270,10 @@
             filePath = "UeBook/viewControllers/ChatUSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "searchBar(_:textDidChange:)"
-            landmarkType = "7">
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "ChatUSViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -302,8 +286,8 @@
             filePath = "UeBook/viewControllers/ChatUSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "ChatUSViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -466,38 +450,6 @@
             endingLineNumber = "70"
             landmarkName = "Register_API_Method()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A131659E-6A8A-4C70-9A4B-C728058600EA - e553609f42341390"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UeBook.ChatDesinViewController.Register_API_Method() -&gt; ()"
-                  moduleName = "UeBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/ChatDesinViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "A131659E-6A8A-4C70-9A4B-C728058600EA - d8310686df6c9959"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.ChatDesinViewController.Register_API_Method() -&gt; ()"
-                  moduleName = "UeBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/ChatDesinViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "125">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -519,22 +471,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D1E8A1EA-2395-41E7-9E70-A537246C807B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "Register_API_Method()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A563BB77-E762-4876-9A6A-F3049E477706"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -542,9 +478,9 @@
             filePath = "UeBook/viewControllers/ChatUSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "Register_API_Method()"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
+            landmarkName = "UserChatList_API_Method()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1280,8 +1216,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "133"
             endingLineNumber = "133"
-            landmarkName = "AppDelegate"
-            landmarkType = "3">
+            landmarkName = "root()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1518,9 +1454,9 @@
             filePath = "UeBook/viewControllers/ContactUSViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
-            landmarkName = "Contact_Us()"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "btnBack(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1601,6 +1537,230 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A249B696-75A0-4C3A-8CD1-24A62FFF19ED"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ForgotPasswordViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "forgotPassword_Api_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A10ACA8-6668-424A-9C1C-033627767921"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ForgotPasswordViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "forgotPassword_Api_Method()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A10ACA8-6668-424A-9C1C-033627767921 - a907b7f84ba230f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.ForgotPasswordViewController.forgotPassword_Api_Method() -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/ForgotPasswordViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "639">
+               </Location>
+               <Location
+                  uuid = "8A10ACA8-6668-424A-9C1C-033627767921 - 133d158dae10f12b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.ForgotPasswordViewController.forgotPassword_Api_Method() -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/ForgotPasswordViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "177">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C76BB11B-8393-4A1E-842D-33F654EADA77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ForgotPasswordViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "forgotPassword_Api_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94E71132-0BB8-4B5C-8D0C-85AA12C5D8D2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/HomePage/ChatView/ChatUserDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "user_chat_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8C27C2A-310D-4D2F-8864-AA2F208CF769"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ContactList/contactListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "Register_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F18783C9-D3FD-4C8B-A8FD-07EB9725A44E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ContactList/contactListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03807A63-244B-423A-985E-8305CC198EB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "UserChatList_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EF1FCBF-5DFE-4F90-9B1B-940B0087DF58"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "UserChatList_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2D6C807-E9DB-422B-A103-72CCCE24204B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "253B1688-8136-4B7C-9A8F-5927CF47B380"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "UserChatList_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80D32285-6D8F-47B6-AC52-4C9EA3878524"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "UserChatList_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7AF44B3-4012-42B4-AEC9-FFF05A1B1CF0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatUSViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "UserChatList_API_Method()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

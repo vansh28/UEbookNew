@@ -134,6 +134,8 @@ PODS:
   - Protobuf (3.11.2)
   - Scaledrone (0.3.0):
     - Starscream (~> 2.1.0)
+  - SCLAlertView (0.8)
+  - ScrollableSegmentedControl (1.5.0)
   - SDWebImage/Core (4.4.8)
   - SDWebImage/WebP (4.4.8):
     - libwebp (< 2.0, >= 0.5)
@@ -154,6 +156,8 @@ DEPENDENCIES:
   - JitsiMeetSDK
   - MessageKit
   - Scaledrone (~> 0.3.0)
+  - SCLAlertView
+  - ScrollableSegmentedControl (~> 1.5.0)
   - SDWebImage/WebP
 
 SPEC REPOS:
@@ -189,6 +193,8 @@ SPEC REPOS:
     - nanopb
     - Protobuf
     - Scaledrone
+    - SCLAlertView
+    - ScrollableSegmentedControl
     - SDWebImage
     - Starscream
 
@@ -224,9 +230,11 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Protobuf: dd1aaea7140debfe4dd0683fb8ef208e527ae153
   Scaledrone: 25e5e70107222ed50046fc0ed9569915bdb85262
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  ScrollableSegmentedControl: 2e64bbe8968a7fcd8aae5014434481464fcdfe60
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
 
-PODFILE CHECKSUM: 60cf6c993c142a5ed5f2e848c17a72eb351aac47
+PODFILE CHECKSUM: 731c5dced555314498fb4263d901500f402c5ff1
 
 COCOAPODS: 1.8.4

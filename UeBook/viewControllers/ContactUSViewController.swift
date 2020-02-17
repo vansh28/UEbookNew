@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SCLAlertView
+
 
 class ContactUSViewController: UIViewController , UITextViewDelegate , UITextFieldDelegate{
     
@@ -99,6 +101,8 @@ class ContactUSViewController: UIViewController , UITextViewDelegate , UITextFie
                    }
                   
     }
+    
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
     let myColor = UIColor.black
 
@@ -217,6 +221,27 @@ class ContactUSViewController: UIViewController , UITextViewDelegate , UITextFie
         // AJAlertController.initialization().showAlertWithOkButton(aStrMessage: alertMsg) { (index, title) in
         
     }
+    func alertCutsom()
+    {
+        let appearance = SCLAlertView.SCLAppearance(
+                   kTitleFont: UIFont(name: "HelveticaNeue", size: 20)!,
+                   kTextFont: UIFont(name: "HelveticaNeue", size: 14)!,
+                   kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 14)!,
+                   showCloseButton: false,
+                   dynamicAnimatorActive: true,
+                   buttonsLayout: .horizontal
+               )
+               let alert = SCLAlertView(appearance: appearance)
+              
+               _ = alert.addButton("Done") {
+                   print("Second button tapped")
+               }
+               
+               let icon = UIImage(named:"icon-180")
+               let color = UIColor(red: 95/255, green: 121/255, blue: 134/255, alpha: 1)
+               
+        _ = alert.showCustom(" Team UEbook", subTitle: "Thanks for contacting us ,we will get back to you soon!", color: color, icon: icon!, circleIconImage: icon!)
+    }
     @IBAction func btnSend(_ sender: Any) {
         if self.txtEmail.text?.count == 0
                {
@@ -309,6 +334,9 @@ class ContactUSViewController: UIViewController , UITextViewDelegate , UITextFie
                 self.textViewMessageWrite.text = "Write your message"
                 self.textViewMessageWrite.textColor = UIColor.lightGray
                 self.lblMessage.isHidden = true
+                
+                
+                self.alertCutsom()
 //                   if statusCode == 1 {
 //                       self.AlertVC(alertMsg:"Error, Please retry")
 //                       // self.AlertVC(alertMsg:"Invalid username or password")

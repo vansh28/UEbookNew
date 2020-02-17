@@ -15,7 +15,9 @@ target 'UeBook' do
       pod 'AZTabBar'
       pod 'SDWebImage/WebP'
       pod 'HCSStarRatingView', '~> 1.5'
-      
+      pod 'SCLAlertView'
+      pod 'ScrollableSegmentedControl', '~> 1.5.0'
+
 
       end
 

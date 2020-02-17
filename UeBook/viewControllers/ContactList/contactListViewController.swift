@@ -13,17 +13,72 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
 
     var chatArr = [AllUserListClass]()
 
+    
+    lazy var faButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let color = UIColor(red: (95.0/255), green: (122.0/255), blue: (134.0/255), alpha: 1.0)
+
+        button.backgroundColor = color
+       // button.setTitle("+", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "chat"), for:.normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+
+
+        button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
+        return button
+    }()
+    
     @IBOutlet weak var tableView: UITableView!
+    var userId = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+           userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
                Register_API_Method()
+       
                tableView.rowHeight = 100
                tableView.delegate = self
                tableView.dataSource = self
                
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let view = UIApplication.shared.keyWindow {
+            view.addSubview(faButton)
+            setupButton()
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let view = UIApplication.shared.keyWindow, faButton.isDescendant(of: view) {
+            faButton.removeFromSuperview()
+        }
+    }
+
+    @objc func fabTapped(_ button: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                       let nextViewController = storyBoard.instantiateViewController(withIdentifier: kChatUSViewController) as! ChatUSViewController
+                       //nextViewController.valueNote = "1"
+
+        nextViewController.modalPresentationStyle = .overFullScreen
+        self.present(nextViewController, animated:true, completion:nil)
+        print("button tapped")
+    }
+    func setupButton() {
+            NSLayoutConstraint.activate([
+                faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                faButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+                faButton.heightAnchor.constraint(equalToConstant: 60),
+                faButton.widthAnchor.constraint(equalToConstant: 60)
+                ])
+            faButton.layer.cornerRadius = 30
+            faButton.shadowOpacity = 0.5
+            faButton.layer.masksToBounds = true
+    //        faButton.layer.borderColor = UIColor.lightGray.cgColor
+    //        faButton.layer.borderWidth = 4
+        }
     
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -78,7 +133,7 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
        
 
         let dictionary: NSDictionary = [
-            "user_id" : "78"
+            "user_id" : userId
             
         ]
         ServiceManager.POSTServerRequest(String(kuser_list), andParameters: dictionary as! [String : String], success: {response in

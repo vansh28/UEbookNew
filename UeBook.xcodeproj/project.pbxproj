@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8401CECA23FA5A15008BC88B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */; };
 		8403AC3423D6F21C008F3A4C /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3323D6F21C008F3A4C /* ServiceManager.swift */; };
 		8403AC3623D6F403008F3A4C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3523D6F403008F3A4C /* Constant.swift */; };
 		8403AC3823D701AD008F3A4C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3723D701AD008F3A4C /* Repository.swift */; };
@@ -79,6 +80,7 @@
 		84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */; };
 		84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */; };
 		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
+		84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +104,7 @@
 /* Begin PBXFileReference section */
 		3579FFEA596D8A96904E417E /* Pods-UeBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UeBook.release.xcconfig"; path = "Target Support Files/Pods-UeBook/Pods-UeBook.release.xcconfig"; sourceTree = "<group>"; };
 		3F633636CA53A3BE8031873C /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		8403AC3323D6F21C008F3A4C /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		8403AC3523D6F403008F3A4C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		8403AC3723D701AD008F3A4C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -180,6 +183,7 @@
 		84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
+		84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookTableViewCell.swift; sourceTree = "<group>"; };
 		84DF09E223E164300025FAA9 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		84DF09E423E187960025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E723E188B00025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,8 +232,8 @@
 		8403AC3923D70996008F3A4C /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				840D67DD23D035CC00D0DAF6 /* ChatUserDetail.swift */,
 				8403AC3A23D709CA008F3A4C /* contactListViewController.swift */,
-				8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -321,7 +325,6 @@
 				842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */,
 				843EB3E423D57C13006773EF /* ChatUSViewController.swift */,
 				842B753323D1DC96007E5C4A /* call-recieve.gif */,
-				843EB3E623D57C84006773EF /* ChatUsTableViewCell.swift */,
 				842B06E223D6CF840062162A /* ChatDesinViewController.swift */,
 				842B06E423D6D0DE0062162A /* cellCollectionViewCell.swift */,
 				8415F97B23D9A661001D84BE /* UploadBookViewController.swift */,
@@ -345,6 +348,7 @@
 				840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */,
 				847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */,
 				847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */,
+				8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -359,6 +363,7 @@
 				84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */,
 				840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */,
 				840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */,
+				84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -409,7 +414,8 @@
 				84B8B28C23D5BFA80062B8B9 /* Spinner.swift */,
 				84B8B28E23D5BFF60062B8B9 /* BaseCells.swift */,
 				84B8B29223D5C0760062B8B9 /* ChatCell.swift */,
-				840D67DD23D035CC00D0DAF6 /* ChatUserDetail.swift */,
+				8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */,
+				843EB3E623D57C84006773EF /* ChatUsTableViewCell.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 				8456CD8823DAB44800155540 /* ImagePAgingViewController.swift in Sources */,
 				840A2FD023F54E16003212D5 /* BooksByTypesTableViewCell.swift in Sources */,
 				843E8A4223F129670061AAF8 /* EditProfileViewController.swift in Sources */,
+				84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */,
 				84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */,
 				843E8A3E23F129400061AAF8 /* CategoriesViewController.swift in Sources */,
 				84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */,
@@ -721,6 +728,7 @@
 				842B752823D18E14007E5C4A /* Viedo&ChatViewController.swift in Sources */,
 				847FA8D523F6C4DE00BBB988 /* HelpUSViewController.swift in Sources */,
 				84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */,
+				8401CECA23FA5A15008BC88B /* ForgotPasswordViewController.swift in Sources */,
 				843EB3E723D57C84006773EF /* ChatUsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

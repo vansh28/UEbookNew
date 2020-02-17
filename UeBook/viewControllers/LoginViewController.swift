@@ -184,6 +184,9 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
         Login_API_Method()
     }
     
+   
+    
+    
  func Login_API_Method() {
          
         let parameters: NSDictionary = [
@@ -334,6 +337,14 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
 
         iconClick = !iconClick
     }
+    @IBAction func btnforgotPassword(_ sender: Any) {
+           let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                                  let nextViewController = storyBoard.instantiateViewController(withIdentifier: kForgotPasswordViewController) as! ForgotPasswordViewController
+           
+                                   nextViewController.modalPresentationStyle = .overFullScreen
+                                   self.present(nextViewController, animated:true, completion:nil)
+           
+       }
     
     func AlertVC(alertMsg:String) {
          

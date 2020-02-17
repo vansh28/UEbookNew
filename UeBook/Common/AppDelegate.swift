@@ -16,6 +16,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 
 import AZTabBar
+import SCLAlertView
 
 
 

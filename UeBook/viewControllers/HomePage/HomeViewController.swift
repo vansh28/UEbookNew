@@ -120,10 +120,19 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
     @IBAction func btWriteYourBook(_ sender: Any) {
     }
     
-    
     @IBAction func btnReadYourBook(_ sender: Any) {
-        
+        let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kReadBookViewController) as! ReadBookViewController
+
+                      
+                       BookdetailVC.modalPresentationStyle = .overFullScreen
+
+               //        self.navigationController?.pushViewController(BookdetailVC, animated: true)
+                       self.present(BookdetailVC, animated: true, completion: nil)
+                       
+                     //  print("You selected cell #\(indexPath.item)!")
     }
+    
+   
     
     @IBAction func btnChat(_ sender: Any) {
     }

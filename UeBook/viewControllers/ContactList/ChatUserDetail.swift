@@ -29,7 +29,7 @@ class ChatUserDetail: UIViewController {
         self.collectionView.delegate = self
                 self.navigationItem.title = "Chat VC"
                 self.assignDelegates()
-                self.manageInputEventsForTheSubViews()
+              //  self.manageInputEventsForTheSubViews()
        
             }
                     
@@ -124,7 +124,7 @@ class ChatUserDetail: UIViewController {
                  {
                     
          let chatText = txtMsgType.text
-                    print(chatText)
+                    print(chatText as Any)
                     
                     
                      let dictionary: NSDictionary = [
@@ -133,7 +133,7 @@ class ChatUserDetail: UIViewController {
                          "sendTO"   :  "71",
                          "tokenKey" :    "",
                          "type"     :   "text",
-                         "message"   :  "hiiiiiiiiiiii"
+                         "message"   :  txtMsgType.text
                     ]
                      ServiceManager.POSTServerRequest(String(kuser_chat), andParameters: dictionary as! [String : String], success: {response in
                          
@@ -154,22 +154,22 @@ class ChatUserDetail: UIViewController {
                      })
                  }
                     private func manageInputEventsForTheSubViews() {
-                        
+
                         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChangeNotfHandler(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
                         NotificationCenter.default.addObserver(self, selector: #selector(keyboardFrameChangeNotfHandler(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
                     }
                     
                     @objc private func keyboardFrameChangeNotfHandler(_ notification: Notification) {
-                        
+
                         if let userInfo = notification.userInfo {
                             let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
                             let isKeyboardShowing = notification.name == UIResponder.keyboardWillShowNotification
                             inputViewContainerBottomConstraint.constant = isKeyboardShowing ? keyboardFrame.height : 0
                             UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
-                                
+
                                 self.view.layoutIfNeeded()
                             }, completion: { (completed) in
-                                
+
                                 if isKeyboardShowing {
                                     let lastItem = self.chatsArray.count - 1
                                     let indexPath = IndexPath(item: lastItem, section: 0)

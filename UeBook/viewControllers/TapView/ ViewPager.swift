@@ -592,77 +592,77 @@ open class PagerController: UIViewController, UIPageViewControllerDataSource, UI
     
     // MARK: - UIScrollViewDelegate
     // MARK: Responding to Scrolling and Dragging
-    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if self.actualDelegate?.responds(to: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:))) ?? false {
-            self.actualDelegate?.scrollViewDidScroll?(scrollView)
-        }
-        
-        let tabView: UIView = self.tabViewAtIndex(self.activeTabIndex)!
-        
-        if !self.animatingToTab {
-            
-            // Get the related tab view position
-            var frame: CGRect = tabView.frame
-            let movedRatio: CGFloat = (scrollView.contentOffset.x / scrollView.frame.width) - 1
-            frame.origin.x += movedRatio * frame.width
-            
-            if self.centerCurrentTab {
-                
-                frame.origin.x += (frame.size.width / 2)
-                frame.origin.x -= self.tabsView!.frame.width / 2
-                frame.size.width = self.tabsView!.frame.width
-                
-                if frame.origin.x < 0 {
-                    frame.origin.x = 0
-                }
-                
-                if (frame.origin.x + frame.size.width) > self.tabsView!.contentSize.width {
-                    frame.origin.x = (self.tabsView!.contentSize.width - self.tabsView!.frame.width)
-                }
-            } else {
-                
-                frame.origin.x -= self.tabOffset
-                frame.size.width = self.tabsView!.frame.width
-            }
-            
-            self.tabsView!.scrollRectToVisible(frame, animated: false)
-        }
-        
-        var rect: CGRect = tabView.frame
-        
-        let updateIndicator = {
-            (newX: CGFloat) -> Void in
-            rect.origin.x = newX
-            rect.origin.y = self.underlineStroke.frame.origin.y
-            rect.size.height = self.underlineStroke.frame.size.height
-            self.underlineStroke.frame = rect
-        }
-        
-        var newX: CGFloat
-        let width: CGFloat = self.view.frame.width
-        let distance: CGFloat = tabView.frame.size.width
-        
-        if self.animation == PagerAnimation.during && !self.didTapOnTabView {
-            if scrollView.panGestureRecognizer.translation(in: scrollView.superview!).x > 0 {
-                let mov: CGFloat = width - scrollView.contentOffset.x
-                newX = rect.origin.x - ((distance * mov) / width)
-            } else {
-                let mov: CGFloat = scrollView.contentOffset.x - width
-                newX = rect.origin.x + ((distance * mov) / width)
-            }
-            updateIndicator(newX)
-        } else if self.animation == PagerAnimation.none {
-            newX = tabView.frame.origin.x
-            updateIndicator(newX)
-        } else if self.animation == PagerAnimation.end || self.didTapOnTabView {
-            newX = tabView.frame.origin.x
-            UIView.animate(withDuration: 0.35, animations: {
-                () -> Void in
-                updateIndicator(newX)
-            })
-        }
-    }
-    
+//    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if self.actualDelegate?.responds(to: #selector(UIScrollViewDelegate.scrollViewDidScroll(_:))) ?? false {
+//            self.actualDelegate?.scrollViewDidScroll?(scrollView)
+//        }
+//        
+//        let tabView: UIView = self.tabViewAtIndex(self.activeTabIndex)!
+//        
+//        if !self.animatingToTab {
+//            
+//            // Get the related tab view position
+//            var frame: CGRect = tabView.frame
+//            let movedRatio: CGFloat = (scrollView.contentOffset.x / scrollView.frame.width) - 1
+//            frame.origin.x += movedRatio * frame.width
+//            
+//            if self.centerCurrentTab {
+//                
+//                frame.origin.x += (frame.size.width / 2)
+//                frame.origin.x -= self.tabsView!.frame.width / 2
+//                frame.size.width = self.tabsView!.frame.width
+//                
+//                if frame.origin.x < 0 {
+//                    frame.origin.x = 0
+//                }
+//                
+//                if (frame.origin.x + frame.size.width) > self.tabsView!.contentSize.width {
+//                    frame.origin.x = (self.tabsView!.contentSize.width - self.tabsView!.frame.width)
+//                }
+//            } else {
+//                
+//                frame.origin.x -= self.tabOffset
+//                frame.size.width = self.tabsView!.frame.width
+//            }
+//            
+//            self.tabsView!.scrollRectToVisible(frame, animated: false)
+//        }
+//        
+//        var rect: CGRect = tabView.frame
+//        
+//        let updateIndicator = {
+//            (newX: CGFloat) -> Void in
+//            rect.origin.x = newX
+//            rect.origin.y = self.underlineStroke.frame.origin.y
+//            rect.size.height = self.underlineStroke.frame.size.height
+//            self.underlineStroke.frame = rect
+//        }
+//        
+//        var newX: CGFloat
+//        let width: CGFloat = self.view.frame.width
+//        let distance: CGFloat = tabView.frame.size.width
+//        
+//        if self.animation == PagerAnimation.during && !self.didTapOnTabView {
+//            if scrollView.panGestureRecognizer.translation(in: scrollView.superview!).x > 0 {
+//                let mov: CGFloat = width - scrollView.contentOffset.x
+//                newX = rect.origin.x - ((distance * mov) / width)
+//            } else {
+//                let mov: CGFloat = scrollView.contentOffset.x - width
+//                newX = rect.origin.x + ((distance * mov) / width)
+//            }
+//            updateIndicator(newX)
+//        } else if self.animation == PagerAnimation.none {
+//            newX = tabView.frame.origin.x
+//            updateIndicator(newX)
+//        } else if self.animation == PagerAnimation.end || self.didTapOnTabView {
+//            newX = tabView.frame.origin.x
+//            UIView.animate(withDuration: 0.35, animations: {
+//                () -> Void in
+//                updateIndicator(newX)
+//            })
+//        }
+//    }
+//    
     open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         if self.actualDelegate != nil {
             if self.actualDelegate!.responds(to: #selector(UIScrollViewDelegate.scrollViewWillBeginDragging(_:))) {
