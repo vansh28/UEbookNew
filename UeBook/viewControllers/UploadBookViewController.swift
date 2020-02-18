@@ -13,20 +13,26 @@ import AVFoundation
 import MobileCoreServices
 
 
-class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate , AVAudioRecorderDelegate, AVAudioPlayerDelegate {
+class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource , AVAudioRecorderDelegate, AVAudioPlayerDelegate {
 
     //viedo upload
     var imagePickerController = UIImagePickerController()
     var videoURL : NSURL?
     var audioRecorder:AVAudioRecorder!
 
+    var coverImage :UIImage!
+    @IBOutlet weak var lblbookAssigmant: UILabel!
+    
+    @IBOutlet weak var btnAdd: UIButton!
+    
+    @IBOutlet weak var imageUploadCoverImage: UIImageView!
     @IBOutlet weak var imageViedo: UIImageView!
     //
     @IBOutlet weak var viewRoundedView: RoundedView!
     
+    @IBOutlet weak var viewimage: UIView!
     var value:Int = 0
-     
-     var strRecommmended = ["Recommmended","New Books", " Sport", "Music","Story","Dev test"] //multi-season
+     var imagePicker = UIImagePickerController()
      
      var activeDataArray = [String]()
     
@@ -36,35 +42,12 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
      var txtAddQuestion = UITextField()
     var lblAddQuestion = UILabel()
     var arrtextValue = [String]()
-     
-    
-     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-         return 1
-     }
-     
-     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         return activeDataArray.count
-     }
-     
-     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-         return activeDataArray[row]
-     }
-     
-     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         
-        
-         
-             txtRecommended.text = activeDataArray[row]
-             self.view.endEditing(true)
-         
-      
-     }
-    
-    
-     
+    var CategiesArr = [AllCategory]()
 
-     let thePicker = UIPickerView()
-    
+    var toolBar = UIToolbar()
+    var picker  = UIPickerView()
+    var category_Id  = String()
+     var strRecommmended = ["Recommmended","New Books", " Sport", "Music","Story","Dev test"] //multi-season
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -73,8 +56,9 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     @IBOutlet weak var btnSaveForLater: UIButton!
     
     
-    
     @IBOutlet weak var btnPublish: UIButton!
+    
+   
     @IBOutlet weak var txtbookTitle: UITextField!
     @IBOutlet weak var txtBookAuthor: UITextField!
     @IBOutlet weak var textViewBookDescription: UITextView!
@@ -108,16 +92,17 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     @IBOutlet weak var txtEnterQuestion: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Categries_API_Method()
+        viewimage.isHidden = true
+        imagePicker.delegate = self
+        
+        imageUploadCoverImage.isHidden = true
+        
+        lblbookAssigmant.frame =  CGRect(x: lblbookAssigmant.frame.origin.x, y: 379, width: lblbookAssigmant.frame.width, height: lblbookAssigmant.frame.size.height)
+        btnAdd.frame = CGRect(x: btnAdd.frame.origin.x, y: 379, width: btnAdd.frame.size.width, height: lblbookAssigmant.frame.size.height)
 
+       // imageViedo.isHidden = true
         
-        
-        let vc = UIImagePickerController()
-        vc.sourceType = .savedPhotosAlbum
-        vc.allowsEditing = true
-        vc.delegate = self
-        present(vc, animated: true)
-        
-    
         addQuestionTextField()
         view1.backgroundColor = UIColor.white
         scrollView.contentSize = CGSize(width:view.frame.width, height: 800)
@@ -150,7 +135,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                txtRecommended.layer.borderWidth = 1.0
                txtRecommended.layer.borderColor = UIColor.gray.cgColor
                txtRecommended.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
-             
+               
             
                
                
@@ -170,30 +155,90 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                txtBookAuthor.placeholder="Book Author"
                lblAuthor.isHidden = true
                
-//               txtEnterQuestion.placeholder="Question"
-//               lblQuestion.isHidden = true
+
                
                textViewBookDescription.text = "Book Description"
                textViewBookDescription.textColor = UIColor.lightGray
                lblDescription.isHidden = true
                
-               
-               
-               
-//               
-//               btnUploadCoverImage.layer.cornerRadius = 5
-//               btnUploadCoverImage.layer.borderWidth = 1.0
-//               btnUploadCoverImage.layer.borderColor = UIColor.black.cgColor
-//               
-//               btnPublish.layer.cornerRadius = 5
-//              // btnPublish.layer.borderWidth = 1.0
-
-//               btnSaveForLater.layer.cornerRadius = 5
-//              // btnSaveForLater.layer.borderWidth = 1.0
+               let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+                                      imageUploadCoverImage.addGestureRecognizer(tap)
+        self.imageUploadCoverImage.isUserInteractionEnabled = true
 
                
-        // Do any additional setup after loading the view.
+               
+
+
+               
     }
+    
+    @IBAction func btnSaveForLater(_ sender: Any) {
+    }
+    @IBAction func btnRecommended(_ sender: Any) {
+        activeDataArray = strRecommmended
+        pickerview()
+        
+    }
+  
+    
+    @IBAction func btnPublish(_ sender: Any) {
+        
+        AddNewBook_API_Method()
+        
+        
+    }
+    
+    
+    
+    
+    func pickerview()
+      {
+          picker = UIPickerView.init()
+          picker.delegate = self
+          picker.backgroundColor = UIColor.white
+          picker.setValue(UIColor.black, forKey: "textColor")
+          picker.autoresizingMask = .flexibleWidth
+          picker.contentMode = .center
+          picker.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
+          self.view.addSubview(picker)
+    
+          toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+          toolBar.barStyle = .black
+          toolBar.items = [UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(onDoneButtonTapped))]
+          self.view.addSubview(toolBar)
+      }
+      @objc func onDoneButtonTapped() {
+          toolBar.removeFromSuperview()
+          picker.removeFromSuperview()
+      }
+      
+      func numberOfComponents(in pickerView: UIPickerView) -> Int {
+          return 1
+      }
+
+      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+          return CategiesArr.count
+      }
+
+      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return(CategiesArr[row].category_name)
+         
+        ///return(activeDataArray[row])
+          
+      
+      }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            print(activeDataArray[row])
+              txtRecommended.text = ""
+        txtRecommended.text = CategiesArr[row].category_name
+        category_Id = CategiesArr[row].id!
+        
+           print (category_Id)
+    }
+    
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
             if textView.textColor == UIColor.lightGray {
                 textView.text = nil
@@ -209,11 +254,13 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             }
         }
         
+    
+    
     @IBAction func btnBack(_ sender: Any) {
-        	
         self.dismiss(animated: true, completion: nil)
-
     }
+    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationHide()
@@ -376,6 +423,129 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
 
     }
     
+    func Categries_API_Method() {
+              
+              
+    let parameters: NSDictionary = [:]
+              
+
+              ServiceManager.POSTServerRequest(String(kgetAllCategory), andParameters: parameters as! [String : String], success: {response in
+                  print("response-------",response!)
+                  //self.HideLoader()
+                  if response is NSDictionary {
+                     // let statusCode = response?["error"] as? Int
+                      let message = response? ["message"] as? String
+                      let AllCategoryList = response?["response"] as? NSArray
+
+                       print("response-------",response!)
+                             
+                               if AllCategoryList == nil || AllCategoryList?.count == 0 {
+                                  
+                                 
+                      
+                               }
+                                else
+                               {
+                                       self.CategiesArr.removeAll()
+                                      
+
+                                       for dataCategory in AllCategoryList! {
+
+                                           self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
+                                           print(self.CategiesArr.count)
+                                          
+                                       }
+                                
+                                     
+                                   }
+                      
+                              
+                      
+                          
+                      
+                  }
+              }, failure: { error in
+                  //self.HideLoader()
+              })
+          }
+          
+
+
+    
+  func AddNewBook_API_Method() {
+        
+      let    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+
+                     
+           let parameters: NSDictionary = [
+            "user_id"    : userId,
+            "category_id" : category_Id,
+            "book_title"  : txtbookTitle.text as Any,
+            "book_description" : textViewBookDescription.text as Any,
+            "author_name"  :  txtBookAuthor.text as Any,
+            "pdf_url"      :  "",
+            "video_url"   :   "",
+            "audio_url"   :   "",
+            "questiondata":   "",
+            "isbn_number" :   "",
+            "thubm_image" :  "",
+            "status" :   "1",
+            "book_id" :  ""
+           
+            ]
+             
+    ServiceManager.POSTServerRequestWithImage(String(kaddNewBook), andParameters: parameters as! [String : String], andImage: coverImage, imagePara: "cover_url", success: {response in
+                         print("response-------",response!)
+                         //self.HideLoader()
+                         if response is NSDictionary {
+                            // let statusCode = response?["error"] as? Int
+                             let message = response? ["message"] as? String
+                             let AllCategoryList = response?["response"] as? NSArray
+
+                              print("response-------",response!)
+                                    
+                                      if AllCategoryList == nil || AllCategoryList?.count == 0 {
+                                         
+                                         
+                             
+                                      }
+                                       else
+                                      {
+                                              self.CategiesArr.removeAll()
+                                             
+
+                                              for dataCategory in AllCategoryList! {
+
+                                                  self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
+                                                  print(self.CategiesArr.count)
+                                                 
+                                              }
+//                                        self.category_id = self.CategiesArr[0].id!
+//
+//                                        self.BookByType_API_Method()
+//
+                                        
+                                        
+                                    
+                                        
+                                          }
+                             
+                                     
+                             
+                                 
+                             
+                         }
+                     }, failure: { error in
+                         //self.HideLoader()
+                     })
+                 }
+                 
+    
+    
+    
+    
+    
+    
     func viedoupload()
     {
         let viedoView = UIView()
@@ -468,7 +638,56 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
 //    }
 
     @IBAction func btnUploadCoverImage(_ sender: Any) {
+     
+        let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+
+        /*If you want work actionsheet on ipad
+        then you have to use popoverPresentationController to present the actionsheet,
+        otherwise app will crash on iPad */
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            alert.popoverPresentationController?.sourceView = sender as! UIView
+            alert.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+        default:
+            break
+        }
+
+        self.present(alert, animated: true, completion: nil)
     }
+    func openCamera()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
+        {
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func openGallary()
+    {
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func btnSaveForlater(_ sender: Any) {
     }
     
@@ -546,31 +765,31 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             }
      
     
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-               guard let mediaType = info[.mediaType] as? String,
-                   mediaType == kUTTypeMovie as String,
-                   let url = info[.mediaURL] as? URL else {
-                   return
-               }
-
-               do {
-                   let bookmarkData = try url.bookmarkData()
-                   UserDefaults.standard.set(bookmarkData, forKey: "mediaURL")
-               } catch {
-                   print("bookmarkData error: \(error)")
-               }
-           }
-
-           func mediaURL() -> URL? {
-               guard let urlData = UserDefaults.standard.data(forKey: "mediaURL") else {
-                   return nil
-               }
-
-               var staleData = false
-               let mediaURL = try? URL(resolvingBookmarkData: urlData, options: .withoutUI, relativeTo: nil, bookmarkDataIsStale: &staleData)
-
-               return staleData ? nil : mediaURL
-           }
+//        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+//               guard let mediaType = info[.mediaType] as? String,
+//                   mediaType == kUTTypeMovie as String,
+//                   let url = info[.mediaURL] as? URL else {
+//                   return
+//               }
+//
+//               do {
+//                   let bookmarkData = try url.bookmarkData()
+//                   UserDefaults.standard.set(bookmarkData, forKey: "mediaURL")
+//               } catch {
+//                   print("bookmarkData error: \(error)")
+//               }
+//           }
+//
+//           func mediaURL() -> URL? {
+//               guard let urlData = UserDefaults.standard.data(forKey: "mediaURL") else {
+//                   return nil
+//               }
+//
+//               var staleData = false
+//               let mediaURL = try? URL(resolvingBookmarkData: urlData, options: .withoutUI, relativeTo: nil, bookmarkDataIsStale: &staleData)
+//
+//               return staleData ? nil : mediaURL
+//           }
    
     class TextField: UITextField {
            
@@ -620,6 +839,51 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     func getInputsValue(_ inputs:[UITextField], seperatedby value: String) -> String {
         return inputs.sorted {$0.tag <  $1.tag}.map {$0.text}.compactMap({$0}).joined(separator: value)
     }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+    
+        view.backgroundColor = UIColor.white
+        viewimage.frame = CGRect(x:20, y:100 , width:view.frame.width-40, height:460)
+        viewimage.layer.borderWidth = 5
+        viewimage.layer.borderColor = UIColor.gray.cgColor
+        self.imageUploadCoverImage.frame = CGRect(x:0, y:0 , width:view.frame.width-40, height:400)
+        
+
+        
+        
+
+        let button = UIButton(type: UIButton.ButtonType.system) as UIButton
+            
+            let xPostion:CGFloat = 30
+            let yPostion:CGFloat = imageUploadCoverImage.frame.height+imageUploadCoverImage.frame.origin.y+10
+            let buttonWidth:CGFloat = imageUploadCoverImage.frame.width-60
+            let buttonHeight:CGFloat = 40
+            button.layer.cornerRadius = 15
+            button.frame = CGRect(x:xPostion, y:yPostion, width:buttonWidth, height:buttonHeight)
+            
+             button.setTitle("OK", for: UIControl.State.normal)
+             button.tintColor = UIColor.white
+             button.backgroundColor = UIColor.red
+             button.addTarget(self, action: #selector(UploadBookViewController.buttonAction(_:)), for: .touchUpInside)
+            
+            self.viewimage.addSubview(button)
+           self.view1.bringSubviewToFront(button)
+            self.view1.bringSubviewToFront(viewimage)
+        }
+        
+    @objc func buttonAction(_ sender:UIButton!)
+        {
+            self.dismiss(animated: true, completion: nil)
+        }
+
+                   
+                 //  self.viewBanner.addSubview(btnCencel)
+                   
+
+    }
+  
+  
+    
     /*
      // MARK: - Navigation
 
@@ -630,7 +894,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     }
     */
 
-}
+
 extension UITextField {
 
     enum PaddingSide {
@@ -669,4 +933,26 @@ extension UITextField {
     }
 }
     
-   
+   extension UploadBookViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        guard let selectedImage = info[.editedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+          lblbookAssigmant.frame =  CGRect(x: lblbookAssigmant.frame.origin.x, y: 400, width: lblbookAssigmant.frame.width, height: lblbookAssigmant.frame.size.height)
+              btnAdd.frame = CGRect(x: btnAdd.frame.origin.x, y: 400, width: btnAdd.frame.size.width, height: lblbookAssigmant.frame.size.height)
+        imageUploadCoverImage.isHidden = false
+        viewimage.isHidden = false
+        self.imageUploadCoverImage.image = selectedImage
+        coverImage = selectedImage
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+ 
+       func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+           picker.isNavigationBarHidden = false
+           self.dismiss(animated: true, completion: nil)
+       }
+   }

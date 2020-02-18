@@ -31,7 +31,7 @@ class StarsView: UIView {
         func starLayer(full: Bool) -> CAShapeLayer {
             let shapeLayer = CAShapeLayer()
             shapeLayer.path = starPath(size: bounds.size.height, full: full).cgPath
-            shapeLayer.fillColor = UIColor(red: 254/255, green: 227/255, blue: 110/255, alpha: 1).cgColor
+            shapeLayer.fillColor = UIColor(red: 255/255, green: 193/255, blue: 7/255, alpha: 1).cgColor
             return shapeLayer
         }
 

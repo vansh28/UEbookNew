@@ -118,6 +118,14 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
         })
     }
     @IBAction func btWriteYourBook(_ sender: Any) {
+        let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kUploadBookViewController) as! UploadBookViewController
+
+               
+                BookdetailVC.modalPresentationStyle = .overFullScreen
+
+        //        self.navigationController?.pushViewController(BookdetailVC, animated: true)
+                self.present(BookdetailVC, animated: true, completion: nil)
+        
     }
     
     @IBAction func btnReadYourBook(_ sender: Any) {
@@ -195,7 +203,7 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
         
         let bookId = self.popularBookArr[indexPath.row].id
         let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kBookDescriptionViewController) as! BookDescriptionViewController
-
+       BookdetailVC.modalPresentationStyle = .overFullScreen
         BookdetailVC.bookId = bookId!
         print(BookdetailVC.bookId)
         

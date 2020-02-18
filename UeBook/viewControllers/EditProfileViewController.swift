@@ -89,7 +89,7 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let nextViewController = storyBoard.instantiateViewController(withIdentifier:kUserInfoViewController ) as! UserInfoViewController
             nextViewController.modalPresentationStyle = .overFullScreen
-
+            nextViewController.valueBtn = "2"
             self.present(nextViewController, animated:true, completion:nil)
         }
         

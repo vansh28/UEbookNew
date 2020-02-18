@@ -432,5 +432,27 @@ init(getAllUserInfo: NSDictionary) {
 }
 
 
+class  AllFollowStatus{
+    var id: String?
+    var user_id: String?
+    var status: String?
+   
+    var request_date: String?
+    var url: String?
+    var user_name: String?
+    
+   var publisher_type: String?
+   
+init(getFollowStatus: NSDictionary) {
+        
+    self.id                            = getFollowStatus["id"] as? String
+    self.user_id                       = getFollowStatus["user_id"] as? String
+    self.status                        = getFollowStatus["status"] as? String
+    self.request_date                  = getFollowStatus["request_date"] as? String
+    self.url                           = getFollowStatus["url"] as? String
+    self.user_name                     = getFollowStatus["user_name"] as? String
+     self.publisher_type               = getFollowStatus["publisher_type"] as? String
+    }
+}
 
 

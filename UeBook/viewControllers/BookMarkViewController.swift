@@ -88,7 +88,7 @@ class BookMarkViewController: UIViewController , UITableViewDelegate, UITableVie
                 BookdetailVC.bookId = bookId!
                 print(BookdetailVC.bookId)
                // BookdetailVC.modalPresentationStyle = .overFullScreen
-
+                   kBookDescriptionViewController
         //        self.navigationController?.pushViewController(BookdetailVC, animated: true)
                 self.present(BookdetailVC, animated: true, completion: nil)
                 

@@ -7,36 +7,161 @@
 //
 
 import UIKit
+import SCLAlertView
 
 
 class UserInfoViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
     
     @IBOutlet weak var userImage: UIImageView!
     
-    
+     var arrGetFollowStatus = [AllFollowStatus]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblUserName: UILabel!
     
     @IBOutlet weak var lblUserType: UILabel!
     
     @IBOutlet weak var lblPostCount: UILabel!
-    
+    var userIdbyAuthor = String()
     
     @IBOutlet weak var btnEditProfile: UIButton!
-    
+    var valueBtn = String()
        var userBookDetailArr = [AllUserBooklist]()
        var userId = String()
+    var flag = 0
+    
+    @IBOutlet weak var btnSendingRequest: UIButton!
+    
+    @IBOutlet weak var btnEmail: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
-        UserInfo_API_Method()
+       userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+       if valueBtn == "1"
+            {
+                if userId == userIdbyAuthor
+                {
+                    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+                                   btnEditProfile.isHidden = false
+                                   btnEmail.isHidden = true
+                                   btnSendingRequest.isHidden = true
+                }
+                
+                else{
+                    btnEmail.isHidden = false
+                    btnSendingRequest.isHidden = false
+                    btnEditProfile.isHidden = true
+                    userId = userIdbyAuthor
+                    print(userId)
+                }
+                 
+            }
+           else  if valueBtn == "2"
+            {
+                userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+                btnEditProfile.isHidden = false
+                btnEmail.isHidden = true
+                btnSendingRequest.isHidden = true
+            }
+        
+        
+            UserInfo_API_Method()
+            GetFollowStatus_API_Method()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 150
-
+        
+        
+     
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func btnSendingRequest(_ sender: Any) {
+        
+        if flag == 0
+        {
+             btnSendingRequest.isUserInteractionEnabled = true
+            SendFrndReq_API_Method()
+        }
+        else if flag == 1        {
+             btnSendingRequest.isUserInteractionEnabled = true
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                           let nextViewController = storyBoard.instantiateViewController(withIdentifier: kChatUserDetail) as! ChatUserDetail
+                           //nextViewController.valueNote = "1"
+
+            
+            //nextViewController.modalPresentationStyle = .overFullScreen
+            self.present(nextViewController, animated:true, completion:nil)
+        }
+        else if flag == 2        {
+            btnSendingRequest.isUserInteractionEnabled = false
+        }
+       
+    }
+    
+    @IBAction func btnEmail(_ sender: Any) {
+        let appearance = SCLAlertView.SCLAppearance(
+                   kTitleFont: UIFont(name: "HelveticaNeue", size: 15)!,
+                   kTextFont: UIFont(name: "HelveticaNeue", size: 15)!,
+                   kButtonFont: UIFont(name: "HelveticaNeue-Bold", size: 15)!,
+                   showCloseButton: false,
+                   dynamicAnimatorActive: true
+               )
+//
+               // Initialize SCLAlertView using custom Appearance
+               let alert = SCLAlertView(appearance: appearance)
+               let myColor = UIColor(red: 95/255, green: 121/255, blue: 134/255, alpha: 1)
+
+               // Creat the subview
+               let subview = UIView(frame: CGRect(x: 0,y: 0,width: 216,height: 250))
+               let x = (subview.frame.width - 180)
+               
+               // Add textfield 1
+               let textfield1 = UITextField(frame: CGRect(x: 0,y: 10,width: 216,height:50))
+               textfield1.layer.borderColor = myColor.cgColor
+               textfield1.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
+
+               textfield1.layer.borderWidth = 1.5
+               textfield1.layer.cornerRadius = 5
+               textfield1.placeholder = "Subject"
+               textfield1.textAlignment = NSTextAlignment.left
+               subview.addSubview(textfield1)
+               
+               // Add textfield 2
+               let textView = UITextView(frame: CGRect(x: 0,y: textfield1.frame.maxY + 10,width: 216,height:150))
+               //textView.isSecureTextEntry = true
+               textView.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
+
+               textView.layer.borderColor = myColor.cgColor
+               textView.layer.borderWidth = 1.5
+               textView.layer.cornerRadius = 5
+               textView.text = "Write your Message"
+                
+               textView.textAlignment = NSTextAlignment.left
+               subview.addSubview(textView)
+               
+               // Add the subview to the alert's UI property
+               alert.customSubview = subview
+               _ = alert.addButton("SEND", backgroundColor:myColor, textColor: .white)  {
+                   print("Logged in")
+               }
+               
+                //Add Button with visible timeout and custom Colors
+               let showTimeout = SCLButton.ShowTimeoutConfiguration(prefix: "(", suffix: " s)")
+        _ = alert.addButton("CANCEL", backgroundColor:myColor, textColor: .white, showTimeout: showTimeout) {
+                   print("Timeout Button tapped")
+               }
+
+               let timeoutValue: TimeInterval = 10.0
+               let timeoutAction: SCLAlertView.SCLTimeoutConfiguration.ActionType = {
+                   print("Timeout occurred")
+               }
+               
+               _ = alert.showInfo("Email", subTitle: "")
+           
+    }
+    
     @IBAction func btnEditProfile(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kUserInfoUpdateViewController) as! UserInfoUpdateViewController
@@ -63,11 +188,14 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
                 
 
                 let myDouble = userBookDetailArr[indexPath.row].rating
+        if myDouble == nil{
+            cell?.starView.rating = 0
+        }
+        else
+        {
                 let double = Double(myDouble!)
                 cell?.starView.rating = double!
-              
-        //        cell?.layer.masksToBounds = true
-        //        cell?.imgView.layer.cornerRadius = ((cell?.imgView.frame.size.width)!)/2
+        }
 
                 let escapedString = userBookDetailArr[indexPath.row].thubm_image
                        let fullURL = "http://" + escapedString!
@@ -90,7 +218,7 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
                                }
                            }
                 }
-                
+        
         return cell!
         
     }
@@ -212,6 +340,106 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
         })
     }
     
+    
+     func SendFrndReq_API_Method() {
+            
+            userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+            let parameters: NSDictionary = [
+               "user_id": userId,
+                "frnd_id":userIdbyAuthor
+              ]
+            
+
+            ServiceManager.POSTServerRequest(String(ksendFrndReq), andParameters: parameters as! [String : String], success: {response in
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                   // let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    
+                    
+                    self.GetFollowStatus_API_Method()
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                //self.HideLoader()
+            })
+        }
+    
+    
+    func GetFollowStatus_API_Method() {
+             
+             userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+             let parameters: NSDictionary = [
+                "user_id": userId,
+                "friend_id":userIdbyAuthor
+               ]
+             
+
+             ServiceManager.POSTServerRequest(String(kgetFollowStatus), andParameters: parameters as! [String : String], success: {response in
+                 print("response-------",response!)
+                 //self.HideLoader()
+                 if response is NSDictionary {
+                    // let statusCode = response?["error"] as? Int
+                     let message = response? ["message"] as? String
+                     let GetFolowStatusdata =    response? ["data"] as? NSArray
+                     
+                     if GetFolowStatusdata == nil || GetFolowStatusdata?.count == 0 {
+                                 
+                                 
+                     
+                              }
+                               else
+                              {
+                                      self.userBookDetailArr.removeAll()
+                                      
+                                      for dataCategory in GetFolowStatusdata! {
+                                          
+                                          self.arrGetFollowStatus.append(AllFollowStatus(getFollowStatus: dataCategory as! NSDictionary))
+                                          print(self.userBookDetailArr.count)
+                                        
+                                        let stautsType = self.arrGetFollowStatus[0].status
+                                        
+                                        if stautsType == "1"
+                                        {
+                                            self.btnSendingRequest.setTitle("MESSAGE", for: .normal)
+                                            
+                                            self.flag = 1
+                                            self.btnSendingRequest.isUserInteractionEnabled = true
+
+                                        }
+                                        else if  stautsType == "0"
+                                        {
+                                            self.btnSendingRequest.isUserInteractionEnabled = false
+
+                                            self.btnSendingRequest.setTitle("PENDING", for: .normal)
+                                            self.flag = 2
+                                            
+                                        }
+                                        else if  stautsType == "2"
+                                        {
+                                            self.btnSendingRequest.setTitle("REJECT", for: .normal)
+                                            self.btnSendingRequest.isUserInteractionEnabled = true
+
+                                            
+                                        }
+                                        else
+                                        {
+                                            self.flag = 0
+                                            self.btnSendingRequest.isUserInteractionEnabled = true
+
+                                            self.btnSendingRequest.setTitle("FOLLOW", for: .normal)
+                                        }
+                                        
+                                }
+                    }
+                 }
+             }, failure: { error in
+                 //self.HideLoader()
+             })
+         }
     /*
     // MARK: - Navigation
 

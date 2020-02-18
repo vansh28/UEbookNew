@@ -23,7 +23,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     @IBOutlet weak var btnAuthorName: UIButton!
     @IBOutlet weak var starView: StarsView!
     
-    
+    var userIdbyAuthor = String()
     @IBOutlet weak var lbBookDescription: UILabel!
     
     @IBOutlet weak var lblrating: UILabel!
@@ -32,6 +32,9 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     @IBOutlet weak var textview: UITextView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var btnUserName: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
@@ -56,6 +59,16 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         return reviewArr.count
     }
     
+    @IBAction func btnUserName(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier:kUserInfoViewController ) as! UserInfoViewController
+        nextViewController.modalPresentationStyle = .overFullScreen
+        nextViewController.valueBtn = "1"
+        nextViewController.userIdbyAuthor = userIdbyAuthor
+        self.present(nextViewController, animated:true, completion:nil)
+        
+        
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var frame = self.tableView.frame
@@ -171,12 +184,14 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     }
                 else {
                     let objBookDetail = AllBookDescription(getBookDescriptionData: BookDetailList!)
+                    self.userIdbyAuthor = objBookDetail.user_id!
                     if objBookDetail.book_title == nil
                     {
                         self.lblBookName.text = ""
                     }
                     else{
                         self.lblBookName.text =  objBookDetail.book_title
+                    
                     }
                     
                     if objBookDetail.user_name == nil
