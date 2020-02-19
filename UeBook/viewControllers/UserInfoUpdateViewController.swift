@@ -34,7 +34,6 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
     @IBOutlet weak var txtUpdateEmail: UITextField!
     
     
-    
     @IBOutlet weak var txtUpdateCountry: UITextField!
     
     @IBOutlet weak var lblUpdateCountry: UILabel!
@@ -248,7 +247,8 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
             return 1
         }
 
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+ 
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
             return stringActor.count
         }
 
@@ -261,7 +261,7 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             print(stringActor[row])
             
-            btnUserType.setTitle("", for: .normal)
+                 btnUserType.setTitle("", for: .normal)
             
                 btnUserType.setTitle(stringActor[row], for: .normal)
               btnVAlue = stringActor[row]
@@ -269,7 +269,8 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
         
         }
     
-    @IBAction func btnCeamra(_ sender: Any) {
+    @IBAction func btnCam(_ sender: Any) {
+    
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
                 self.openCamera()
@@ -528,43 +529,43 @@ func UserInfoUpdate_API_Method() {
 }
 //MARK: - UIImagePickerControllerDelegate
 
-//extension UserInfoUpdateViewController: UIImagePickerControllerDelegate {
-//
-//    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        self.pickerController(picker, didSelect: nil)
-//    }
-//
-//    public func imagePickerController(_ picker: UIImagePickerController,
-//                                      didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-//        guard let image = info[.editedImage] as? UIImage else {
-//            return self.pickerController(picker, didSelect: nil)
-//        }
-//        self.pickerController(picker, didSelect: image)
-//    }
-//}
-//
-//extension UserInfoUpdateViewController: UINavigationControllerDelegate {
-//
-//}
-//
-//
-//extension UserInfoUpdateViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-//
-//    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-//
+extension UserInfoUpdateViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        
+        
+        
+  var selectedImage: UIImage?
+        if let editedImage = info["UIImagePickerControllerEditedImage"]   as? UIImage {
+            
+            selectedImage = editedImage
+           userImage.image=selectedImage
+             self.Edit_Img_API_Method()
+        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
+            selectedImage = originalImage
+            userImage.image=selectedImage
+             self.Edit_Img_API_Method()
+            
+            
+        }
+      
+        
+        
 //        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
 //            self.userImage.image = editedImage
 //        }
-//       picker.dismiss(animated: true, completion: nil)
-//    }
-//
-//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-//        picker.isNavigationBarHidden = false
-//        self.dismiss(animated: true, completion: nil)
-//    }
-//}
-//
-
+        
+        //Dismiss the UIImagePicker after selection
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.isNavigationBarHidden = false
+        
+        self.dismiss(animated: true, completion: nil)
+       
+}
+}
     /*
     // MARK: - Navigation
 

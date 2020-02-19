@@ -56,24 +56,35 @@ var navController : UINavigationController?
         GIDSignIn.sharedInstance().delegate = self
         
         
-               let loginVC = UserDefaults.standard.integer(forKey: "Save_User_Login")
-
-               if loginVC == 1 {
-                    let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                           let homePage = mainStoryboard.instantiateViewController(withIdentifier:kHomeViewController) as! HomeViewController
-                           self.window?.rootViewController = homePage
-
-               }
-               else{
-                   self.methodForLogout()
-               }
+               
         ApplicationDelegate.shared.application(
                    application,
                    didFinishLaunchingWithOptions:
                    launchOptions
                )
         IQKeyboardManager.shared.previousNextDisplayMode = .alwaysHide
+        
+        let loginVC = UserDefaults.standard.integer(forKey: "Save_User_Login")
+
+        if loginVC == 1 {
+//             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                    let homePage = mainStoryboard.instantiateViewController(withIdentifier:kSWRevealViewController) as! SWRevealViewController
+//                    self.window?.rootViewController = homePage
+//
+         let storyboard = UIStoryboard(name: kMain, bundle: nil)
+              let objViewController = storyboard.instantiateViewController(withIdentifier: kSWRevealViewController) as? SWRevealViewController
+              let loginNav = UINavigationController(rootViewController: objViewController!)
+              self.window?.backgroundColor = UIColor.white
+              self.window?.rootViewController = loginNav
+        
+
+        }
+        else{
+            self.methodForLogout()
+        }
         guard let launchOptions = launchOptions else { return false }
+        
+        
                return JitsiMeet.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
       
@@ -107,192 +118,212 @@ var navController : UINavigationController?
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    class func methodForLogin() {
-           AppDelegate.getAppDelegate().root()
-       }
-       class func getAppDelegate() -> AppDelegate {
-              return UIApplication.shared.delegate as! AppDelegate
-          }
-    func root()
-    {
-        let status = UserDefaults.standard.bool(forKey: "status")
-            var rootVC : UIViewController?
-           
-                print(status)
-            
-
-            if(status == true){
-                rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kHomeViewController) as! HomeViewController
-            }else{
-                rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kLoginViewController) as! LoginViewController
-            }
-            
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.window?.rootViewController = rootVC
-            
-        }
+//    class func methodForLogin() {
+//           AppDelegate.getAppDelegate().addRoot()
+//       }
+//       class func getAppDelegate() -> AppDelegate {
+//              return UIApplication.shared.delegate as! AppDelegate
+//          }
+//    func root()
+//    {
+//        let status = UserDefaults.standard.bool(forKey: "status")
+//            var rootVC : UIViewController?
+//           
+//                print(status)
+//            
+//
+//            if(status == true){
+//                rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kHomeViewController) as! HomeViewController
+//            }else{
+//                rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kLoginViewController) as! LoginViewController
+//            }
+//            
+//            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//            appDelegate.window?.rootViewController = rootVC
+//            
+//        }
      
 
     
     func methodForLogout() {
-        let storyboard = UIStoryboard(name: kMain, bundle: nil)
-        let objViewController = storyboard.instantiateViewController(withIdentifier: kFirstPageViewController) as? FirstPageViewController
-        let loginNav = UINavigationController(rootViewController: objViewController!)
-        self.window?.backgroundColor = UIColor.white
-        self.window?.rootViewController = loginNav
+//        let storyboard = UIStoryboard(name: kMain, bundle: nil)
+//        let objViewController = storyboard.instantiateViewController(withIdentifier: kFirstPageViewController) as? FirstPageViewController
+//        let loginNav = UINavigationController(rootViewController: objViewController!)
+//        self.window?.backgroundColor = UIColor.white
+//        self.window?.rootViewController = loginNav
     }
     //..... tabbar view controller
     
-     func addRoot() {
-            var icons = [String]()
-            icons.append("homenew")
-            icons.append("userhome")
-            icons.append("bookmarkhome")
-            icons.append("notehome")
-            icons.append("categorieshome")
-        
-        
-        
-            
-            var selectedIcons = [String]()
-            selectedIcons.append("homenew")
-            selectedIcons.append("userhome")
-            selectedIcons.append("bookmarkhome")
-            selectedIcons.append("notehome")
-            selectedIcons.append("categorieshome")
-           
-        
-            let pp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:kLoginViewController)
-            
-            
-    //        let rearNavigationController = UINavigationController(rootViewController: rearViewController!)
-    //        rearNavigationController.isNavigationBarHidden = true
-            
-            
-            
-            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-    //        let frontNavigationControllerHome = UINavigationController(rootViewController: homeVC!)
-            
-            let bookMarksVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kBookMarkViewController) as? BookMarkViewController
-            
-             let NotepadVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kNotepadViewController) as? NotepadViewController
-            
-            let EditProfileVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: kEditProfileViewController) as? EditProfileViewController
-        
-            let CategoriesVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: kCategoriesViewController) as? CategoriesViewController
-   
-            let color = UIColor(red:0.71, green:0.45, blue:0.04, alpha:1.0)
-            
-            tabController = AZTabBarController.insert(into: pp, withTabIconNames: icons, andSelectedIconNames: selectedIcons)
-            
-            tabController.setViewController(UINavigationController(rootViewController:homeVC!), atIndex: 0)
-            tabController.setViewController(UINavigationController(rootViewController:bookMarksVC!), atIndex: 1)
-            tabController.setViewController(UINavigationController(rootViewController:NotepadVC!), atIndex: 2)
-            tabController.setViewController(UINavigationController(rootViewController:CategoriesVC!), atIndex: 3)
-            tabController.setViewController(UINavigationController(rootViewController:EditProfileVC!), atIndex: 3)
-            
-            tabController.selectionIndicatorHeight = 0
-            tabController.font = UIFont(name: "Montserrat-Regular", size: 10)
-            
-            
-            tabController.separatorLineColor = .clear
-            tabController.buttonsBackgroundColor = .black
-            tabController.highlightedBackgroundColor = color
-            tabController.highlightButton(atIndex: 0)
-            tabController.setTitle("Home", atIndex: 0)
-            tabController.setTitle("BookMark", atIndex: 1)
-            tabController.setTitle("Notepad", atIndex: 2)
-            tabController.setTitle("Category", atIndex: 3)
-            tabController.setTitle("User", atIndex: 4)
-            
-            tabController.animateTabChange = false
-            tabController.highlightColor = .white
-            tabController.selectedColor = .white
-            tabController.defaultColor = .white
-            tabController.setIndex(0)
-            
-            tabController.setAction(atIndex: 0) {
-                self.tabController.highlightButton(atIndex: 0)
-                self.tabController.removeHighlight(atIndex: 1)
-                self.tabController.removeHighlight(atIndex: 2)
-                self.tabController.removeHighlight(atIndex: 3)
-                self.tabController.removeHighlight(atIndex: 4)
-                (self.tabController.children[0] as? UINavigationController)?.popToRootViewController(animated: true)
-            }
-            
-            tabController.setAction(atIndex: 1) {
-                //Your statments
-                self.tabController.removeHighlight(atIndex: 0)
-                self.tabController.highlightButton(atIndex: 1)
-                self.tabController.removeHighlight(atIndex: 2)
-                self.tabController.removeHighlight(atIndex: 3)
-                self.tabController.removeHighlight(atIndex: 4)
-                (self.tabController.children[1] as? UINavigationController)?.popToRootViewController(animated: true)
-            }
-            tabController.setAction(atIndex: 2) {
-                //Your statments
-                self.tabController.removeHighlight(atIndex: 0)
-                self.tabController.removeHighlight(atIndex: 1)
-                self.tabController.highlightButton(atIndex: 2)
-                self.tabController.removeHighlight(atIndex: 3)
-                self.tabController.removeHighlight(atIndex: 4)
-                (self.tabController.children[2] as? UINavigationController)?.popToRootViewController(animated: true)
-            }
-            tabController.setAction(atIndex: 3) {
-                //Your statments
-                self.tabController.removeHighlight(atIndex: 0)
-                self.tabController.removeHighlight(atIndex: 1)
-                self.tabController.removeHighlight(atIndex: 2)
-                self.tabController.highlightButton(atIndex: 3)
-                self.tabController.removeHighlight(atIndex: 4)
-                (self.tabController.children[3] as? UINavigationController)?.popToRootViewController(animated: true)
-            }
-        tabController.setAction(atIndex: 4) {
-                       //Your statments
-                       self.tabController.removeHighlight(atIndex: 0)
-                       self.tabController.removeHighlight(atIndex: 1)
-                       self.tabController.removeHighlight(atIndex: 2)
-                       self.tabController.removeHighlight(atIndex: 3)
-                       self.tabController.highlightButton(atIndex: 4)
-                       (self.tabController.children[4] as? UINavigationController)?.popToRootViewController(animated: true)
-                   }
-            
-//let rearViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kSideTableViewController) as? SideMenuViewController
-//        let revealController = SWRevealViewController(nibName: HomeViewController, bundle: tabController)
-//       self.objRevealViewController = revealController!
-//       let storyboard = UIStoryboard(name: kMain, bundle: nil)
-//       let objViewController = storyboard.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
-//       let loginNav = UINavigationController(rootViewController: objViewController!)
-//       self.window?.backgroundColor = UIColor.white
-//       self.window?.rootViewController = loginNav
-       
-        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: kHomeViewController) as! HomeViewController
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    self.window?.rootViewController = initialViewControlleripad
-                    self.window?.makeKeyAndVisible()
-        
-        let vc = HomeViewController()
-        let navigationController = UINavigationController(rootViewController: vc)
-        self.window?.rootViewController = navigationController
-        self.window!.makeKeyAndVisible()
-        navigationController.setNavigationBarHidden(true, animated: true)
-
-        
-        
-//
-//          window = UIWindow(frame: UIScreen.main.bounds)
-//        navController = UINavigationController.init(rootViewController: homeVC!)
-//
-//           navController?.isNavigationBarHidden =
-//               ((navController?.navigationBar.isTranslucent = false) != nil)
-//
-//           self.window?.rootViewController = navController
-//           self.window?.backgroundColor = .white
-//           self.window?.makeKeyAndVisible()
     
-    }
     
+//    func addRoot()
+//    {
+//
+//        let loginVC = UserDefaults.standard.integer(forKey: "Save_User_Login")
+//
+//        if loginVC == 1 {
+//             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                    let homePage = mainStoryboard.instantiateViewController(withIdentifier:kSWRevealViewController) as! SWRevealViewController
+//                    self.window?.rootViewController = homePage
+//
+//
+//
+//
+//        }
+//        else{
+//            self.methodForLogout()
+//        }
+//    }
+//     func addRoot() {
+//            var icons = [String]()
+//            icons.append("homenew")
+//            icons.append("userhome")
+//            icons.append("bookmarkhome")
+//            icons.append("notehome")
+//            icons.append("categorieshome")
+//
+//
+//
+//
+//            var selectedIcons = [String]()
+//            selectedIcons.append("homenew")
+//            selectedIcons.append("userhome")
+//            selectedIcons.append("bookmarkhome")
+//            selectedIcons.append("notehome")
+//            selectedIcons.append("categorieshome")
+//
+//
+//            let pp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:kLoginViewController)
+//
+//
+//    //        let rearNavigationController = UINavigationController(rootViewController: rearViewController!)
+//    //        rearNavigationController.isNavigationBarHidden = true
+//
+//
+//
+//            let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+//    //        let frontNavigationControllerHome = UINavigationController(rootViewController: homeVC!)
+//
+//            let bookMarksVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kBookMarkViewController) as? BookMarkViewController
+//
+//             let NotepadVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kNotepadViewController) as? NotepadViewController
+//
+//            let EditProfileVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: kEditProfileViewController) as? EditProfileViewController
+//
+//            let CategoriesVC = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: kCategoriesViewController) as? CategoriesViewController
+//
+//            let color = UIColor(red:0.71, green:0.45, blue:0.04, alpha:1.0)
+//
+//            tabController = AZTabBarController.insert(into: pp, withTabIconNames: icons, andSelectedIconNames: selectedIcons)
+//
+//            tabController.setViewController(UINavigationController(rootViewController:homeVC!), atIndex: 0)
+//            tabController.setViewController(UINavigationController(rootViewController:bookMarksVC!), atIndex: 1)
+//            tabController.setViewController(UINavigationController(rootViewController:NotepadVC!), atIndex: 2)
+//            tabController.setViewController(UINavigationController(rootViewController:CategoriesVC!), atIndex: 3)
+//            tabController.setViewController(UINavigationController(rootViewController:EditProfileVC!), atIndex: 3)
+//
+//            tabController.selectionIndicatorHeight = 0
+//            tabController.font = UIFont(name: "Montserrat-Regular", size: 10)
+//
+//
+//            tabController.separatorLineColor = .clear
+//            tabController.buttonsBackgroundColor = .black
+//            tabController.highlightedBackgroundColor = color
+//            tabController.highlightButton(atIndex: 0)
+//            tabController.setTitle("Home", atIndex: 0)
+//            tabController.setTitle("BookMark", atIndex: 1)
+//            tabController.setTitle("Notepad", atIndex: 2)
+//            tabController.setTitle("Category", atIndex: 3)
+//            tabController.setTitle("User", atIndex: 4)
+//
+//            tabController.animateTabChange = false
+//            tabController.highlightColor = .white
+//            tabController.selectedColor = .white
+//            tabController.defaultColor = .white
+//            tabController.setIndex(0)
+//
+//            tabController.setAction(atIndex: 0) {
+//                self.tabController.highlightButton(atIndex: 0)
+//                self.tabController.removeHighlight(atIndex: 1)
+//                self.tabController.removeHighlight(atIndex: 2)
+//                self.tabController.removeHighlight(atIndex: 3)
+//                self.tabController.removeHighlight(atIndex: 4)
+//                (self.tabController.children[0] as? UINavigationController)?.popToRootViewController(animated: true)
+//            }
+//
+//            tabController.setAction(atIndex: 1) {
+//                //Your statments
+//                self.tabController.removeHighlight(atIndex: 0)
+//                self.tabController.highlightButton(atIndex: 1)
+//                self.tabController.removeHighlight(atIndex: 2)
+//                self.tabController.removeHighlight(atIndex: 3)
+//                self.tabController.removeHighlight(atIndex: 4)
+//                (self.tabController.children[1] as? UINavigationController)?.popToRootViewController(animated: true)
+//            }
+//            tabController.setAction(atIndex: 2) {
+//                //Your statments
+//                self.tabController.removeHighlight(atIndex: 0)
+//                self.tabController.removeHighlight(atIndex: 1)
+//                self.tabController.highlightButton(atIndex: 2)
+//                self.tabController.removeHighlight(atIndex: 3)
+//                self.tabController.removeHighlight(atIndex: 4)
+//                (self.tabController.children[2] as? UINavigationController)?.popToRootViewController(animated: true)
+//            }
+//            tabController.setAction(atIndex: 3) {
+//                //Your statments
+//                self.tabController.removeHighlight(atIndex: 0)
+//                self.tabController.removeHighlight(atIndex: 1)
+//                self.tabController.removeHighlight(atIndex: 2)
+//                self.tabController.highlightButton(atIndex: 3)
+//                self.tabController.removeHighlight(atIndex: 4)
+//                (self.tabController.children[3] as? UINavigationController)?.popToRootViewController(animated: true)
+//            }
+//        tabController.setAction(atIndex: 4) {
+//                       //Your statments
+//                       self.tabController.removeHighlight(atIndex: 0)
+//                       self.tabController.removeHighlight(atIndex: 1)
+//                       self.tabController.removeHighlight(atIndex: 2)
+//                       self.tabController.removeHighlight(atIndex: 3)
+//                       self.tabController.highlightButton(atIndex: 4)
+//                       (self.tabController.children[4] as? UINavigationController)?.popToRootViewController(animated: true)
+//                   }
+//
+////let rearViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kSideTableViewController) as? SideMenuViewController
+////        let revealController = SWRevealViewController(nibName: HomeViewController, bundle: tabController)
+////       self.objRevealViewController = revealController!
+////       let storyboard = UIStoryboard(name: kMain, bundle: nil)
+////       let objViewController = storyboard.instantiateViewController(withIdentifier: kHomeViewController) as? HomeViewController
+////       let loginNav = UINavigationController(rootViewController: objViewController!)
+////       self.window?.backgroundColor = UIColor.white
+////       self.window?.rootViewController = loginNav
+//
+//        let mainStoryboardIpad : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initialViewControlleripad : UIViewController = mainStoryboardIpad.instantiateViewController(withIdentifier: kHomeViewController) as! HomeViewController
+//                    self.window = UIWindow(frame: UIScreen.main.bounds)
+//                    self.window?.rootViewController = initialViewControlleripad
+//                    self.window?.makeKeyAndVisible()
+//
+//        let vc = HomeViewController()
+//        let navigationController = UINavigationController(rootViewController: vc)
+//        self.window?.rootViewController = navigationController
+//        self.window!.makeKeyAndVisible()
+//        navigationController.setNavigationBarHidden(true, animated: true)
+//
+//
+//
+////
+////          window = UIWindow(frame: UIScreen.main.bounds)
+////        navController = UINavigationController.init(rootViewController: homeVC!)
+////
+////           navController?.isNavigationBarHidden =
+////               ((navController?.navigationBar.isTranslucent = false) != nil)
+////
+////           self.window?.rootViewController = navController
+////           self.window?.backgroundColor = .white
+////           self.window?.makeKeyAndVisible()
+//
+//    }
+//
     
     
     ///..........................///

@@ -71,7 +71,8 @@ class BookMarkViewController: UIViewController , UITableViewDelegate, UITableVie
                        print("Download Finished")
                        DispatchQueue.main.async() {
 
-                           cell?.imgView?.image = UIImage(data: data)
+                          // cell?.imgView?.image = UIImage(data: data)
+                           cell?.imgView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
 
                        }
                    }

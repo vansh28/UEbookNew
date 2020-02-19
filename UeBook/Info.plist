@@ -96,7 +96,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>For using microphone</string>
+	<string>This app requires to access your microphone to record video with your voice send via chat</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>This app wants to use your photos.</string>
 	<key>UIApplicationSceneManifest</key>

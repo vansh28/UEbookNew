@@ -436,7 +436,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-hG-f2r">
-                                        <rect key="frame" x="6" y="438" width="402" height="137"/>
+                                        <rect key="frame" x="6" y="438" width="402" height="164"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -2056,7 +2056,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="camera"/>
                                         <connections>
-                                            <action selector="btnCeamra:" destination="JTf-nT-tkE" eventType="touchUpInside" id="mXt-Eb-qYh"/>
+                                            <action selector="btnCam:" destination="JTf-nT-tkE" eventType="touchUpInside" id="Wdg-cB-OJn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgN-uy-enV">
@@ -4262,50 +4262,50 @@
         <image name="1-homescreen" width="1080" height="1920"/>
         <image name="IQButtonBarArrowRight" width="12" height="21"/>
         <image name="Locator1x" width="36" height="36"/>
-        <image name="about" width="72" height="72"/>
+        <image name="about" width="36" height="36"/>
         <image name="arrow-96" width="96" height="96"/>
-        <image name="audio" width="36" height="36"/>
+        <image name="audio" width="48" height="48"/>
         <image name="back" width="65" height="65"/>
-        <image name="book" width="36" height="36"/>
+        <image name="book" width="48" height="48"/>
         <image name="call-cut-96" width="96" height="96"/>
         <image name="call-re-96" width="96" height="96"/>
-        <image name="camera" width="36" height="36"/>
+        <image name="camera" width="72" height="72"/>
         <image name="cancel" width="64" height="64"/>
-        <image name="chathome" width="36" height="36"/>
-        <image name="chatn" width="72" height="72"/>
-        <image name="document" width="48" height="48"/>
+        <image name="chathome" width="48" height="48"/>
+        <image name="chatn" width="96" height="96"/>
+        <image name="document" width="36" height="36"/>
         <image name="drop-down-arrow" width="16" height="16"/>
         <image name="drop-down32" width="32" height="32"/>
-        <image name="email" width="36" height="36"/>
+        <image name="email" width="48" height="48"/>
         <image name="eyec" width="36" height="36"/>
-        <image name="fblogo" width="72" height="72"/>
-        <image name="gender" width="36" height="36"/>
-        <image name="gplogo" width="48" height="48"/>
+        <image name="fblogo" width="36" height="36"/>
+        <image name="gender" width="48" height="48"/>
+        <image name="gplogo" width="36" height="36"/>
         <image name="help" width="128" height="128"/>
         <image name="imgtwo" width="281" height="381"/>
-        <image name="loginlogo" width="450" height="126"/>
+        <image name="loginlogo" width="720" height="201"/>
         <image name="menu" width="32" height="32"/>
         <image name="noimage" width="150" height="180"/>
         <image name="paper_plane" width="30" height="30"/>
         <image name="paperclip" catalog="system" width="64" height="64"/>
-        <image name="password" width="72" height="72"/>
+        <image name="password" width="48" height="48"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
-        <image name="placeholder_user" width="168" height="168"/>
+        <image name="placeholder_user" width="84" height="84"/>
         <image name="read-156" width="156" height="156"/>
-        <image name="readhome" width="36" height="36"/>
-        <image name="right" width="36" height="36"/>
-        <image name="share" width="72" height="72"/>
-        <image name="twlogo" width="72" height="72"/>
+        <image name="readhome" width="48" height="48"/>
+        <image name="right" width="48" height="48"/>
+        <image name="share" width="48" height="48"/>
+        <image name="twlogo" width="48" height="48"/>
         <image name="typing-96" width="96" height="96"/>
-        <image name="user" width="96" height="96"/>
+        <image name="user" width="48" height="48"/>
         <image name="user_default" width="256" height="256"/>
-        <image name="usericon" width="48" height="48"/>
+        <image name="usericon" width="72" height="72"/>
         <image name="video" width="96" height="96"/>
         <image name="video.fill" catalog="system" width="64" height="40"/>
         <image name="voice-96" width="96" height="96"/>
-        <image name="whatsapp" width="96" height="96"/>
-        <image name="writehome" width="36" height="36"/>
+        <image name="whatsapp" width="48" height="48"/>
+        <image name="writehome" width="48" height="48"/>
     </resources>
 </document>

@@ -12,6 +12,8 @@ import AZTabBar
 
 class SWRevealViewController: UIViewController {
 
+    
+    var indexValue = String()
      var counter = 0
         var tabController:AZTabBarController!
         
@@ -54,18 +56,34 @@ class SWRevealViewController: UIViewController {
 
 
 
-    
-
-         
-
-
-
-            tabController.setViewController(HomeViewController.instance(), atIndex: 0)
+            if indexValue == "0"
+            {
+                tabController.setViewController(HomeViewController.instance(), atIndex: 0)
+                
+            }
+            else if indexValue == "1"
+            {
+                tabController.setViewController(BookMarkViewController.instance(), atIndex: 1)
+                
+            }
+            else if indexValue == "2"
+            {
+                tabController.setViewController(CategoriesViewController.instance(), atIndex: 2)
+                
+                
+            }
+            else if indexValue == "3"
+            {
+                tabController.setViewController(NotepadViewController.instance(), atIndex: 3)
+            }
+                
+                
+            else if indexValue == "4"
+            {
+                tabController.setViewController(EditProfileViewController.instance(), atIndex: 4)
+            }
             
-            tabController.setViewController(BookMarkViewController.instance(), atIndex: 1)
-            tabController.setViewController(CategoriesViewController.instance(), atIndex: 2)
-            tabController.setViewController(NotepadViewController.instance(), atIndex: 3)
-            tabController.setViewController(EditProfileViewController.instance(), atIndex: 4)
+            
 
             
             
@@ -140,6 +158,11 @@ class SWRevealViewController: UIViewController {
         
         override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
+            
+            if indexValue == "3"
+            {
+                tabController.setViewController(NotepadViewController.instance(), atIndex: 3)
+            }
 
         }
         
@@ -202,6 +225,35 @@ class SWRevealViewController: UIViewController {
         
         func tabBar(_ tabBar: AZTabBarController, didSelectTabAtIndex index: Int) {
             print("didSelectTabAtIndex \(index)")
+            
+            
+            
+            if index == 0
+            {
+                tabController.setViewController(HomeViewController.instance(), atIndex: 0)
+                
+            }
+            else if index == 1
+            {
+                tabController.setViewController(BookMarkViewController.instance(), atIndex: 1)
+                
+            }
+            else if index == 2
+            {
+                tabController.setViewController(CategoriesViewController.instance(), atIndex: 2)
+                
+                
+            }
+            else if index == 3
+            {
+                tabController.setViewController(NotepadViewController.instance(), atIndex: 3)
+            }
+                
+                
+            else if index == 4
+            {
+                tabController.setViewController(EditProfileViewController.instance(), atIndex: 4)
+            }
         }
         
         func tabBar(_ tabBar: AZTabBarController, willMoveToTabAtIndex index: Int) {

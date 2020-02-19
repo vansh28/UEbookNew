@@ -228,7 +228,11 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
                                         
 
                         UserDefaults.standard.set(1, forKey: "Save_User_Login")
-                       // AppDelegate.methodForLogin()
+                                        if #available(iOS 13.0, *) {
+                                            //AppDelegate.methodForLogin()
+                                        } else {
+                                            // Fallback on earlier versions
+                                        }
                         UserDefaults.standard.set(emailUser, forKey: "Save_User_Email")
                         UserDefaults.standard.set(UserID, forKey: "Save_User_ID")
                         UserDefaults.standard.set(publisher_type, forKey: "Save_publisher_type")
@@ -238,7 +242,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
                         
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
-                                       
+                                        nextViewController.indexValue = "0"
                         nextViewController.modalPresentationStyle = .overFullScreen
                         self.present(nextViewController, animated:true, completion:nil)
                       //  self.present(vc, animated: true, completion: nil)

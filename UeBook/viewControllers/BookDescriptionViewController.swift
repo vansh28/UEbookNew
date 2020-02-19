@@ -245,9 +245,10 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                                         print(response?.suggestedFilename ?? url.lastPathComponent)
                                         print("Download Finished")
                                         DispatchQueue.main.async() {
-                                            
-                                            self.BookImage.image = UIImage(data: data)
-                                            
+                                           // imgView
+                                            //self.BookImage.image = UIImage(data: data)
+                                        self.BookImage?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
+
                                         }
                                     }
                                 }

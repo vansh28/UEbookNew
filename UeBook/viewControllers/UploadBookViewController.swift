@@ -11,6 +11,9 @@ import Photos
 import AVKit
 import AVFoundation
 import MobileCoreServices
+import Alamofire
+import AVFoundation
+import UIKit
 
 
 class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource , AVAudioRecorderDelegate, AVAudioPlayerDelegate {
@@ -24,12 +27,14 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     @IBOutlet weak var lblbookAssigmant: UILabel!
     
     @IBOutlet weak var btnAdd: UIButton!
-    
+    var VideoUrl :URL!
     @IBOutlet weak var imageUploadCoverImage: UIImageView!
     @IBOutlet weak var imageViedo: UIImageView!
     //
     @IBOutlet weak var viewRoundedView: RoundedView!
-    
+    var imageData : Data!
+    var url: URL?
+    let  videoUrl = "https://api.example/video... "
     @IBOutlet weak var viewimage: UIView!
     var value:Int = 0
      var imagePicker = UIImagePickerController()
@@ -48,8 +53,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     var picker  = UIPickerView()
     var category_Id  = String()
      var strRecommmended = ["Recommmended","New Books", " Sport", "Music","Story","Dev test"] //multi-season
-    
-    
+    var flag = 0
+    var filePathG  :URL?
     @IBOutlet weak var scrollView: UIScrollView!
     
     //upload book
@@ -416,7 +421,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     }
     @IBAction func btnViedoUpload(_ sender: Any) {
         
-        
+        flag = 1
    
       CaputreImageClicked()
         
@@ -424,7 +429,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     }
     
     func Categries_API_Method() {
-              
+          
+        
               
     let parameters: NSDictionary = [:]
               
@@ -471,13 +477,13 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
           
 
 
-    
+
   func AddNewBook_API_Method() {
-        
+
       let    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
 
-                     
-           let parameters: NSDictionary = [
+
+           let dictionary: NSDictionary = [
             "user_id"    : userId,
             "category_id" : category_Id,
             "book_title"  : txtbookTitle.text as Any,
@@ -488,61 +494,173 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             "audio_url"   :   "",
             "questiondata":   "",
             "isbn_number" :   "",
-            "thubm_image" :  "",
             "status" :   "1",
-            "book_id" :  ""
-           
+            "book_id" :  "",
+            "cover_url" :""
+
+
             ]
-             
-    ServiceManager.POSTServerRequestWithImage(String(kaddNewBook), andParameters: parameters as! [String : String], andImage: coverImage, imagePara: "cover_url", success: {response in
+    print (coverImage as Any)
+
+
+    ServiceManager.POSTServerRequestWithImage(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", success: {response in
+
+
                          print("response-------",response!)
                          //self.HideLoader()
                          if response is NSDictionary {
-                            // let statusCode = response?["error"] as? Int
+                             let statusCode = response?["error"] as? Int
                              let message = response? ["message"] as? String
-                             let AllCategoryList = response?["response"] as? NSArray
+                             let AllCategoryList = response?["data"] as? NSDictionary
 
                               print("response-------",response!)
-                                    
-                                      if AllCategoryList == nil || AllCategoryList?.count == 0 {
-                                         
-                                         
-                             
-                                      }
-                                       else
-                                      {
-                                              self.CategiesArr.removeAll()
-                                             
 
-                                              for dataCategory in AllCategoryList! {
 
-                                                  self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
-                                                  print(self.CategiesArr.count)
-                                                 
-                                              }
+                            if statusCode == 0
+                            {
+                                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                                                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+
+                                                      nextViewController.modalPresentationStyle = .overFullScreen
+                                                      self.present(nextViewController, animated:true, completion:nil)
+                            }
+
+                            else
+                            {
+
+                            }
+
+
+//                        if AllCategoryList == nil || AllCategoryList?.count == 0 {
+//
+//
+//
+//                                      }
+//                                       else
+//                                      {
+//                                              self.CategiesArr.removeAll()
+//
+//
+//                                              for dataCategory in AllCategoryList! {
+//
+//                                                  self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
+//                                                  print(self.CategiesArr.count)
+//
+//                                              }
 //                                        self.category_id = self.CategiesArr[0].id!
 //
 //                                        self.BookByType_API_Method()
 //
-                                        
-                                        
-                                    
-                                        
-                                          }
-                             
-                                     
-                             
-                                 
-                             
+
+
+
+
+//                                          }
+
+
+
+
+
                          }
                      }, failure: { error in
                          //self.HideLoader()
                      })
                  }
-                 
+
+
     
-    
-    
+//    func AddNewBook_API_Method() {
+//            
+//          let    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+//        //let viedoUrl:URL =  UserDefaults.standard.string(forKey: "mediaURL")!
+//                        
+//               let dictionary: NSDictionary = [
+//                "user_id"    : userId,
+//                "category_id" : category_Id,
+//                "book_title"  : txtbookTitle.text as Any,
+//                "book_description" : textViewBookDescription.text as Any,
+//                "author_name"  :  txtBookAuthor.text as Any,
+//                "pdf_url"      :  "",
+//                "audio_url"   :   "",
+//                "questiondata":   "",
+//                "isbn_number" :   "",
+//                "status" :   "1",
+//                "book_id" :  "",
+//                "cover_url" :""
+//               
+//               
+//                ]
+//        print (coverImage as Any)
+//        
+//        
+//        ServiceManager.POSTServerRequestWithImage2(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath : filePathG!, viedoPara: "video_url", success: {response in
+//
+//                      
+//                             print("response-------",response!)
+//                             //self.HideLoader()
+//                             if response is NSDictionary {
+//                                 let statusCode = response?["error"] as? Int
+//                                 let message = response? ["message"] as? String
+//                                 let AllCategoryList = response?["data"] as? NSDictionary
+//
+//                                  print("response-------",response!)
+//                                       
+//                                
+//                                if statusCode == 0
+//                                {
+//                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//                                                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+//                                                                         
+//                                                          nextViewController.modalPresentationStyle = .overFullScreen
+//                                                          self.present(nextViewController, animated:true, completion:nil)
+//                                }
+//                                
+//                                else
+//                                {
+//                                    
+//                                }
+//                                
+//                                
+//    //                        if AllCategoryList == nil || AllCategoryList?.count == 0 {
+//    //
+//    //
+//    //
+//    //                                      }
+//    //                                       else
+//    //                                      {
+//    //                                              self.CategiesArr.removeAll()
+//    //
+//    //
+//    //                                              for dataCategory in AllCategoryList! {
+//    //
+//    //                                                  self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
+//    //                                                  print(self.CategiesArr.count)
+//    //
+//    //                                              }
+//    //                                        self.category_id = self.CategiesArr[0].id!
+//    //
+//    //                                        self.BookByType_API_Method()
+//    //
+//                                            
+//                                            
+//                                        
+//                                            
+//    //                                          }
+//                                 
+//            
+//                                 
+//                                     
+//                                 
+//                             }
+//                         }, failure: { error in
+//                             //self.HideLoader()
+//                         })
+//                     }
+//                     
+//        
+        
+        
+        
     
     
     
@@ -639,6 +757,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
 
     @IBAction func btnUploadCoverImage(_ sender: Any) {
      
+        flag = 0
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
             self.openCamera()
@@ -936,21 +1055,85 @@ extension UITextField {
    extension UploadBookViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
+        
+        if flag == 0
+        {
         guard let selectedImage = info[.editedImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        
+        imageData = selectedImage.pngData()!
+        print (imageData)
           lblbookAssigmant.frame =  CGRect(x: lblbookAssigmant.frame.origin.x, y: 400, width: lblbookAssigmant.frame.width, height: lblbookAssigmant.frame.size.height)
               btnAdd.frame = CGRect(x: btnAdd.frame.origin.x, y: 400, width: btnAdd.frame.size.width, height: lblbookAssigmant.frame.size.height)
         imageUploadCoverImage.isHidden = false
         viewimage.isHidden = false
-        self.imageUploadCoverImage.image = selectedImage
+       // self.imageUploadCoverImage.image = selectedImage
         coverImage = selectedImage
+        self.imageUploadCoverImage.image = coverImage
+        print (imageUploadCoverImage.image as Any)
+        }
+        
+        else if flag == 1
+        {
+            guard let mediaType = info[.mediaType] as? String,
+                    mediaType == kUTTypeMovie as String,
+                    let url = info[.mediaURL] as? URL
+                    else {
+                    return
+                }
+
+                do {
+                     let asset = AVAsset(url: url) // video url from library
+                    let fileMgr = FileManager.default
+                    let dirPaths = fileMgr.urls(for: .documentDirectory, in: .userDomainMask)
+                    
+                    let filePath1 = dirPaths[0].appendingPathComponent("Video_\(datePresentString()).mp4") //create new data in file manage .mp4
+                    
+                                                                        
+                                                                  
+                                               
+                                                                    print(filePath1)
+                    
+                    filePathG = filePath1
+                    
+                    
+                    let bookmarkData = try url.bookmarkData()
+                    UserDefaults.standard.set(bookmarkData, forKey: "mediaURL")
+                    
+              
+                } catch {
+                    print("bookmarkData error: \(error)")
+                }
+            }
+
+            func mediaURL() -> URL? {
+                guard let urlData = UserDefaults.standard.data(forKey: "mediaURL") else {
+                    return nil
+                }
+
+                var staleData = false
+                                              let mediaURL = try? URL(resolvingBookmarkData: urlData, options: .withoutUI, relativeTo: nil, bookmarkDataIsStale: &staleData)
+                  
+                     return staleData ? nil : mediaURL
+                }
         
         picker.dismiss(animated: true, completion: nil)
     }
+
+    public func datePresentString() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        let enUSPosixLocale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.calendar = Calendar(identifier: .iso8601)
+        dateFormatter.locale = enUSPosixLocale
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyyMMdd_HHmmss"
+        
+        let iso8601String = dateFormatter.string(from: date as Date)
+        
+        return iso8601String
+    }
     
- 
        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
            picker.isNavigationBarHidden = false
            self.dismiss(animated: true, completion: nil)

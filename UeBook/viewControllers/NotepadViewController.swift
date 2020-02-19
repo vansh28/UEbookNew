@@ -13,7 +13,7 @@ class NotepadViewController: UIViewController , UITableViewDataSource ,UITableVi
     class func instance()->UIViewController{
         let colorController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: kNotepadViewController)
         let nav = UINavigationController(rootViewController: colorController)
-        nav.navigationBar.isTranslucent = false
+        nav.navigationBar.isTranslucent = true
         return nav
     }
     var count = 0

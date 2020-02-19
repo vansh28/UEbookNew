@@ -1,5 +1,7 @@
 PODS:
   - Alamofire (4.9.1)
+  - AlamofireImage (3.6.0):
+    - Alamofire (~> 4.9)
   - AppAuth (1.3.0):
     - AppAuth/Core (= 1.3.0)
     - AppAuth/ExternalUserAgent (= 1.3.0)
@@ -144,6 +146,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.3)
   - AZTabBar
   - FBSDKCoreKit/Swift
   - FBSDKLoginKit/Swift
@@ -163,6 +166,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireImage
     - AppAuth
     - AZTabBar
     - EasyNotificationBadge
@@ -200,6 +204,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AppAuth: 73574f3013a1e65b9601a3ddc8b3158cce68c09d
   AZTabBar: e4d5a1f5f3fc7be044d532b7a704d303cff9af11
   EasyNotificationBadge: afeb15ed6f9a4262d626a2b745297e96afa26c2e
@@ -235,6 +240,6 @@ SPEC CHECKSUMS:
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   Starscream: 142bd8ef24592d985daee9fa48c936070b85b15f
 
-PODFILE CHECKSUM: 731c5dced555314498fb4263d901500f402c5ff1
+PODFILE CHECKSUM: f9d9855cd74afe9f7df9bb7e101213e6519da80c
 
 COCOAPODS: 1.8.4

@@ -14,6 +14,7 @@ target 'UeBook' do
       pod 'GoogleSignIn'
       pod 'AZTabBar'
       pod 'SDWebImage/WebP'
+      pod 'AlamofireImage', '~> 3.3'
       pod 'HCSStarRatingView', '~> 1.5'
       pod 'SCLAlertView'
       pod 'ScrollableSegmentedControl', '~> 1.5.0'

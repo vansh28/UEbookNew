@@ -104,7 +104,10 @@ class AddNotesViewController: UIViewController , UITextFieldDelegate, UITextView
     }
 
     @IBAction func btnBack(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        
+      //  self.navigationController?.popViewController(animated: true)
+       dismiss(animated: true, completion: nil)
+        
     }
    
     
@@ -163,13 +166,12 @@ class AddNotesViewController: UIViewController , UITextFieldDelegate, UITextView
                 
                  if (error == 0)
                  {
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: kNotepadViewController) as! NotepadViewController
-                    nextViewController.userId = self.userId
-                    // nextViewController.modalPresentationStyle = .overFullScreen
-                   //  self.present(nextViewController, animated:true, completion:nil)
-                    self.dismiss(animated: true, completion: nil)
-                    // self.navigationController?.popViewController(animated: true)
+                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                                          let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                                                           nextViewController.indexValue = "0"
+                                           nextViewController.modalPresentationStyle = .overFullScreen
+                                           self.present(nextViewController, animated:true, completion:nil)
+                                         //  self.present(vc, animated: true, completion: nil)
                     
                 }
                  else{

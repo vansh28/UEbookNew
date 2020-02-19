@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class HomeViewController: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -59,6 +60,7 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationHide()
+        GetAllPopularBook_API_Method()
         
        
     }
@@ -180,8 +182,9 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
                 print(response?.suggestedFilename ?? url.lastPathComponent)
                 print("Download Finished")
                 DispatchQueue.main.async() {
-                    
-                    cell.imageView?.image = UIImage(data: data)
+                   cell.imageView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
+
+                   // cell.imageView?.image = UIImage(data: data)
                     
                 }
             }
