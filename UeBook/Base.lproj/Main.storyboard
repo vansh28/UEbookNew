@@ -441,7 +441,7 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YlD-Ez-dUp">
-                                        <rect key="frame" x="6" y="534" width="402" height="192"/>
+                                        <rect key="frame" x="6" y="534" width="402" height="225"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyA-CR-EFs" customClass="RoundedView" customModule="UeBook" customModuleProvider="target">
@@ -503,7 +503,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMI-GG-KST">
-                                                <rect key="frame" x="15" y="117" width="179" height="40"/>
+                                                <rect key="frame" x="15" y="172" width="179" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.37326365709999998" green="0.47620612379999999" blue="0.52402591710000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -521,7 +521,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wt4-xw-Yxl">
-                                                <rect key="frame" x="223" y="117" width="164" height="40"/>
+                                                <rect key="frame" x="223" y="172" width="164" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.017135046420000001" green="0.103116788" blue="0.40604716540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -545,6 +545,46 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMf-dN-KBx">
+                                                <rect key="frame" x="15" y="100" width="372" height="68"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="as2-zW-aTQ">
+                                                        <rect key="frame" x="8" y="2" width="356" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="Image.image">
+                                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnImageLink:" destination="lz4-CA-s31" eventType="touchUpInside" id="dIf-vr-yY8"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjW-I2-sgS">
+                                                        <rect key="frame" x="8" y="24" width="356" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <state key="normal" title="docfile.pdf">
+                                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnPdfLink:" destination="lz4-CA-s31" eventType="touchUpInside" id="7f8-If-xLQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZD-eu-CXm">
+                                                        <rect key="frame" x="8" y="46" width="356" height="20"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <state key="normal" title="audio.audio">
+                                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="btnAudioLink:" destination="lz4-CA-s31" eventType="touchUpInside" id="Xwj-N0-mSs"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -702,6 +742,9 @@
                     <size key="freeformSize" width="414" height="900"/>
                     <connections>
                         <outlet property="btnAdd" destination="Iss-Dx-vzJ" id="7vc-82-Jfy"/>
+                        <outlet property="btnAudioLink" destination="ZZD-eu-CXm" id="pwk-Bk-Qgi"/>
+                        <outlet property="btnImageLink" destination="as2-zW-aTQ" id="ZDn-dN-KXj"/>
+                        <outlet property="btnPdfLink" destination="xjW-I2-sgS" id="7MN-ZM-cwM"/>
                         <outlet property="btnPublish" destination="wt4-xw-Yxl" id="Rcn-JC-yHW"/>
                         <outlet property="btnSaveForLater" destination="QMI-GG-KST" id="DOC-hi-R6g"/>
                         <outlet property="btnViedoUpload" destination="FXs-yX-J5T" id="O9y-sf-EJS"/>
@@ -4262,50 +4305,50 @@
         <image name="1-homescreen" width="1080" height="1920"/>
         <image name="IQButtonBarArrowRight" width="12" height="21"/>
         <image name="Locator1x" width="36" height="36"/>
-        <image name="about" width="36" height="36"/>
+        <image name="about" width="96" height="96"/>
         <image name="arrow-96" width="96" height="96"/>
         <image name="audio" width="48" height="48"/>
         <image name="back" width="65" height="65"/>
-        <image name="book" width="48" height="48"/>
+        <image name="book" width="72" height="72"/>
         <image name="call-cut-96" width="96" height="96"/>
         <image name="call-re-96" width="96" height="96"/>
-        <image name="camera" width="72" height="72"/>
+        <image name="camera" width="48" height="48"/>
         <image name="cancel" width="64" height="64"/>
-        <image name="chathome" width="48" height="48"/>
+        <image name="chathome" width="36" height="36"/>
         <image name="chatn" width="96" height="96"/>
-        <image name="document" width="36" height="36"/>
+        <image name="document" width="96" height="96"/>
         <image name="drop-down-arrow" width="16" height="16"/>
         <image name="drop-down32" width="32" height="32"/>
-        <image name="email" width="48" height="48"/>
-        <image name="eyec" width="36" height="36"/>
+        <image name="email" width="36" height="36"/>
+        <image name="eyec" width="72" height="72"/>
         <image name="fblogo" width="36" height="36"/>
-        <image name="gender" width="48" height="48"/>
-        <image name="gplogo" width="36" height="36"/>
+        <image name="gender" width="72" height="72"/>
+        <image name="gplogo" width="72" height="72"/>
         <image name="help" width="128" height="128"/>
         <image name="imgtwo" width="281" height="381"/>
-        <image name="loginlogo" width="720" height="201"/>
+        <image name="loginlogo" width="450" height="126"/>
         <image name="menu" width="32" height="32"/>
         <image name="noimage" width="150" height="180"/>
         <image name="paper_plane" width="30" height="30"/>
         <image name="paperclip" catalog="system" width="64" height="64"/>
-        <image name="password" width="48" height="48"/>
+        <image name="password" width="36" height="36"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
-        <image name="placeholder_user" width="84" height="84"/>
+        <image name="placeholder_user" width="56" height="56"/>
         <image name="read-156" width="156" height="156"/>
         <image name="readhome" width="48" height="48"/>
         <image name="right" width="48" height="48"/>
-        <image name="share" width="48" height="48"/>
-        <image name="twlogo" width="48" height="48"/>
+        <image name="share" width="96" height="96"/>
+        <image name="twlogo" width="96" height="96"/>
         <image name="typing-96" width="96" height="96"/>
-        <image name="user" width="48" height="48"/>
+        <image name="user" width="36" height="36"/>
         <image name="user_default" width="256" height="256"/>
-        <image name="usericon" width="72" height="72"/>
+        <image name="usericon" width="48" height="48"/>
         <image name="video" width="96" height="96"/>
         <image name="video.fill" catalog="system" width="64" height="40"/>
         <image name="voice-96" width="96" height="96"/>
-        <image name="whatsapp" width="48" height="48"/>
+        <image name="whatsapp" width="72" height="72"/>
         <image name="writehome" width="48" height="48"/>
     </resources>
 </document>

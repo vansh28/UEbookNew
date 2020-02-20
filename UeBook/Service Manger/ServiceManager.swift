@@ -215,7 +215,7 @@ class ServiceManager: NSObject {
                     }
                 }
             }
-    class func POSTServerRequestWithImage2(_ queryString: String,andParameters payload: [String: String],andImage uploadImage:(UIImage), imagePara:String, filePath:URL,viedoPara:String, success: @escaping (_ response: AnyObject?) -> Void, failure: @escaping (_ error: NSError?) -> Void) {
+    class func POSTServerRequestWithImage2(_ queryString: String,andParameters payload: [String: String],andImage uploadImage:(UIImage), imagePara:String, filePath:URL,viedoPara:String, FileDocPath:URL,docPara : String, success: @escaping (_ response: AnyObject?) -> Void, failure: @escaping (_ error: NSError?) -> Void) {
         let formattedSearchString = queryString.replacingOccurrences(of: " ", with:"")
         let urlString = String(format:"%@", formattedSearchString)
         let parameters = payload
@@ -226,6 +226,10 @@ class ServiceManager: NSObject {
         Alamofire.upload(multipartFormData: { (multipartFormData) in
             
             multipartFormData.append(uploadImage.jpegData(compressionQuality: 0.50)!, withName: imagePara, fileName: "image.jpeg", mimeType: "image/jpeg")
+            
+            multipartFormData.append(filePath, withName: viedoPara)
+            multipartFormData.append(FileDocPath, withName: docPara)
+            
             
        // multipartFormData.append(urlString, withName: viedoPara, fileName: filePath, mimeType: "video/mp4") // <= set url filepath
             for (key, value) in parameters {
@@ -263,5 +267,6 @@ class ServiceManager: NSObject {
             }
         }
     }
-        }
+    
+}
 

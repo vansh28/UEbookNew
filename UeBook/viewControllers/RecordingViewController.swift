@@ -205,7 +205,8 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
             finishAudioRecording(success: true)
             btnRecording.setTitle("Record", for: .normal)
             btnStopRecording.isEnabled = true
-            isRecording = false
+            isRecording = true
+            meterTimer = Timer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
         }
         else
         {
@@ -214,9 +215,9 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
             audioRecorder.record()
             meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector:#selector(self.updateAudioMeter(timer:)), userInfo: nil, repeats: true)
 
-           // meterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector(("checkTime")), userInfo: nil, repeats: true)
+          //  meterTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: Selector(("checkTime")), userInfo: nil, repeats: true)
 
-           // meterTimer = Timer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
+            
             btnRecording.setTitle("Pause", for: .normal)
             btnStopRecording.isEnabled = false
             isRecording = true
@@ -231,11 +232,11 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
                 lblTime.text = totalTimeString
             self.audioPlayer.stop()
             timer.invalidate()
-            print (timer)
+            print (timer as Any)
         }
     }
+
 //
-    
 //    func updateAudioMeter(timer:Timer) {
 //       if audioPlayer.ire {
 //          let dFormat = "%02d"
@@ -246,7 +247,7 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
 //          recorder.updateMeters()
 //          var apc0 = recorder.averagePowerForChannel(0)
 //          var peak0 = recorder.peakPowerForChannel(0)
-//    print them out...
+//   // print them out...
 //       }
 //    }
     @objc func updateAudioMeter(timer: Timer)
