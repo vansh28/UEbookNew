@@ -18,6 +18,8 @@ target 'UeBook' do
       pod 'HCSStarRatingView', '~> 1.5'
       pod 'SCLAlertView'
       pod 'ScrollableSegmentedControl', '~> 1.5.0'
+      pod "Popover"
+      pod 'NVActivityIndicatorView/AppExtension'
 
 
       end

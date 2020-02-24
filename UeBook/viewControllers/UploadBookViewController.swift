@@ -12,7 +12,7 @@ import AVKit
 import AVFoundation
 import MobileCoreServices
 import Alamofire
-import AVFoundation
+
 import UIKit
 import PDFKit
 

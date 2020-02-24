@@ -77,6 +77,8 @@
 		84B8B28F23D5BFF60062B8B9 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B28E23D5BFF60062B8B9 /* BaseCells.swift */; };
 		84B8B29323D5C0760062B8B9 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B29223D5C0760062B8B9 /* ChatCell.swift */; };
 		84B8B29623D5C1100062B8B9 /* UIView + Ext .swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B29523D5C1100062B8B9 /* UIView + Ext .swift */; };
+		84BA06EC2403AF2400A78FF5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BA06EB2403AF2300A78FF5 /* WebKit.framework */; };
+		84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */; };
 		84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */; };
 		84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */; };
 		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
@@ -180,6 +182,8 @@
 		84B8B29223D5C0760062B8B9 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		84B8B29523D5C1100062B8B9 /* UIView + Ext .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext .swift"; sourceTree = "<group>"; };
 		84B8B29823D5C2150062B8B9 /* Chat.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Chat.geojson; sourceTree = "<group>"; };
+		84BA06EB2403AF2300A78FF5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDocmentViewController.swift; sourceTree = "<group>"; };
 		84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			files = (
 				843D8A6E23EAF7B500E3365E /* AuthenticationServices.framework in Frameworks */,
 				843D8A7023EAF7C400E3365E /* SystemConfiguration.framework in Frameworks */,
+				84BA06EC2403AF2400A78FF5 /* WebKit.framework in Frameworks */,
 				843D8A6A23EAF78400E3365E /* LocalAuthentication.framework in Frameworks */,
 				843D8A5B23EABC2F00E3365E /* libPods-UeBook.a in Frameworks */,
 				843D8A6C23EAF7A300E3365E /* SafariServices.framework in Frameworks */,
@@ -349,6 +354,7 @@
 				847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */,
 				847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */,
 				8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */,
+				84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 		D982CD89955A597D7D9DFF8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BA06EB2403AF2300A78FF5 /* WebKit.framework */,
 				843D8A6F23EAF7C400E3365E /* SystemConfiguration.framework */,
 				843D8A6D23EAF7B500E3365E /* AuthenticationServices.framework */,
 				843D8A6B23EAF7A300E3365E /* SafariServices.framework */,
@@ -719,6 +726,7 @@
 				84471CEA23DEA9B600F6F1F9 /*  ViewPager.swift in Sources */,
 				8410BC1C23F2CE9200A2390D /* EditUserProfileTableViewCell.swift in Sources */,
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
+				84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */,
 				84A5687523E973E70027888B /* LoginViewController.swift in Sources */,
 				843C793B23E43B11002641AA /* StarsView.swift in Sources */,
 				8415F97C23D9A661001D84BE /* UploadBookViewController.swift in Sources */,

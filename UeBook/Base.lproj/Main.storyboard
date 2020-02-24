@@ -998,6 +998,71 @@
             </objects>
             <point key="canvasLocation" x="2699" y="475"/>
         </scene>
+        <!--Web Docment View Controller-->
+        <scene sceneID="2W9-z4-YL3">
+            <objects>
+                <viewController storyboardIdentifier="WebDocmentViewController" id="mU5-Qi-Pbo" customClass="WebDocmentViewController" customModule="UeBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8h7-ce-hxL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ir5-lj-sdW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1P-H3-kqc">
+                                        <rect key="frame" x="20" y="21" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="af1-Kw-zzn"/>
+                                            <constraint firstAttribute="width" constant="30" id="pMc-fh-W5d"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="btnBack:" destination="mU5-Qi-Pbo" eventType="touchUpInside" id="GFF-Bi-Bo1"/>
+                                            <action selector="btnBack:" destination="T3z-6Y-6hH" eventType="touchUpInside" id="PSB-pK-dYe"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginlogo" translatesAutoresizingMaskIntoConstraints="NO" id="wKf-WO-Ya0">
+                                        <rect key="frame" x="151" y="17" width="113" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37332624199999997" green="0.48008102180000001" blue="0.52388709779999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="W1P-H3-kqc" firstAttribute="leading" secondItem="Ir5-lj-sdW" secondAttribute="leading" constant="20" id="8kY-hr-i20"/>
+                                    <constraint firstAttribute="bottom" secondItem="W1P-H3-kqc" secondAttribute="bottom" constant="21" id="OCm-IZ-aUH"/>
+                                    <constraint firstItem="W1P-H3-kqc" firstAttribute="top" secondItem="Ir5-lj-sdW" secondAttribute="top" constant="21" id="QtI-aa-0vA"/>
+                                    <constraint firstAttribute="height" constant="72" id="urz-y9-9hk"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrW-td-axn">
+                                <rect key="frame" x="0.0" y="80" width="414" height="656"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zrW-td-axn" firstAttribute="leading" secondItem="yq1-zX-Lpa" secondAttribute="leading" id="5AM-lv-lyk"/>
+                            <constraint firstItem="Ir5-lj-sdW" firstAttribute="top" secondItem="yq1-zX-Lpa" secondAttribute="top" id="8bb-wf-KNv"/>
+                            <constraint firstItem="Ir5-lj-sdW" firstAttribute="leading" secondItem="yq1-zX-Lpa" secondAttribute="leading" id="Hqp-Nv-Jsr"/>
+                            <constraint firstItem="zrW-td-axn" firstAttribute="trailing" secondItem="yq1-zX-Lpa" secondAttribute="trailing" id="M2y-u3-AxD"/>
+                            <constraint firstItem="zrW-td-axn" firstAttribute="bottom" secondItem="yq1-zX-Lpa" secondAttribute="bottom" id="YED-N7-yKr"/>
+                            <constraint firstItem="zrW-td-axn" firstAttribute="top" secondItem="Ir5-lj-sdW" secondAttribute="bottom" constant="8" symbolic="YES" id="w03-9W-1fs"/>
+                            <constraint firstItem="Ir5-lj-sdW" firstAttribute="trailing" secondItem="yq1-zX-Lpa" secondAttribute="trailing" id="xno-UH-sT1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yq1-zX-Lpa"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="zrW-td-axn" id="NqW-zT-5OU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hS8-P4-0rJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="1285.5978260869567"/>
+        </scene>
         <!--Categories View Controller-->
         <scene sceneID="tZt-f6-S5w">
             <objects>
@@ -1115,7 +1180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alL-8A-meU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="1281.521739130435"/>
+            <point key="canvasLocation" x="725" y="1282"/>
         </scene>
         <!--Books By Types View Controller-->
         <scene sceneID="vcf-Ne-gzg">
@@ -1609,7 +1674,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRB-9g-9cB">
-                                                    <rect key="frame" x="372" y="25" width="20" height="20"/>
+                                                    <rect key="frame" x="371" y="25" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="IQButtonBarArrowRight"/>
                                                 </button>
@@ -2000,7 +2065,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faU-Hq-DUV">
-                                                    <rect key="frame" x="366" y="60" width="28" height="30"/>
+                                                    <rect key="frame" x="365" y="60" width="28" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="menu"/>
                                                 </button>
@@ -2321,7 +2386,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcN-9r-xi4">
-                                                    <rect key="frame" x="361" y="38" width="35" height="35"/>
+                                                    <rect key="frame" x="360" y="38" width="36" height="35"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="share"/>
                                                     <connections>
@@ -2491,7 +2556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D3J-9Y-kKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3186" y="1479"/>
+            <point key="canvasLocation" x="-2549" y="1917"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="c7E-av-7GI">
@@ -3417,6 +3482,9 @@
                                                 <state key="normal" title="Read Full Book">
                                                     <color key="titleColor" red="0.41823428870000001" green="0.51923650499999996" blue="0.57014948129999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnReadFullBook:" destination="T3z-6Y-6hH" eventType="touchUpInside" id="E0Q-2F-HuF"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBx-B5-GWY">
                                                 <rect key="frame" x="21" y="112" width="89" height="2"/>
@@ -3622,6 +3690,7 @@
                         <outlet property="BookImage" destination="hil-K9-q9r" id="deY-Nv-WzR"/>
                         <outlet property="authorImage" destination="Jfy-Kd-zhb" id="K84-CS-lxc"/>
                         <outlet property="btnAuthorName" destination="do8-65-ESn" id="fZe-To-YlU"/>
+                        <outlet property="btnReadFullBook" destination="SW7-89-Uae" id="bRA-VK-cl7"/>
                         <outlet property="btnUserName" destination="do8-65-ESn" id="chI-8u-rog"/>
                         <outlet property="lbBookDescription" destination="84V-ER-oWC" id="lZx-qZ-dVu"/>
                         <outlet property="lblBookName" destination="LiA-Dc-YMg" id="jN7-3g-OFv"/>
@@ -4305,25 +4374,25 @@
         <image name="1-homescreen" width="1080" height="1920"/>
         <image name="IQButtonBarArrowRight" width="12" height="21"/>
         <image name="Locator1x" width="36" height="36"/>
-        <image name="about" width="96" height="96"/>
+        <image name="about" width="72" height="72"/>
         <image name="arrow-96" width="96" height="96"/>
-        <image name="audio" width="48" height="48"/>
+        <image name="audio" width="36" height="36"/>
         <image name="back" width="65" height="65"/>
-        <image name="book" width="72" height="72"/>
+        <image name="book" width="48" height="48"/>
         <image name="call-cut-96" width="96" height="96"/>
         <image name="call-re-96" width="96" height="96"/>
-        <image name="camera" width="48" height="48"/>
+        <image name="camera" width="72" height="72"/>
         <image name="cancel" width="64" height="64"/>
-        <image name="chathome" width="36" height="36"/>
-        <image name="chatn" width="96" height="96"/>
-        <image name="document" width="96" height="96"/>
+        <image name="chathome" width="48" height="48"/>
+        <image name="chatn" width="72" height="72"/>
+        <image name="document" width="36" height="36"/>
         <image name="drop-down-arrow" width="16" height="16"/>
         <image name="drop-down32" width="32" height="32"/>
-        <image name="email" width="36" height="36"/>
-        <image name="eyec" width="72" height="72"/>
-        <image name="fblogo" width="36" height="36"/>
+        <image name="email" width="72" height="72"/>
+        <image name="eyec" width="48" height="48"/>
+        <image name="fblogo" width="96" height="96"/>
         <image name="gender" width="72" height="72"/>
-        <image name="gplogo" width="72" height="72"/>
+        <image name="gplogo" width="36" height="36"/>
         <image name="help" width="128" height="128"/>
         <image name="imgtwo" width="281" height="381"/>
         <image name="loginlogo" width="450" height="126"/>
@@ -4331,24 +4400,24 @@
         <image name="noimage" width="150" height="180"/>
         <image name="paper_plane" width="30" height="30"/>
         <image name="paperclip" catalog="system" width="64" height="64"/>
-        <image name="password" width="36" height="36"/>
+        <image name="password" width="72" height="72"/>
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="person.crop.square.fill" catalog="system" width="64" height="56"/>
         <image name="phone.fill" catalog="system" width="64" height="56"/>
-        <image name="placeholder_user" width="56" height="56"/>
+        <image name="placeholder_user" width="168" height="168"/>
         <image name="read-156" width="156" height="156"/>
-        <image name="readhome" width="48" height="48"/>
-        <image name="right" width="48" height="48"/>
-        <image name="share" width="96" height="96"/>
+        <image name="readhome" width="36" height="36"/>
+        <image name="right" width="36" height="36"/>
+        <image name="share" width="72" height="72"/>
         <image name="twlogo" width="96" height="96"/>
         <image name="typing-96" width="96" height="96"/>
-        <image name="user" width="36" height="36"/>
+        <image name="user" width="96" height="96"/>
         <image name="user_default" width="256" height="256"/>
-        <image name="usericon" width="48" height="48"/>
+        <image name="usericon" width="72" height="72"/>
         <image name="video" width="96" height="96"/>
         <image name="video.fill" catalog="system" width="64" height="40"/>
         <image name="voice-96" width="96" height="96"/>
-        <image name="whatsapp" width="72" height="72"/>
-        <image name="writehome" width="48" height="48"/>
+        <image name="whatsapp" width="36" height="36"/>
+        <image name="writehome" width="36" height="36"/>
     </resources>
 </document>
