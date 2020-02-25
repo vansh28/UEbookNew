@@ -1,26 +1,26 @@
 //
-//  BookDescriptionTableViewCell.swift
+//  BookAssignmentTableViewCell.swift
 //  UeBook
 //
-//  Created by Admin on 31/01/20.
+//  Created by Admin on 25/02/20.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
 import UIKit
-import Cosmos
-class BookDescriptionTableViewCell: UITableViewCell {
+
+class BookAssignmentTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var lblName: UILabel!
-   
-    @IBOutlet weak var imgView: UIImageView!
-    
-    @IBOutlet weak var lbltimeDate: UILabel!
-    @IBOutlet weak var lblComment: UILabel!
-    
-    @IBOutlet weak var starView: CosmosView!
     
     
+    @IBOutlet weak var lblQuestion: UILabel!
+    
+    @IBOutlet weak var lblAnswer: UILabel!
+    
+    
+    @IBOutlet weak var lblAnswerTextView: UILabel!
+    
+    @IBOutlet weak var textViewAnswer: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

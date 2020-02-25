@@ -13,12 +13,12 @@ import MobileCoreServices
 import AVFoundation
 import AVKit
 import WebKit
+import Cosmos
 
-
-class BookDescriptionViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIDocumentInteractionControllerDelegate ,WKNavigationDelegate{
+class BookDescriptionViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIDocumentInteractionControllerDelegate ,WKNavigationDelegate,UITextViewDelegate{
     
     var reviewArr = [Allreview]()
-    
+    var assignmentArr = [AllAssignmentList]()
     @IBOutlet weak var tableView: UITableView!
     var bookId = String()
     var userId  = String()
@@ -28,8 +28,12 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var lblMostView: UILabel!
     @IBOutlet weak var btnAuthorName: UIButton!
-    @IBOutlet weak var starView: StarsView!
+   
+    @IBOutlet weak var starView: CosmosView!
     
+    
+    
+    @IBOutlet weak var lblTopReviews: UILabel!
     //...............popup Tableview.............................//
     
     fileprivate var popover: Popover!
@@ -53,36 +57,66 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     @IBOutlet weak var lbBookDescription: UILabel!
     
     @IBOutlet weak var lblrating: UILabel!
-    @IBOutlet weak var ratingView: UIView!
     
-    @IBOutlet weak var textview: UITextView!
+    @IBOutlet weak var textviewReview: UITextView!
     
+    @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var btnUserName: UIButton!
-    
+    var ratingValueString = "0"
     
     @IBOutlet weak var btnReadFullBook: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        textviewReview.delegate = self
+        
+        
+        textviewReview.text = "Write your Comment here"
+        textviewReview.textColor = UIColor.lightGray
         userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
         tableView.rowHeight = 150.0
-        
+        ratingView.settings.fillMode = .half
         BookDetail_API_Method()
-        
-        tableView.isScrollEnabled = false
+        starView.isUserInteractionEnabled = false
+        starView.settings.fillMode = .half
+
+        tableView.isScrollEnabled = true
         
         
         //tableView.frame.size.height = self.scrollView.frame.height
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+       // tableView.estimatedRowHeight = UITableView.automaticDimension
         
-        scrollView.contentSize = CGSize(width:view.frame.width, height:1000)
-        let lbl = UILabel()
-        lbl.frame = CGRect(x: 15, y: 2000, width:100, height:20)
-        lbl.text = "hii"
-        scrollView.addSubview(lbl)
+        scrollView.contentSize = CGSize(width:view.frame.width, height:600)
+//        let lbl = UILabel()
+//        lbl.frame = CGRect(x: 15, y: 2000, width:100, height:20)
+//        lbl.text = "hii"
+//        scrollView.addSubview(lbl)
+        ratingView.didTouchCosmos = didTouchCosmos
+
+        
         // Do any additional setup after loading the view.
+    }
+    
+  private class func formatValue(_ value: Double) -> String {
+    
+     return String(format: "%.1f", value)
+    
+   }
+    
+    private func didTouchCosmos(_ rating: Double) {
+      lblrating.text = BookDescriptionViewController.formatValue(rating)
+      ratingValueString = BookDescriptionViewController.formatValue(rating)
+        print(ratingValueString)
+    }
+    
+    private func didFinishTouchingCosmos(_ rating: Double) {
+      self.lblrating.text = BookDescriptionViewController.formatValue(rating)
+        ratingValueString = BookDescriptionViewController.formatValue(rating)
+        print(ratingValueString)
     }
     
     @IBAction func btnReadFullBook(_ sender: Any) {
@@ -110,6 +144,58 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         
     }
     
+    @IBAction func btnBookAssignment(_ sender: Any) {
+        
+        if assignmentArr.count == 0
+        {
+           self.AlertVC(alertMsg:"No Assignment for this Book")
+        }
+        else{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                   let nextViewController = storyBoard.instantiateViewController(withIdentifier:kBookAssignmentViewController ) as! BookAssignmentViewController
+                   nextViewController.modalPresentationStyle = .overFullScreen
+                   nextViewController.assignmaintArr = assignmentArr
+                   self.present(nextViewController, animated:true, completion:nil)
+        }
+    }
+    
+    
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+            if textView.textColor == UIColor.lightGray {
+                textView.text = nil
+                textView.textColor = UIColor.black
+                
+                let myColor = UIColor(red: 95/255, green: 121/255, blue: 134/255, alpha: 1)
+                textviewReview.layer.borderColor = myColor.cgColor
+                
+                textviewReview.layer.borderWidth = 2.0
+                
+               
+                
+            }
+        }
+        
+    func textViewDidEndEditing(_ textView: UITextView) {
+            
+            
+            let myColor = UIColor.black
+            textviewReview.layer.borderColor = myColor.cgColor
+            
+            textviewReview.layer.borderWidth = 1.0
+            
+            if(textView == textviewReview)
+            {
+                if self.textviewReview.text?.count == 0
+                {
+                    
+                    textviewReview.text = "Write your Comment here"
+                    textviewReview.textColor = UIColor.lightGray
+                    }
+                
+            }
+            
+    }
     
     @IBAction func btnUserName(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -121,7 +207,10 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         
         
     }
-    
+  
+     
+     
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if (flag == 1)
@@ -129,11 +218,17 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
             return 3
         }
         else{
+
             return reviewArr.count
+
         }
+        
     }
-    
-    
+//    override func viewDidLayoutSubviews() {
+//           super.viewDidLayoutSubviews()
+//           scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: 700)
+//       }
+//
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -146,16 +241,23 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         }
         else
         {
+            self.tableView.contentSize.height = CGFloat(reviewArr.count) * 150    // +40 for the header height
+            tableView.translatesAutoresizingMaskIntoConstraints = true
+
             var frame = self.tableView.frame
             frame.size.height = self.tableView.contentSize.height
             self.tableView.frame = frame
             self.tableView.layoutIfNeeded()
-            
+
             print (self.tableView.contentSize.height)
-            
-            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: self.scrollView.contentSize.height + self.tableView.contentSize.height )
-            
-            self.tableView.heightAnchor.constraint(equalToConstant: self.tableView.contentSize.height).isActive = true
+
+            let value = reviewArr.count
+            print((value*150))
+           // print (CGFloat(reviewArr.count) * 150)
+            scrollView.contentSize = CGSize(width: scrollView.frame.size.width, height: 650 + CGFloat(value * 150) )
+
+            print(scrollView.contentSize.height)
+           self.tableView.heightAnchor.constraint(equalToConstant: self.tableView.contentSize.height).isActive = true
             let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell") as? BookDescriptionTableViewCell
             
             cell?.lblName.text = reviewArr[indexPath.row].user_name
@@ -165,8 +267,8 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
             let myDouble = reviewArr[indexPath.row].rating
             let double = Double(myDouble!)
             cell?.starView.rating = double!
-            //  tableView.rowHeight = UITableView.automaticDimension
-            
+            cell?.starView.settings.fillMode = .half
+            starView.isUserInteractionEnabled = false
             
             cell?.layer.masksToBounds = true
             cell?.imgView.layer.cornerRadius = ((cell?.imgView.frame.size.width)!)/2
@@ -186,8 +288,8 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     print(response?.suggestedFilename ?? url.lastPathComponent)
                     print("Download Finished")
                     DispatchQueue.main.async() {
-                        
-                        cell?.imgView?.image = UIImage(data: data)
+                        cell?.imgView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+                       // cell?.imgView?.image = UIImage(data: data)
                         
                     }
                 }
@@ -389,8 +491,41 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     {
                         self.DocumentBookUrl = objBookDetail.pdf_url!
                     }
-                    
-                    
+                    if objBookDetail.profile_pic == nil
+                    {
+                        self.authorImage.layer.cornerRadius = self.authorImage.frame.width/2
+                                               self.authorImage.layer.borderColor = UIColor.white.cgColor
+                                               self.authorImage.layer.borderWidth = 2
+                        self.authorImage.image = #imageLiteral(resourceName: "user_default")
+                    }
+                    else{
+                        self.authorImage.layer.cornerRadius = self.authorImage.frame.width/2
+                        self.authorImage.layer.borderColor = UIColor.white.cgColor
+                        self.authorImage.layer.borderWidth = 2
+                        
+                        let escapedString = objBookDetail.profile_pic
+                        let fullURL = kImageUploadURL + escapedString!
+                        let url = URL(string:fullURL)!
+                         
+                        
+                        DispatchQueue.main.async {
+                            
+                            
+                            self.getData(from: url) { data, response, error in
+                                guard let data = data, error == nil else {
+                                    self.authorImage.image = #imageLiteral(resourceName: "noimage")
+                                    return }
+                                print(response?.suggestedFilename ?? url.lastPathComponent)
+                                print("Download Finished")
+                                DispatchQueue.main.async() {
+                                    // imgView
+                                    //self.BookImage.image = UIImage(data: data)
+                                    self.authorImage?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+                                    
+                                }
+                            }
+                        }
+                    }
                     
                     if objBookDetail.thubm_image == ""
                     {
@@ -427,38 +562,6 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     }
                     
                     
-                    //                    if objBookDetail.profile_pic == ""
-                    //                                       {
-                    //                                           self.authorImage.image = #imageLiteral(resourceName: "noimage")
-                    //                                       }
-                    //
-                    //                                       else
-                    //                                       {
-                    //                                           self.authorImage.layer.cornerRadius = 2
-                    //
-                    //                                           let escapedString = objBookDetail.profile_pic
-                    //                                                   let fullURL = kImageUploadURL + escapedString!
-                    //                                                   let url = URL(string:fullURL)!
-                    //
-                    //
-                    //                                                   DispatchQueue.main.async {
-                    //
-                    //
-                    //                                                       self.getData(from: url) { data, response, error in
-                    //                                                           guard let data = data, error == nil else {
-                    //                                                               self.authorImage.image = #imageLiteral(resourceName: "noimage")
-                    //                                                               return }
-                    //                                                           print(response?.suggestedFilename ?? url.lastPathComponent)
-                    //                                                           print("Download Finished")
-                    //                                                           DispatchQueue.main.async() {
-                    //
-                    //                                                               self.authorImage.image = UIImage(data: data)
-                    //
-                    //                                                           }
-                    //                                                       }
-                    //                                                   }
-                    //                                       }
-                    
                 }
                 //........................
                 
@@ -471,10 +574,12 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     
                     //self.noDataFoundLbl.isHidden = false
                     self.tableView.isHidden = true
+                    self.lblTopReviews.isHidden = true
                 }
                 else {
                     self.reviewArr.removeAll()
                     self.tableView.isHidden = false
+                    self.lblTopReviews.isHidden = false
                     
                     for dataCategory in reviewList! {
                         
@@ -489,6 +594,24 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                 }
                 
                 
+                let assignmentList = response? ["assignment"] as? NSArray
+                
+                if assignmentList == nil || assignmentList?.count == 0 {
+               
+                }
+                else {
+                    self.assignmentArr.removeAll()
+                   
+                    
+                    for dataCategory in assignmentList! {
+                        
+                        self.assignmentArr.append(AllAssignmentList(getAssignmentListData: dataCategory as! NSDictionary))
+                        
+                        
+                    }
+               
+                    
+                }
                 
                 
                 
@@ -508,6 +631,57 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         }, failure: { error in
             // self.HideLoader()
         })
+    }
+    
+    func addReview_API_Method() {
+        
+        
+        let parameters: NSDictionary = [
+           "user_id": userId,
+            "books_id": bookId,
+            "comment": textviewReview.text as Any,
+            "rating": ratingValueString,
+            ]
+        
+
+        ServiceManager.POSTServerRequest(String(kaddReview), andParameters: parameters as! [String : String], success: {response in
+            print("response-------",response!)
+            //self.HideLoader()
+            if response is NSDictionary {
+               let statusCode = response?["error"] as? Int
+                                        if statusCode == 1 {
+                                          //  self.AlertVC(alertMsg:msg!)
+                                        }
+                                        else if statusCode == 0
+                                        {
+                                            
+                                            self.BookDetail_API_Method()
+                                            
+                                       }
+                
+               
+                
+                
+                    
+                
+            }
+        }, failure: { error in
+            //self.HideLoader()
+        })
+    }
+    
+    @IBAction func btnSubmit(_ sender: Any) {
+        if textviewReview.textColor == UIColor.lightGray || textviewReview.text == nil {
+             self.AlertVC(alertMsg:"Please Enter your Comment")
+        }
+        if ratingValueString == "0"
+        {
+              self.AlertVC(alertMsg:"Please Rate this book")
+        }
+        else
+        {
+            addReview_API_Method()
+        }
     }
     
     

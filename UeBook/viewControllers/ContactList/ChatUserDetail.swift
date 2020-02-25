@@ -106,7 +106,6 @@ class ChatUserDetail: UIViewController {
                           
                           
                           
-                          
                           if statusCode == 1 {
                             //  self.AlertVC(alertMsg:msg!)
                           }

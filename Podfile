@@ -20,7 +20,7 @@ target 'UeBook' do
       pod 'ScrollableSegmentedControl', '~> 1.5.0'
       pod "Popover"
       pod 'NVActivityIndicatorView/AppExtension'
-
+      pod 'Cosmos', '~> 21.0'
 
       end
 

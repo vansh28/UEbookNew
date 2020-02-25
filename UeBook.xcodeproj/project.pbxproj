@@ -13,6 +13,9 @@
 		8403AC3823D701AD008F3A4C /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3723D701AD008F3A4C /* Repository.swift */; };
 		8403AC3B23D709CA008F3A4C /* contactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3A23D709CA008F3A4C /* contactListViewController.swift */; };
 		8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */; };
+		8403C57F24050440008BD334 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403C57E24050440008BD334 /* SelfSizedTableView.swift */; };
+		8409E9D2240550AE00FDBDC7 /* BookAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */; };
+		8409E9D4240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */; };
 		840A2FCE23F527E9003212D5 /* CategiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */; };
 		840A2FD023F54E16003212D5 /* BooksByTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */; };
 		840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */; };
@@ -112,6 +115,9 @@
 		8403AC3723D701AD008F3A4C /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		8403AC3A23D709CA008F3A4C /* contactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactListViewController.swift; sourceTree = "<group>"; };
 		8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		8403C57E24050440008BD334 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAssignmentViewController.swift; sourceTree = "<group>"; };
+		8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategiesTableViewCell.swift; sourceTree = "<group>"; };
 		840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksByTypesTableViewCell.swift; sourceTree = "<group>"; };
 		840A2FD123F54E2E003212D5 /* BooksByTypesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksByTypesViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +361,7 @@
 				847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */,
 				8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */,
 				84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */,
+				8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -370,6 +377,7 @@
 				840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */,
 				840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */,
 				84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */,
+				8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 			children = (
 				8415F97423D96478001D84BE /* RoundedView.swift */,
 				843C793A23E43B11002641AA /* StarsView.swift */,
+				8403C57E24050440008BD334 /* SelfSizedTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -681,6 +690,7 @@
 				8415F97A23D976B8001D84BE /* HomeCollectionViewCell.swift in Sources */,
 				843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */,
 				840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */,
+				8403C57F24050440008BD334 /* SelfSizedTableView.swift in Sources */,
 				8403AC3823D701AD008F3A4C /* Repository.swift in Sources */,
 				8403AC3B23D709CA008F3A4C /* contactListViewController.swift in Sources */,
 				842B753023D1D69D007E5C4A /* ViedoCallReciveViewController.swift in Sources */,
@@ -699,6 +709,7 @@
 				842B752D23D1CFC7007E5C4A /* RecivecallViewController.swift in Sources */,
 				843EB3E523D57C13006773EF /* ChatUSViewController.swift in Sources */,
 				842B06E523D6D0DE0062162A /* cellCollectionViewCell.swift in Sources */,
+				8409E9D2240550AE00FDBDC7 /* BookAssignmentViewController.swift in Sources */,
 				84B8B28F23D5BFF60062B8B9 /* BaseCells.swift in Sources */,
 				843E8A4423F12EFD0061AAF8 /* SWRevealViewController.swift in Sources */,
 				843D8A6223EAD6E600E3365E /* Response.swift in Sources */,
@@ -728,6 +739,7 @@
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
 				84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */,
 				84A5687523E973E70027888B /* LoginViewController.swift in Sources */,
+				8409E9D4240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift in Sources */,
 				843C793B23E43B11002641AA /* StarsView.swift in Sources */,
 				8415F97C23D9A661001D84BE /* UploadBookViewController.swift in Sources */,
 				84B8B29323D5C0760062B8B9 /* ChatCell.swift in Sources */,

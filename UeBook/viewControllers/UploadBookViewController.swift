@@ -331,7 +331,6 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                 
             }
         }
-        
     
     
     @IBAction func btnBack(_ sender: Any) {

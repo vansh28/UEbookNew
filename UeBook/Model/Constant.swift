@@ -47,6 +47,8 @@ let kforgetPassword                      =     kBaseUrl +    "forgetPassword"
 let ksendFrndReq                         =     kBaseUrl +    "sendFrndReq"
 let kgetFollowStatus                     =     kBaseUrl +    "getFollowStatus"
 let kaddNewBook                          =     kBaseUrl +    "addNewBook"
+let kaddReview                           =     kBaseUrl +    "addReview"
+
 //Idenfier
 
 let kBookDescriptionViewController        =     "BookDescriptionViewController"
@@ -72,3 +74,4 @@ let kReadBookViewController               =    "ReadBookViewController"
 let kChatUSViewController                 =    "ChatUSViewController"
 let kChatUserDetail                       =    "ChatUserDetail"
 let kWebDocmentViewController             =    "WebDocmentViewController"
+let kBookAssignmentViewController         =    "BookAssignmentViewController"
