@@ -268,7 +268,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
             let double = Double(myDouble!)
             cell?.starView.rating = double!
             cell?.starView.settings.fillMode = .half
-            starView.isUserInteractionEnabled = false
+            cell?.starView.isUserInteractionEnabled = false
             
             cell?.layer.masksToBounds = true
             cell?.imgView.layer.cornerRadius = ((cell?.imgView.frame.size.width)!)/2

@@ -455,4 +455,19 @@ init(getFollowStatus: NSDictionary) {
     }
 }
 
+struct SendAnswerData {
+      var books_id: String
+      var assId: String
+      var answer   : String
+       var answered_by : String
+  
+   init(_ dictionary: [String: Any]) {
+      self.books_id = dictionary["books_id"] as? String ?? "NA"
+      self.assId = dictionary["assignment_id"] as? String ?? "NA"
+    
+      self.answer = dictionary["Answer"] as? String ?? "NA"
+      self.answered_by = dictionary["answered_by"] as? String ?? "NA"
+    
+    }
+}
 

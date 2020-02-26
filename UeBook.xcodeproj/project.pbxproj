@@ -40,6 +40,7 @@
 		842B753023D1D69D007E5C4A /* ViedoCallReciveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */; };
 		842B753223D1DC24007E5C4A /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B753123D1DC24007E5C4A /* iOSDevCenters+GIF.swift */; };
 		842B753423D1DC96007E5C4A /* call-recieve.gif in Resources */ = {isa = PBXBuildFile; fileRef = 842B753323D1DC96007E5C4A /* call-recieve.gif */; };
+		84331D8A240648E200D9BC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84331D88240648E200D9BC3D /* Main.storyboard */; };
 		843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */; };
 		843C793B23E43B11002641AA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793A23E43B11002641AA /* StarsView.swift */; };
 		843D8A5B23EABC2F00E3365E /* libPods-UeBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D8A5A23EABC2F00E3365E /* libPods-UeBook.a */; };
@@ -69,9 +70,6 @@
 		84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687223E92FD50027888B /* FirstPageViewController.swift */; };
 		84A5687523E973E70027888B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687423E973E70027888B /* LoginViewController.swift */; };
 		84A5687723E974070027888B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5687623E974070027888B /* RegisterViewController.swift */; };
-		84A5689D23E97A720027888B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A5689B23E97A720027888B /* Main.storyboard */; };
-		84A5689E23E97A720027888B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A5689B23E97A720027888B /* Main.storyboard */; };
-		84A5689F23E97A720027888B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A5689B23E97A720027888B /* Main.storyboard */; };
 		84A568A223E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
 		84A568A323E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
 		84A568A423E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
@@ -116,7 +114,7 @@
 		8403AC3A23D709CA008F3A4C /* contactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactListViewController.swift; sourceTree = "<group>"; };
 		8403AC3C23D709E0008F3A4C /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		8403C57E24050440008BD334 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
-		8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAssignmentViewController.swift; sourceTree = "<group>"; };
+		8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAssignmentViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookAssignmentTableViewCell.swift; sourceTree = "<group>"; };
 		840A2FCD23F527E9003212D5 /* CategiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategiesTableViewCell.swift; sourceTree = "<group>"; };
 		840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksByTypesTableViewCell.swift; sourceTree = "<group>"; };
@@ -147,6 +145,7 @@
 		842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViedoCallReciveViewController.swift; sourceTree = "<group>"; };
 		842B753123D1DC24007E5C4A /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		842B753323D1DC96007E5C4A /* call-recieve.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "call-recieve.gif"; sourceTree = "<group>"; };
+		84331D89240648E200D9BC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UeBook/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		843C793A23E43B11002641AA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 		843D8A5A23EABC2F00E3365E /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +176,6 @@
 		84A5687223E92FD50027888B /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		84A5687423E973E70027888B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84A5687623E974070027888B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		84A5689C23E97A720027888B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84A568A123E97A810027888B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84B8B27C23D5A7050062B8B9 /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8B27E23D5A7650062B8B9 /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,7 +279,6 @@
 				84B8B29423D5C0F30062B8B9 /* Utilities */,
 				84B8B28823D5BF1F0062B8B9 /* Model */,
 				842B752E23D1D65B007E5C4A /* viewControllers */,
-				84A5689B23E97A720027888B /* Main.storyboard */,
 				84A568A023E97A810027888B /* LaunchScreen.storyboard */,
 				843D8A6123EAD6E600E3365E /* Response.swift */,
 				847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */,
@@ -362,6 +359,7 @@
 				8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */,
 				84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */,
 				8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */,
+				84331D88240648E200D9BC3D /* Main.storyboard */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -596,10 +594,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				842B753423D1DC96007E5C4A /* call-recieve.gif in Resources */,
+				84331D8A240648E200D9BC3D /* Main.storyboard in Resources */,
 				84A568A223E97A810027888B /* LaunchScreen.storyboard in Resources */,
 				847FA8D123F6777B00BBB988 /* GoogleService-Info.plist in Resources */,
 				840D67E323D035D000D0DAF6 /* Assets.xcassets in Resources */,
-				84A5689D23E97A720027888B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,7 +605,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A5689E23E97A720027888B /* Main.storyboard in Resources */,
 				84A568A323E97A810027888B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -616,7 +613,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84A5689F23E97A720027888B /* Main.storyboard in Resources */,
 				84A568A423E97A810027888B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,10 +781,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84A5689B23E97A720027888B /* Main.storyboard */ = {
+		84331D88240648E200D9BC3D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84A5689C23E97A720027888B /* Base */,
+				84331D89240648E200D9BC3D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

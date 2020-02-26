@@ -48,7 +48,7 @@ let ksendFrndReq                         =     kBaseUrl +    "sendFrndReq"
 let kgetFollowStatus                     =     kBaseUrl +    "getFollowStatus"
 let kaddNewBook                          =     kBaseUrl +    "addNewBook"
 let kaddReview                           =     kBaseUrl +    "addReview"
-
+let kanswerQuestion                      =     kBaseUrl +    "answerQuestion"
 //Idenfier
 
 let kBookDescriptionViewController        =     "BookDescriptionViewController"

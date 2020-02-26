@@ -46,12 +46,21 @@ class BookMarkViewController: UIViewController , UITableViewDelegate, UITableVie
         
         cell?.lblBookName.text = BookMarkArr[indexPath.row].book_title
         cell?.lblUserName.text = BookMarkArr[indexPath.row].author_name
-        
+          let myDouble = BookMarkArr[indexPath.row].rating
+        if myDouble == nil
+        {
+            cell?.starView.rating = 0
+        }
+        else
+        {
 
-        let myDouble = BookMarkArr[indexPath.row].rating
+      
         let double = Double(myDouble!)
         cell?.starView.rating = double!
-      
+        cell?.starView.rating = double!
+                 cell?.starView.settings.fillMode = .half
+        cell?.starView.isUserInteractionEnabled = false
+        }
 //        cell?.layer.masksToBounds = true
 //        cell?.imgView.layer.cornerRadius = ((cell?.imgView.frame.size.width)!)/2
 

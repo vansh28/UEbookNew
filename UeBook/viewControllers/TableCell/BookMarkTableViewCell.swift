@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class BookMarkTableViewCell: UITableViewCell {
 
@@ -16,7 +17,8 @@ class BookMarkTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblUserName: UILabel!
     
-    @IBOutlet weak var starView: StarsView!
+    @IBOutlet weak var starView: CosmosView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
