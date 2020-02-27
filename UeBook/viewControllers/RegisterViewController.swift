@@ -38,6 +38,8 @@ class RegisterViewController: UIViewController ,UITextFieldDelegate ,UIPickerVie
     
     @IBOutlet weak var btnKindofActor: UIButton!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

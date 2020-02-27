@@ -84,6 +84,7 @@
 		84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */; };
 		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
 		84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */; };
+		84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D85C822407916300B51CC2 /* MediaPlayer.framework */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,7 +137,7 @@
 		8415F97423D96478001D84BE /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		8415F97623D97082001D84BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8415F97923D976B8001D84BE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		8415F97B23D9A661001D84BE /* UploadBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBookViewController.swift; sourceTree = "<group>"; };
+		8415F97B23D9A661001D84BE /* UploadBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBookViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		842B06E223D6CF840062162A /* ChatDesinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDesinViewController.swift; sourceTree = "<group>"; };
 		842B06E423D6D0DE0062162A /* cellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellCollectionViewCell.swift; sourceTree = "<group>"; };
 		842B752723D18E14007E5C4A /* Viedo&ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viedo&ChatViewController.swift"; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
 		84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookTableViewCell.swift; sourceTree = "<group>"; };
+		84D85C822407916300B51CC2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84DF09E223E164300025FAA9 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		84DF09E423E187960025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E723E188B00025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 				843D8A6E23EAF7B500E3365E /* AuthenticationServices.framework in Frameworks */,
 				843D8A7023EAF7C400E3365E /* SystemConfiguration.framework in Frameworks */,
 				84BA06EC2403AF2400A78FF5 /* WebKit.framework in Frameworks */,
+				84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */,
 				843D8A6A23EAF78400E3365E /* LocalAuthentication.framework in Frameworks */,
 				843D8A5B23EABC2F00E3365E /* libPods-UeBook.a in Frameworks */,
 				843D8A6C23EAF7A300E3365E /* SafariServices.framework in Frameworks */,
@@ -445,6 +448,7 @@
 		D982CD89955A597D7D9DFF8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84D85C822407916300B51CC2 /* MediaPlayer.framework */,
 				84BA06EB2403AF2300A78FF5 /* WebKit.framework */,
 				843D8A6F23EAF7C400E3365E /* SystemConfiguration.framework */,
 				843D8A6D23EAF7B500E3365E /* AuthenticationServices.framework */,

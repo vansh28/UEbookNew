@@ -15,11 +15,12 @@ import Alamofire
 
 import UIKit
 import PDFKit
+import MediaPlayer
 
 
 
 
-class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource  , AVAudioRecorderDelegate, AVAudioPlayerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UIDocumentInteractionControllerDelegate {
+class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource  , AVAudioRecorderDelegate, AVAudioPlayerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UIDocumentInteractionControllerDelegate ,MPMediaPickerControllerDelegate {
     
     
 
@@ -200,6 +201,16 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     }
     
     
+    @IBAction func btnRecordView(_ sender: Any) {
+       
+             let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kRecordingViewController) as! RecordingViewController
+
+                            BookdetailVC.modalPresentationStyle = .overFullScreen
+
+                            self.present(BookdetailVC, animated: true, completion: nil)
+                            
+         
+    }
     // ...........link.........
     @IBAction func btnImageLink(_ sender: Any) {
         
@@ -521,18 +532,51 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             present(documentPicker, animated: true, completion: nil)
         }
 
+    @IBAction func btnRecodView(_ sender: Any) {
 
+              let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kRecordingViewController) as! RecordingViewController
+
+                      
+                       BookdetailVC.modalPresentationStyle = .overFullScreen
+
+                       self.present(BookdetailVC, animated: true, completion: nil)
+    }
+    
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
                 print("view was cancelled")
                 dismiss(animated: true, completion: nil)
         }
     @IBAction func btnRecodingUpload(_ sender: Any) {
-        flag = 2
-      galleryAudio()
-
+//        flag = 2
+//      galleryAudio()
+       let mediaPickerController = MPMediaPickerController(mediaTypes: .anyAudio)
+        mediaPickerController.delegate = self
+        mediaPickerController.prompt = "Select Audio"
+        present(mediaPickerController, animated: true, completion: nil)
         
     }
+    func mediaPicker(_ mediaPicker: MPMediaPickerController,
+                     didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
+      
+      dismiss(animated: true) {
+        let selectedSongs = mediaItemCollection.items
+        guard let song = selectedSongs.first else { return }
+        
+        let url = song.value(forProperty: MPMediaItemPropertyAssetURL) as? URL
+         let audioAsset = (url == nil) ? nil : AVAsset(url: url!)
+        let title = (url == nil) ? "Asset Not Available" : "Asset Loaded"
+        let message = (url == nil) ? "Audio Not Loaded" : "Audio Loaded"
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler:nil))
+        self.present(alert, animated: true, completion: nil)
+      }
+    }
 
+    func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
+      dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func btnViedoUpload(_ sender: Any) {
         
         flag = 1
@@ -556,30 +600,30 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                   //self.HideLoader()
                   if response is NSDictionary {
                      // let statusCode = response?["error"] as? Int
-                      let message = response? ["message"] as? String
-                      let AllCategoryList = response?["response"] as? NSArray
-
-                       print("response-------",response!)
-                             
-                               if AllCategoryList == nil || AllCategoryList?.count == 0 {
-                                  
-                                 
-                      
-                               }
-                                else
-                               {
-                                       self.CategiesArr.removeAll()
-                                      
-
-                                       for dataCategory in AllCategoryList! {
-
-                                           self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
-                                           print(self.CategiesArr.count)
-                                          
-                                       }
-                                
-                                     
-                                   }
+//                      let message = response? ["message"] as? String
+//                      let AllCategoryList = response?["response"] as? NSArray
+//
+//                       print("response-------",response!)
+//
+//                               if AllCategoryList == nil || AllCategoryList?.count == 0 {
+//
+//
+//
+//                               }
+//                                else
+//                               {
+//                                       self.CategiesArr.removeAll()
+//
+//
+//                                       for dataCategory in AllCategoryList! {
+//
+//                                           self.CategiesArr.append(AllCategory(getAllCategory: dataCategory as! NSDictionary))
+//                                           print(self.CategiesArr.count)
+//
+//                                       }
+//
+//
+//                                   }
                       
                               
                       
@@ -714,27 +758,27 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                              print("response-------",response!)
                              //self.HideLoader()
                              if response is NSDictionary {
-                                 let statusCode = response?["error"] as? Int
-                                 let message = response? ["message"] as? String
-                                 let AllCategoryList = response?["data"] as? NSDictionary
-
-                                  print("response-------",response!)
-                                       
-                                
-                                if statusCode == 0
-                                {
-                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                                                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
-                                                                         
-                                                          nextViewController.modalPresentationStyle = .overFullScreen
-                                                          self.present(nextViewController, animated:true, completion:nil)
-                                }
-                                
-                                else
-                                {
-                                    
-                                }
-                                
+//                                 let statusCode = response?["error"] as? Int
+//                                 let message = response? ["message"] as? String
+//                                 let AllCategoryList = response?["data"] as? NSDictionary
+//
+//                                  print("response-------",response!)
+//
+//
+//                                if statusCode == 0
+//                                {
+//                                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//                                                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+//
+//                                                          nextViewController.modalPresentationStyle = .overFullScreen
+//                                                          self.present(nextViewController, animated:true, completion:nil)
+//                                }
+//
+//                                else
+//                                {
+//
+//                                }
+//
    
                                      
                                  
@@ -778,7 +822,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             let videoPicker = UIImagePickerController()
             videoPicker.delegate = self
             videoPicker.sourceType = .photoLibrary
-            videoPicker.mediaTypes = ["public.audio"]
+            videoPicker.mediaTypes = [kUTTypeMIDIAudio as String]
             self.present(videoPicker, animated: true, completion: nil)
             
             
