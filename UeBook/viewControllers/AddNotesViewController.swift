@@ -168,7 +168,7 @@ class AddNotesViewController: UIViewController , UITextFieldDelegate, UITextView
                  {
                      let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                                                           let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
-                                                           nextViewController.indexValue = "0"
+                                                           nextViewController.indexValue = "4"
                                            nextViewController.modalPresentationStyle = .overFullScreen
                                            self.present(nextViewController, animated:true, completion:nil)
                                          //  self.present(vc, animated: true, completion: nil)

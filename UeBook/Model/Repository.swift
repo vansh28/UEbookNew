@@ -324,6 +324,31 @@ init(getAllUserBooklist: NSDictionary) {
        
     }
 }
+
+
+class  AllUserPendingBooklist{
+    var id: String?
+    var book_title: String?
+    var thubm_image: String?
+    var author_name: String?
+ 
+    var book_description: String?
+ 
+   
+init(getAllUserPendingBooklist: NSDictionary) {
+        
+        self.id                           = getAllUserPendingBooklist["id"] as? String
+        self.book_title                   = getAllUserPendingBooklist["book_title"] as? String
+        self.thubm_image                  = getAllUserPendingBooklist["thubm_image"] as? String
+        self.author_name                  = getAllUserPendingBooklist["author_name"] as? String
+        self.book_description             = getAllUserPendingBooklist["book_description"] as? String
+    
+       
+    }
+}
+
+
+
 class  AllCategory{
     var id: String?
     var category_name: String?

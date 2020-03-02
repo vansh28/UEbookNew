@@ -15,6 +15,7 @@ import AVKit
 import WebKit
 import Cosmos
 
+
 class BookDescriptionViewController: UIViewController , UITableViewDataSource, UITableViewDelegate,UIDocumentInteractionControllerDelegate ,WKNavigationDelegate,UITextViewDelegate{
     
     var reviewArr = [Allreview]()
@@ -50,7 +51,9 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     var  AudioBookUrl = String()
     var  DocumentBookUrl = String()
     var webview = WKWebView()
-
+    var ImageUrl : URL!
+    var AuthorProfileUrl : URL!
+    var username = String()
     //...........................................................//
     
     var userIdbyAuthor = String()
@@ -83,7 +86,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         BookDetail_API_Method()
         starView.isUserInteractionEnabled = false
         starView.settings.fillMode = .half
-
+  
         tableView.isScrollEnabled = true
         
         
@@ -97,10 +100,39 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
 //        scrollView.addSubview(lbl)
         ratingView.didTouchCosmos = didTouchCosmos
 
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+                                      BookImage.addGestureRecognizer(tap)
+        self.BookImage.isUserInteractionEnabled = true
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleTap2(_:)))
+                                      authorImage.addGestureRecognizer(tap2)
+        self.authorImage.isUserInteractionEnabled = true
+
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+     
+      
+                              let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier:kImageZoomInZoomOutViewController ) as! ImageZoomInZoomOutViewController
+                                         nextViewController.modalPresentationStyle = .overFullScreen
+                                           nextViewController.imageurl = ImageUrl
+                                          nextViewController.name = lblBookName.text!
+                                         self.present(nextViewController, animated:true, completion:nil)
+                              }
+    @objc func handleTap2(_ sender: UITapGestureRecognizer) {
+     
+      
+                              let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                         let nextViewController = storyBoard.instantiateViewController(withIdentifier:kImageZoomInZoomOutViewController ) as! ImageZoomInZoomOutViewController
+                                            nextViewController.modalPresentationStyle = .overFullScreen
+                                           nextViewController.imageurl = AuthorProfileUrl
+                                          nextViewController.name = username
+                                         self.present(nextViewController, animated:true, completion:nil)
+                              }
+
   private class func formatValue(_ value: Double) -> String {
     
      return String(format: "%.1f", value)
@@ -277,7 +309,6 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
             let fullURL = "http://" + escapedString!
             let url = URL(string:fullURL)!
             
-            
             DispatchQueue.main.async {
                 
                 
@@ -303,7 +334,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
         {
             if indexPath.row == 0
             {
-                if VideoBookUrl == "nil"
+                if VideoBookUrl == ""
                 {
                     self.AlertVC(alertMsg:"Oops! No Video for this Book")
                 }
@@ -323,19 +354,27 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
             }
             if indexPath.row == 1
                        {
-                           if AudioBookUrl == "nil"
+                           if AudioBookUrl == ""
                            {
                                                    self.AlertVC(alertMsg:"Oops! No Audio for this Book")
 
                            }
                            else
                            {
-                             print("*")
+                             let stringUrl = "https://" + AudioBookUrl
+                             let videoURL = URL(string:stringUrl)
+                             let player = AVPlayer(url:videoURL!)  // video path coming from above function
+
+                             let playerViewController = AVPlayerViewController()
+                             playerViewController.player = player
+                             self.present(playerViewController, animated: true) {
+                                 playerViewController.player!.play()
                            }
                        }
+            }
             if indexPath.row == 2
                        {
-                           if DocumentBookUrl == "nil"
+                           if DocumentBookUrl == ""
                            {
                                                    self.AlertVC(alertMsg:"Oops! No Document File for this Book")
 
@@ -363,6 +402,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
     
     @IBAction func btnBack(_ sender: Any) {
  
+        
         self.dismiss(animated: true, completion: nil)
         
         
@@ -444,6 +484,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                     }
                     else{
                         self.btnAuthorName.setTitle(objBookDetail.user_name, for: .normal)
+                        self.username = objBookDetail.user_name!
                     }
                     
                     if objBookDetail.book_description == nil
@@ -504,9 +545,9 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                         self.authorImage.layer.borderWidth = 2
                         
                         let escapedString = objBookDetail.profile_pic
-                        let fullURL = kImageUploadURL + escapedString!
+                        let fullURL = "http://" + escapedString!
                         let url = URL(string:fullURL)!
-                         
+                        self.AuthorProfileUrl = url
                         
                         DispatchQueue.main.async {
                             
@@ -541,7 +582,7 @@ class BookDescriptionViewController: UIViewController , UITableViewDataSource, U
                         let fullURL = "http://" + escapedString!
                         let url = URL(string:fullURL)!
                         
-                        
+                        self.ImageUrl = url
                         DispatchQueue.main.async {
                             
                             

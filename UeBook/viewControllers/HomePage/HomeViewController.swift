@@ -57,13 +57,13 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.navigationHide()
-        GetAllPopularBook_API_Method()
-        
-       
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(true)
+//        self.navigationHide()
+//        GetAllPopularBook_API_Method()
+//        
+//       
+//    }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -153,46 +153,46 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
     }
     
     // make a cell for each cell index path
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        // get a reference to our storyboard cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! HomeCollectionViewCell
-        
-        
-        cell.imageView.layer.cornerRadius = 10
-        
-        cell.lblBookName.text =     popularBookArr [indexPath.row].book_title
-        cell.lblWriteName.text =    popularBookArr[indexPath.row].author_name
-        cell.layer.masksToBounds = true
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           
+           // get a reference to our storyboard cell
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath as IndexPath) as! HomeCollectionViewCell
+           
+           
+           cell.imageView.layer.cornerRadius = 10
+           
+           cell.lblBookName.text =     popularBookArr [indexPath.row].book_title
+           cell.lblWriteName.text =    popularBookArr[indexPath.row].author_name
+           cell.layer.masksToBounds = true
 
-        
-        
-        let escapedString = popularBookArr[indexPath.row].thubm_image
-        let fullURL = "http://" + escapedString!
-        let url = URL(string:fullURL)!
-        
-        
-        DispatchQueue.main.async {
-            
-            
-            self.getData(from: url) { data, response, error in
-                guard let data = data, error == nil else {
-                    cell.imageView?.image = #imageLiteral(resourceName: "scam_dum.png")
-                    return }
-                print(response?.suggestedFilename ?? url.lastPathComponent)
-                print("Download Finished")
-                DispatchQueue.main.async() {
-                   cell.imageView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
+           
+           
+           let escapedString = popularBookArr[indexPath.row].thubm_image
+           let fullURL = "http://" + escapedString!
+           let url = URL(string:fullURL)!
+           
+           
+           DispatchQueue.main.async {
+               
+               
+               self.getData(from: url) { data, response, error in
+                   guard let data = data, error == nil else {
+                       cell.imageView?.image = #imageLiteral(resourceName: "scam_dum.png")
+                       return }
+                   print(response?.suggestedFilename ?? url.lastPathComponent)
+                   print("Download Finished")
+                   DispatchQueue.main.async() {
+                      cell.imageView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
 
-                   // cell.imageView?.image = UIImage(data: data)
-                    
-                }
-            }
-        }
-        
-        
-        return cell
-    }
+                      // cell.imageView?.image = UIImage(data: data)
+                       
+                   }
+               }
+           }
+           
+           
+           return cell
+       }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
@@ -215,6 +215,7 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
         
         print("You selected cell #\(indexPath.item)!")
     }
+
     
     
 }

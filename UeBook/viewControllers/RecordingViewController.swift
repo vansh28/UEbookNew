@@ -16,7 +16,7 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
     
     @IBOutlet weak var btnPlay: UIButton!
     @IBOutlet weak var btnRecord: UIButton!
-    
+    var audioUrl :URL!
     @IBOutlet weak var lblTimer: UILabel!
     
     var audioRecorder: AVAudioRecorder!
@@ -58,10 +58,8 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
    
     let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kUploadBookViewController) as! UploadBookViewController
 
-      //  BookdetailVC.btnAudioLink = filepathnew
             BookdetailVC.modalPresentationStyle = .overFullScreen
-
-    //        self.navigationController?.pushViewController(BookdetailVC, animated: true)
+             BookdetailVC.AudioUrl = audioUrl
             self.present(BookdetailVC, animated: true, completion: nil)
     }
     func getDocumentsDirectory() -> URL
@@ -75,7 +73,7 @@ class RecordingViewController: UIViewController , AVAudioRecorderDelegate, AVAud
     {
         let filename = "myRecording.m4a"
         let filePath = getDocumentsDirectory().appendingPathComponent(filename)
-
+        audioUrl = filePath
         print()
     return filePath
     }

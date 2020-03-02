@@ -40,6 +40,9 @@
 		842B753023D1D69D007E5C4A /* ViedoCallReciveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */; };
 		842B753223D1DC24007E5C4A /* iOSDevCenters+GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842B753123D1DC24007E5C4A /* iOSDevCenters+GIF.swift */; };
 		842B753423D1DC96007E5C4A /* call-recieve.gif in Resources */ = {isa = PBXBuildFile; fileRef = 842B753323D1DC96007E5C4A /* call-recieve.gif */; };
+		8432D82D240D06FD003CAC6C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432D82C240D06FD003CAC6C /* LocationManager.swift */; };
+		8432D82F240D33DB003CAC6C /* pendingBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432D82E240D33DB003CAC6C /* pendingBookViewController.swift */; };
+		8432D831240D340F003CAC6C /* PendingBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8432D830240D340F003CAC6C /* PendingBookTableViewCell.swift */; };
 		84331D8A240648E200D9BC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84331D88240648E200D9BC3D /* Main.storyboard */; };
 		843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */; };
 		843C793B23E43B11002641AA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793A23E43B11002641AA /* StarsView.swift */; };
@@ -86,6 +89,7 @@
 		84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */; };
 		84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D85C822407916300B51CC2 /* MediaPlayer.framework */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
+		84F29DD02408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +150,9 @@
 		842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViedoCallReciveViewController.swift; sourceTree = "<group>"; };
 		842B753123D1DC24007E5C4A /* iOSDevCenters+GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "iOSDevCenters+GIF.swift"; sourceTree = "<group>"; };
 		842B753323D1DC96007E5C4A /* call-recieve.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "call-recieve.gif"; sourceTree = "<group>"; };
+		8432D82C240D06FD003CAC6C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		8432D82E240D33DB003CAC6C /* pendingBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pendingBookViewController.swift; sourceTree = "<group>"; };
+		8432D830240D340F003CAC6C /* PendingBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBookTableViewCell.swift; sourceTree = "<group>"; };
 		84331D89240648E200D9BC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UeBook/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		843C793A23E43B11002641AA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
@@ -198,6 +205,7 @@
 		84DF09E423E187960025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E723E188B00025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E923E188B50025FAA9 /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomInZoomOutViewController.swift; sourceTree = "<group>"; };
 		F5986E0C7FBA491A92FB0020 /* Pods-UeBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UeBook.debug.xcconfig"; path = "Target Support Files/Pods-UeBook/Pods-UeBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -339,6 +347,7 @@
 				842B06E223D6CF840062162A /* ChatDesinViewController.swift */,
 				842B06E423D6D0DE0062162A /* cellCollectionViewCell.swift */,
 				8415F97B23D9A661001D84BE /* UploadBookViewController.swift */,
+				84DF09E223E164300025FAA9 /* RecordingViewController.swift */,
 				8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */,
 				84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */,
 				8443273423E2A6C900AC233B /* BookDescriptionViewController.swift */,
@@ -347,7 +356,6 @@
 				84A5687623E974070027888B /* RegisterViewController.swift */,
 				842B752723D18E14007E5C4A /* Viedo&ChatViewController.swift */,
 				842B752A23D1C8D4007E5C4A /* CallReciveViewController.swift */,
-				84DF09E223E164300025FAA9 /* RecordingViewController.swift */,
 				843E8A3B23F129210061AAF8 /* BookMarkViewController.swift */,
 				843E8A3D23F129400061AAF8 /* CategoriesViewController.swift */,
 				843E8A3F23F129500061AAF8 /* NotepadViewController.swift */,
@@ -362,7 +370,9 @@
 				8401CEC923FA5A15008BC88B /* ForgotPasswordViewController.swift */,
 				84BA06ED2403C54300A78FF5 /* WebDocmentViewController.swift */,
 				8409E9D1240550AE00FDBDC7 /* BookAssignmentViewController.swift */,
+				84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */,
 				84331D88240648E200D9BC3D /* Main.storyboard */,
+				8432D82E240D33DB003CAC6C /* pendingBookViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -379,6 +389,7 @@
 				840A2FCF23F54E16003212D5 /* BooksByTypesTableViewCell.swift */,
 				84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */,
 				8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */,
+				8432D830240D340F003CAC6C /* PendingBookTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -408,6 +419,7 @@
 			children = (
 				840D67D923D035CC00D0DAF6 /* AppDelegate.swift */,
 				840D67E223D035D000D0DAF6 /* Assets.xcassets */,
+				8432D82C240D06FD003CAC6C /* LocationManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -699,11 +711,13 @@
 				84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */,
 				840D67DE23D035CC00D0DAF6 /* ChatUserDetail.swift in Sources */,
 				84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */,
+				8432D82D240D06FD003CAC6C /* LocationManager.swift in Sources */,
 				842B06E323D6CF840062162A /* ChatDesinViewController.swift in Sources */,
 				8415F97723D97082001D84BE /* HomeViewController.swift in Sources */,
 				840D67DA23D035CC00D0DAF6 /* AppDelegate.swift in Sources */,
 				842B752B23D1C8D4007E5C4A /* CallReciveViewController.swift in Sources */,
 				842B753223D1DC24007E5C4A /* iOSDevCenters+GIF.swift in Sources */,
+				8432D831240D340F003CAC6C /* PendingBookTableViewCell.swift in Sources */,
 				84B8B28D23D5BFA80062B8B9 /* Spinner.swift in Sources */,
 				840D67DC23D035CC00D0DAF6 /* SceneDelegate.swift in Sources */,
 				842B752D23D1CFC7007E5C4A /* RecivecallViewController.swift in Sources */,
@@ -715,6 +729,8 @@
 				843D8A6223EAD6E600E3365E /* Response.swift in Sources */,
 				84471CEF23DEAAC100F6F1F9 /* TabView.swift in Sources */,
 				84B8B28A23D5BF580062B8B9 /* Chat.swift in Sources */,
+				8432D82F240D33DB003CAC6C /* pendingBookViewController.swift in Sources */,
+				84F29DD02408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift in Sources */,
 				8410BC1823F27F4F00A2390D /* AddNotesViewController.swift in Sources */,
 				84B8B29623D5C1100062B8B9 /* UIView + Ext .swift in Sources */,
 				84A5687723E974070027888B /* RegisterViewController.swift in Sources */,
@@ -925,7 +941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				"DEBUG_INFORMATION_FORMAT[sdk=*]" = dwarf;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
@@ -954,7 +970,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1;
+				CURRENT_PROJECT_VERSION = 1.2;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -190,7 +190,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
  func Login_API_Method() {
          
         let parameters: NSDictionary = [
-             "user_name" : txtUserName.text!,
+             "email" : txtUserName.text!,
              "password" : txtPassword.text!,
              "device_type":"ios",
              "device_token":"0"
@@ -224,7 +224,7 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
                                         let UserID = resposeArr!["id"] as? String
                                         let imgUrlUser = resposeArr!["url"] as? String
                                         let publisher_type = resposeArr!["publisher_type"] as? String
-                                        
+                                    
                                         
 
                         UserDefaults.standard.set(1, forKey: "Save_User_Login")
@@ -237,7 +237,9 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
                         UserDefaults.standard.set(UserID, forKey: "Save_User_ID")
                         UserDefaults.standard.set(publisher_type, forKey: "Save_publisher_type")
                         UserDefaults.standard.set(fullNameUser, forKey: "Save_User_Name")
+                        UserDefaults.standard.set(imgUrlUser, forKey: "Save_Img_url")
 
+                        
                                         
                         
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)

@@ -36,7 +36,12 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
     
     @IBOutlet weak var txtUpdateCountry: UITextField!
     
+    
     @IBOutlet weak var lblUpdateCountry: UILabel!
+   
+    var Userimageurl :URL!
+    var Username = String()
+    
      var userId  = String()
     var stringActor = ["Select kind of Actor","Reader", "Writer", "Publish House","Reader and Writer"]
      var picker  = UIPickerView()
@@ -45,6 +50,17 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
     @IBOutlet weak var btnUserType: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        userImage.layer.cornerRadius = userImage.frame.width/2
+        imagePicker.delegate = self
+        
+        
+        let Imageurl = UserDefaults.standard.string(forKey: "Save_Img_url")!
+        let fullURL = kImageUploadURL + Imageurl
+        let url = URL(string:fullURL)!
+        self.userImage?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+        
+        
+        lblUserName.text = Username
         scrollView.contentSize = CGSize(width:view.frame.width, height: 500)
         
         userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
@@ -271,61 +287,62 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
     
     @IBAction func btnCam(_ sender: Any) {
     
-    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
-                self.openCamera()
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { _ in
-                self.openGallary()
-            }))
-            
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-            
-            //If you want work actionsheet on ipad then you have to use popoverPresentationController to present the actionsheet, otherwise app will crash in iPad
-            switch UIDevice.current.userInterfaceIdiom {
-            case .pad:
-                alert.popoverPresentationController?.sourceView = sender as? UIView
-                alert.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
-                alert.popoverPresentationController?.permittedArrowDirections = .up
-            default:
-                break
-            }
-            
-            self.present(alert, animated: true, completion: nil)
-        }
-        //MARK: - Open the camera
-        func openCamera(){
-            if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera)){
-                imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                //If you dont want to edit the photo then you can set allowsEditing to false
-                imagePicker.allowsEditing = true
-                //imagePicker.delegate = self
-                self.present(imagePicker, animated: true, completion: nil)
-            }
-            else{
-                let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
+    let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
+            self.openCamera()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { _ in
+            self.openGallary()
+        }))
+        
+        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        
+        /*If you want work actionsheet on ipad
+         then you have to use popoverPresentationController to present the actionsheet,
+         otherwise app will crash on iPad */
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            alert.popoverPresentationController?.sourceView = sender as! UIView
+            alert.popoverPresentationController?.sourceRect = (sender as AnyObject).bounds
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+        default:
+            break
         }
         
-        //MARK: - Choose image from camera roll
-        
-        func openGallary(){
-            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            //If you dont want to edit the photo then you can set allowsEditing to false
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func openCamera()
+    {
+        if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
+        {
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = true
-        //    imagePicker.delegate = self
             self.present(imagePicker, animated: true, completion: nil)
         }
+        else
+        {
+            let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func openGallary()
+    {
+        imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+    }
 
-        func Edit_Img_API_Method() {
+
+       func Edit2_Img_API_Method() {
             // ShowLoader()
             let userID = UserDefaults.standard.string(forKey: "Save_User_ID")
             
             let dictionary: NSDictionary = [
-                "user_id" : userID
+                "user_id" : userID as Any
             ]
             
             
@@ -346,53 +363,62 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
                 if response is NSDictionary {
                     let statusCode = response?["error"] as? Int
                     let msg = response?["message"] as? String
+                    let resposeArr = response?["user_data"] as? NSDictionary
+
                     
-                  
-                    let img = response?["url"] as? String
-                    
-                    
-                    
-                    let kProfileImageUploadURL = "http://dnddemo.com/ebooks/api/v1/upload/"
-                    
-                    
-                    if statusCode == 0
-                    {
-                     
-                        let fullURL = kProfileImageUploadURL + img!
-                        
-                        
-                       let downloadURL = NSURL(string: fullURL)
-                        
-                    
-                        //}
-                        UserDefaults.standard.set(fullURL, forKey: "Save_User_Img")
-                        //self.Update_Profile_API_Method()
-                    }
-                    
-                    
-                   
-               
-                    
-                    
-                    if statusCode == 1 {
-                        //self.AlertVC(alertMsg:msg!)
-                    }
-                    //            else if statusCode == 0 {
-                    //                AJAlertController.initialization().showAlertWithOkButton(aStrMessage: msg!) { (index, title) in
-                    //                    if index == 0 {
-                    //                        let vc = self.storyboard?.instantiateViewController(withIdentifier: kHomeViewController) as! HomeViewController
-                    //                        self.navigationController?.pushViewController(vc, animated: true)
-                    //                    }
-                    //                }
-                    //            }
+                    self.AlertVC(alertMsg:msg!)
+                                if statusCode == 1 {
+                                                if resposeArr == nil || resposeArr?.count == 0 {
+                                                    self.AlertVC(alertMsg:"Data Not Found!")
+                                                }
+                                }
+                                                else {
+                               
+                               
+                                                 let imgUrlUser = resposeArr!["url"] as? String
+                                             
+                                    
+                                    // UserDefaults.standard.set(fullNameUser, forKey: "Save_User_Name")
+                                    
+                                    let fullURL = kImageUploadURL + imgUrlUser!
+                                    let url = URL(string:fullURL)!
+                                    self.Userimageurl = url
+                                    //imageView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+                
+                                   UserDefaults.standard.set(imgUrlUser, forKey: "Save_Img_url")
+                                    
+                                    
+                                    
+                              
                 }
+                }
+                
+                
             }, failure: {
                 error in
                 //self.HideLoader()
             })
         }
         
-
+    func AlertVC(alertMsg:String) {
+         
+         let alert = UIAlertController(title: alertMsg, message: nil, preferredStyle: .alert)
+         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+             switch action.style{
+             case .default:
+                 print("default")
+                 
+             case .cancel:
+                 print("cancel")
+                 
+             case .destructive:
+                 print("destructive")
+                 
+                 
+             }}))
+         
+         present(alert, animated: true, completion: nil)
+     }
     
     
     @IBAction func btnUpdate(_ sender: Any) {
@@ -400,7 +426,15 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
     }
     
     @IBAction func btnBack(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier:kUserInfoViewController ) as! UserInfoViewController
+        nextViewController.modalPresentationStyle = .overFullScreen
+        nextViewController.valueBtn = "2"
+        nextViewController.Userimageurl = Userimageurl
+        nextViewController.Username = lblUserName.text!
+        self.present(nextViewController, animated:true, completion:nil)
+        
 
     }
     
@@ -468,7 +502,6 @@ func UserInfoUpdate_API_Method() {
     
     let parameters: NSDictionary = [
        "user_id": userId,
-       "password ": " ",
        "email" :  txtUpdateEmail.text as Any,
        "publisher_type" : btnVAlue,
        "country": txtUpdateCountry.text as Any,
@@ -528,43 +561,23 @@ func UserInfoUpdate_API_Method() {
     
 }
 //MARK: - UIImagePickerControllerDelegate
-
 extension UserInfoUpdateViewController:  UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         
-        
-        
-  var selectedImage: UIImage?
-        if let editedImage = info["UIImagePickerControllerEditedImage"]   as? UIImage {
-            
-            selectedImage = editedImage
-           userImage.image=selectedImage
-             self.Edit_Img_API_Method()
-        } else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-            selectedImage = originalImage
-            userImage.image=selectedImage
-             self.Edit_Img_API_Method()
-            
-            
+        guard let selectedImage = info[.editedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-      
         
-        
-//        if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage{
-//            self.userImage.image = editedImage
-//        }
-        
-        //Dismiss the UIImagePicker after selection
+        self.userImage.image = selectedImage
+        self.Edit2_Img_API_Method()
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.isNavigationBarHidden = false
-        
         self.dismiss(animated: true, completion: nil)
-       
-}
+    }
 }
     /*
     // MARK: - Navigation

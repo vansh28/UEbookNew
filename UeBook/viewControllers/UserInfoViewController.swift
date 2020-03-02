@@ -8,7 +8,7 @@
 
 import UIKit
 import SCLAlertView
-
+import Foundation
 
 class UserInfoViewController: UIViewController , UITableViewDataSource , UITableViewDelegate{
     
@@ -32,9 +32,20 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
     @IBOutlet weak var btnSendingRequest: UIButton!
     
     @IBOutlet weak var btnEmail: UIButton!
-    
+    var Userimageurl :URL!
+    var Username = String()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userImage.layer.cornerRadius = userImage.frame.width/2
+        
+        let Imageurl = UserDefaults.standard.string(forKey: "Save_Img_url")!
+        let fullURL = kImageUploadURL + Imageurl
+        let url = URL(string:fullURL)!
+        self.Userimageurl = url
+        self.userImage?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+         lblUserName.text = Username
        userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
        if valueBtn == "1"
             {
@@ -166,14 +177,20 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kUserInfoUpdateViewController) as! UserInfoUpdateViewController
                        //nextViewController.valueNote = "1"
-
+        nextViewController.Userimageurl = Userimageurl
+        nextViewController.Username = lblUserName.text!
         nextViewController.modalPresentationStyle = .overFullScreen
         self.present(nextViewController, animated:true, completion:nil)
         
     }
     
     @IBAction func btnBack(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier:kSWRevealViewController ) as! SWRevealViewController
+        nextViewController.indexValue = "0"
+        nextViewController.modalPresentationStyle = .overFullScreen
+       
+        self.present(nextViewController, animated:true, completion:nil)
     }
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -197,22 +214,25 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
                 cell?.starView.rating = double!
         }
 
-                let escapedString = userBookDetailArr[indexPath.row].thubm_image
-                       let fullURL = "http://" + escapedString!
-                       let url = URL(string:fullURL)!
-
-
+                let escapedString2 = userBookDetailArr[indexPath.row].thubm_image
+        
+                       let imageFullUrl = "http://" + escapedString2!
+        print(imageFullUrl)
+        
+        let imageURl = URL(string:"http://" + escapedString2!)!
+                        
+                      print(imageURl)
                        DispatchQueue.main.async {
 
 
-                           self.getData(from: url) { data, response, error in
+                           self.getData(from: imageURl) { data, response, error in
                                guard let data = data, error == nil else {
                                    cell?.imgView?.image = #imageLiteral(resourceName: "noimage")
                                    return }
-                               print(response?.suggestedFilename ?? url.lastPathComponent)
+                               print(response?.suggestedFilename ?? imageURl.lastPathComponent)
                                print("Download Finished")
                                DispatchQueue.main.async() {
-                                cell?.imgView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
+                                cell?.imgView?.af_setImage(withURL:imageURl , placeholderImage:#imageLiteral(resourceName: "noimage") )
 
                                    //cell?.imgView?.image = UIImage(data: data)
 
