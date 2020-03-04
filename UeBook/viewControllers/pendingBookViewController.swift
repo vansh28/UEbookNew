@@ -25,6 +25,7 @@ class pendingBookViewController: UIViewController ,UITableViewDataSource ,UITabl
     
     
     @IBAction func btnBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return arrpending.count
@@ -73,7 +74,8 @@ class pendingBookViewController: UIViewController ,UITableViewDataSource ,UITabl
 
                     BookdetailVC.bookId = bookId!
                     print(BookdetailVC.bookId)
-                   
+                    BookdetailVC.modalPresentationStyle = .overFullScreen
+
                     self.present(BookdetailVC, animated: true, completion: nil)
                     
                     print("You selected cell #\(indexPath.item)!")
@@ -97,7 +99,7 @@ class pendingBookViewController: UIViewController ,UITableViewDataSource ,UITabl
               ]
             
 
-            ServiceManager.POSTServerRequest(String(kgetAllbookMarkByUser), andParameters: parameters as! [String : String], success: {response in
+            ServiceManager.POSTServerRequest(String(kgetPendingBookByUser), andParameters: parameters as! [String : String], success: {response in
                 print("response-------",response!)
                 //self.HideLoader()
                 if response is NSDictionary {

@@ -622,8 +622,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1804"
-            endingLineNumber = "1804"
+            startingLineNumber = "2329"
+            endingLineNumber = "2329"
             landmarkName = "addQuestionTextField()"
             landmarkType = "7">
          </BreakpointContent>
@@ -990,10 +990,10 @@
             filePath = "UeBook/Common/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "application(_:didDiscardSceneSessions:)"
-            landmarkType = "7">
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1006,8 +1006,8 @@
             filePath = "UeBook/Common/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>
@@ -1166,8 +1166,8 @@
             filePath = "UeBook/Common/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1182,8 +1182,8 @@
             filePath = "UeBook/Common/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "404"
-            endingLineNumber = "404"
+            startingLineNumber = "420"
+            endingLineNumber = "420"
             landmarkName = "userNotificationCenter(_:willPresent:withCompletionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1214,8 +1214,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1438,8 +1438,8 @@
             filePath = "UeBook/viewControllers/UserInfoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "SendFrndReq_API_Method()"
             landmarkType = "7">
             <Locations>
@@ -1454,8 +1454,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "374"
-                  endingLineNumber = "374"
+                  startingLineNumber = "399"
+                  endingLineNumber = "399"
                   offsetFromSymbolStart = "904">
                </Location>
                <Location
@@ -1469,8 +1469,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "375"
-                  endingLineNumber = "375"
+                  startingLineNumber = "400"
+                  endingLineNumber = "400"
                   offsetFromSymbolStart = "149">
                </Location>
             </Locations>
@@ -1486,8 +1486,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1888"
-            endingLineNumber = "1888"
+            startingLineNumber = "2413"
+            endingLineNumber = "2413"
             landmarkName = "handleTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1502,8 +1502,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "665"
-            endingLineNumber = "665"
+            startingLineNumber = "811"
+            endingLineNumber = "811"
             landmarkName = "UploadBookViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1518,8 +1518,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "641"
-            endingLineNumber = "641"
+            startingLineNumber = "787"
+            endingLineNumber = "787"
             landmarkName = "Categries_API_Method()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1550,8 +1550,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "750"
-            endingLineNumber = "750"
+            startingLineNumber = "896"
+            endingLineNumber = "896"
             landmarkName = "UploadBookViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1694,8 +1694,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
             landmarkName = "documentPicker(_:didPickDocumentsAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1774,8 +1774,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "551"
-            endingLineNumber = "551"
+            startingLineNumber = "697"
+            endingLineNumber = "697"
             landmarkName = "btnRecodView(_:)"
             landmarkType = "7">
             <Locations>
@@ -1790,8 +1790,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UploadBookViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "551"
-                  endingLineNumber = "551"
+                  startingLineNumber = "697"
+                  endingLineNumber = "697"
                   offsetFromSymbolStart = "85">
                </Location>
                <Location
@@ -1805,8 +1805,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UploadBookViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "551"
-                  endingLineNumber = "551"
+                  startingLineNumber = "697"
+                  endingLineNumber = "697"
                   offsetFromSymbolStart = "505">
                </Location>
             </Locations>
@@ -1838,8 +1838,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1835"
-            endingLineNumber = "1835"
+            startingLineNumber = "2360"
+            endingLineNumber = "2360"
             landmarkName = "json(from:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1854,8 +1854,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "948"
-            endingLineNumber = "948"
+            startingLineNumber = "1103"
+            endingLineNumber = "1103"
             landmarkName = "AddNewBook_API_Method(ServerFlag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1870,8 +1870,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "989"
-            endingLineNumber = "989"
+            startingLineNumber = "1146"
+            endingLineNumber = "1146"
             landmarkName = "AddNewBook_API_Method(ServerFlag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1886,8 +1886,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1027"
-            endingLineNumber = "1027"
+            startingLineNumber = "1185"
+            endingLineNumber = "1185"
             landmarkName = "AddNewBook_API_Method(ServerFlag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1902,41 +1902,9 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1066"
-            endingLineNumber = "1066"
+            startingLineNumber = "1225"
+            endingLineNumber = "1225"
             landmarkName = "AddNewBook_API_Method(ServerFlag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "04EE2A1A-CC12-465C-A981-A23E59548EB2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/UserInfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CC8AE848-FA9F-4D17-81DF-32548F1A0C53"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/UserInfoViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1966,42 +1934,10 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
-            landmarkName = "UserInfo_API_Method()"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
+            landmarkName = "Edit2_Img_API_Method()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2044BD51-1DCD-441A-8267-64719F131AF3 - 79dc8b6a91a62617"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "UeBook.UserInfoUpdateViewController.UserInfo_API_Method() -&gt; ()"
-                  moduleName = "UeBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "449"
-                  endingLineNumber = "449"
-                  offsetFromSymbolStart = "222">
-               </Location>
-               <Location
-                  uuid = "2044BD51-1DCD-441A-8267-64719F131AF3 - 70d2ab8cee8058d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.UserInfoUpdateViewController.UserInfo_API_Method() -&gt; ()"
-                  moduleName = "UeBook"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "450"
-                  endingLineNumber = "450"
-                  offsetFromSymbolStart = "151">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2046,10 +1982,42 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
-            landmarkName = "Edit2_Img_API_Method()"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "btnCam(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F955E1A6-C3E9-49C8-8826-E9D44CF272C0 - 55204c69b5131064"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.UserInfoUpdateViewController.btnCam(Any) -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "424"
+                  endingLineNumber = "424"
+                  offsetFromSymbolStart = "443">
+               </Location>
+               <Location
+                  uuid = "F955E1A6-C3E9-49C8-8826-E9D44CF272C0 - 7d26f45fb5be3ea7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in UeBook.UserInfoUpdateViewController.btnCam(Any) -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "425"
+                  endingLineNumber = "425"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2062,9 +2030,9 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
-            landmarkName = "Edit2_Img_API_Method()"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
+            landmarkName = "btnCam(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2094,9 +2062,9 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "572"
-            endingLineNumber = "572"
-            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            startingLineNumber = "613"
+            endingLineNumber = "613"
+            landmarkName = "UserInfo_API_Method()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2110,8 +2078,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
+            startingLineNumber = "405"
+            endingLineNumber = "405"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
             <Locations>
@@ -2126,8 +2094,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/EditProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "388"
-                  endingLineNumber = "388"
+                  startingLineNumber = "405"
+                  endingLineNumber = "405"
                   offsetFromSymbolStart = "579">
                </Location>
                <Location
@@ -2141,8 +2109,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/EditProfileViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "411"
+                  endingLineNumber = "411"
                   offsetFromSymbolStart = "270">
                </Location>
             </Locations>
@@ -2158,8 +2126,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2174,8 +2142,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2190,9 +2158,9 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
-            landmarkName = "Edit2_Img_API_Method()"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "numberOfComponents(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2206,9 +2174,9 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
-            landmarkName = "Edit2_Img_API_Method()"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "numberOfComponents(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2238,8 +2206,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2254,8 +2222,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2270,8 +2238,8 @@
             filePath = "UeBook/viewControllers/EditProfileViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "Edit_Img_API_Methods()"
             landmarkType = "7">
          </BreakpointContent>
@@ -2318,8 +2286,8 @@
             filePath = "UeBook/viewControllers/UploadBookViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1310"
-            endingLineNumber = "1310"
+            startingLineNumber = "1474"
+            endingLineNumber = "1474"
             landmarkName = "SaveImageLater_API_Method(ServerFlag:)"
             landmarkType = "7">
             <Locations>
@@ -2334,9 +2302,9 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UploadBookViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1310"
-                  endingLineNumber = "1310"
-                  offsetFromSymbolStart = "7194">
+                  startingLineNumber = "1474"
+                  endingLineNumber = "1474"
+                  offsetFromSymbolStart = "7422">
                </Location>
                <Location
                   uuid = "6AB6448F-1C04-4CAC-B867-BE2319670C56 - 3dfea446aa501b99"
@@ -2349,8 +2317,8 @@
                   urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UploadBookViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1313"
-                  endingLineNumber = "1313"
+                  startingLineNumber = "1477"
+                  endingLineNumber = "1477"
                   offsetFromSymbolStart = "203">
                </Location>
             </Locations>
@@ -2366,42 +2334,473 @@
             filePath = "UeBook/viewControllers/UserInfoUpdateViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "514"
-            endingLineNumber = "514"
-            landmarkName = "UserInfoUpdate_API_Method()"
+            startingLineNumber = "555"
+            endingLineNumber = "555"
+            landmarkName = "btnUpdate(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "390B0FDD-35FA-4F7D-9B42-DC08F32172AB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1056"
+            endingLineNumber = "1056"
+            landmarkName = "btnSvaeForLater(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6962F5EF-F25A-4BDB-83D8-42C933E5B08D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1457"
+            endingLineNumber = "1457"
+            landmarkName = "SaveImageLater_API_Method(ServerFlag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "60203029-9876-4908-B8CC-1B92DE7EE5AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1472"
+            endingLineNumber = "1472"
+            landmarkName = "SaveImageLater_API_Method(ServerFlag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56501BA2-FF0B-42A5-B426-FDE933F96FFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/pendingBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "PendingBook_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAD63855-6FAF-471F-8CAC-B8598C65777C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E0097E9-CCFA-45E8-B08A-7E23F53F097F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1818"
+            endingLineNumber = "1818"
+            landmarkName = "SaveImageLaterByBookId_API_Method(ServerFlag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1A69F68B-1821-4477-BE74-DA75A1E4EA4B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1099"
+            endingLineNumber = "1099"
+            landmarkName = "AddNewBook_API_Method(ServerFlag:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8E6B4D50-92E3-4578-957B-45491977C224"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Service Manger/ServiceManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "POSTServerRequestWithImage1(_:andParameters:andImage:imagePara:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C1C4FE0-2BB1-44FA-9231-2DF6A4B99051"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UploadBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "getBookById_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "127533EC-BB87-4BD2-A322-0CB866CC0507"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Model/Repository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "127533EC-BB87-4BD2-A322-0CB866CC0507 - bf06626a62d50c1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.AllPendingBookByBookID.__allocating_init() -&gt; UeBook.AllPendingBookByBookID"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/Model/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "127533EC-BB87-4BD2-A322-0CB866CC0507 - fba9094d3f1e8974"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.AllPendingBookByBookID.init() -&gt; UeBook.AllPendingBookByBookID"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/Model/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "160"
+                  endingLineNumber = "160"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  uuid = "127533EC-BB87-4BD2-A322-0CB866CC0507 - 9db520359fe24444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.AllPendingBookByBookID.__deallocating_deinit"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/Model/Repository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B0D51F70-C27B-4FAF-A577-748F5568F4C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37B4FA4D-C077-43C1-B6F2-877E3B287A38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A59E7A94-993D-43E4-83F7-67A8CD09E728"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A77F27C1-4834-4783-B8C7-55AD70A1368F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9774F6A5-8F8C-4E03-8F68-B432549C2F9D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FD2F414-4952-4AB6-8A2C-4D0069E1F55A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PendingRequestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "requestConfim(Status:friendId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A01C3804-3E3C-4065-AD45-E7FC81D25537"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PendingRequestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "requestConfim(Status:friendId:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "6A47D61A-6AA5-4573-8E41-41A8D25FB558 - 9be9cf4bc2dcb16e"
+                  uuid = "A01C3804-3E3C-4065-AD45-E7FC81D25537 - eaa2c3669deec7a6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "UeBook.UserInfoUpdateViewController.UserInfoUpdate_API_Method() -&gt; ()"
+                  symbolName = "UeBook.PendingRequestViewController.requestConfim(Status: Swift.String, friendId: Swift.String) -&gt; ()"
                   moduleName = "UeBook"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PendingRequestViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "514"
-                  endingLineNumber = "514"
-                  offsetFromSymbolStart = "1791">
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "406">
                </Location>
                <Location
-                  uuid = "6A47D61A-6AA5-4573-8E41-41A8D25FB558 - fe984affef2523b9"
+                  uuid = "A01C3804-3E3C-4065-AD45-E7FC81D25537 - 3dacec880b5c9db4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.UserInfoUpdateViewController.UserInfoUpdate_API_Method() -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.PendingRequestViewController.requestConfim(Status: Swift.String, friendId: Swift.String) -&gt; ()"
                   moduleName = "UeBook"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoUpdateViewController.swift"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PendingRequestViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "515"
-                  endingLineNumber = "515"
-                  offsetFromSymbolStart = "151">
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "175">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B3CB5859-0669-4DD4-A641-B54B2B4D337D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PendingRequestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "requestConfim(Status:friendId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CE9D358-7B24-4364-91D7-EE3E5041B2D7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PendingRequestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "requestConfim(Status:friendId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04E3767D-542D-4B0F-A8D7-AE8A788C919A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
+            landmarkName = "GetFollowStatus_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "284EC27B-6B4B-4A0E-90D1-6491262AD4E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
+            landmarkName = "GetFollowStatus_API_Method()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "284EC27B-6B4B-4A0E-90D1-6491262AD4E3 - ac1bfc62840da244"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.UserInfoViewController.GetFollowStatus_API_Method() -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "427"
+                  endingLineNumber = "427"
+                  offsetFromSymbolStart = "902">
+               </Location>
+               <Location
+                  uuid = "284EC27B-6B4B-4A0E-90D1-6491262AD4E3 - 3537c7866c9a84c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in UeBook.UserInfoViewController.GetFollowStatus_API_Method() -&gt; ()"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/UserInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "428"
+                  endingLineNumber = "428"
+                  offsetFromSymbolStart = "163">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C46843D-55E0-488A-B180-5295F868F525"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/UserInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "GetFollowStatus_API_Method()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

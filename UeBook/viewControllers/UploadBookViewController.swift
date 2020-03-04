@@ -12,6 +12,7 @@ import AVKit
 import AVFoundation
 import MobileCoreServices
 import Alamofire
+import NVActivityIndicatorView
 
 import UIKit
 import PDFKit
@@ -22,7 +23,8 @@ import PDFKit
 
 class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFieldDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource  , AVAudioRecorderDelegate, AVAudioPlayerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UIDocumentInteractionControllerDelegate {
     
-    
+    var activityIndicator : NVActivityIndicatorView!
+
     var bookId = String()
     //viedo upload
     var imagePickerController = UIImagePickerController()
@@ -114,10 +116,32 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     //
     
     @IBOutlet weak var lblQuestionCount: UILabel!
+    var statusvalue = String()
     
     @IBOutlet weak var txtEnterQuestion: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if bookId == ""
+        {
+            statusvalue =  "0"
+        }
+        else
+        {
+            statusvalue = "1"
+            getBookById_API_Method()
+        }
+            let xAxis = self.view.center.x // or use (view.frame.size.width / 2) // or use (faqWebView.frame.size.width / 2)
+                  let yAxis = self.view.center.y
+                  
+        
+        let frame = CGRect(x: xAxis, y: yAxis, width: 45, height: 45)
+
+                  self.activityIndicator = NVActivityIndicatorView(frame:frame)
+                  self.activityIndicator.type = . ballClipRotateMultiple // add your type
+                  self.activityIndicator.color = UIColor.red // add your color
+
+                  self.view.addSubview(self.activityIndicator) // or use  webView.addSubview(activityIndicator)
         Categries_API_Method()
         viewimage.isHidden = true
         imagePicker.delegate = self
@@ -167,18 +191,11 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         txtRecommended.layer.borderColor = UIColor.gray.cgColor
         txtRecommended.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
         
-        
-        
-        
-        
         textViewBookDescription.layer.cornerRadius = 5
         let myColor = UIColor.gray
         textViewBookDescription.layer.borderColor = myColor.cgColor
         textViewBookDescription.layer.borderWidth = 1.0
         textViewBookDescription.layer.sublayerTransform = CATransform3DMakeTranslation(10, 0, 0)
-        
-        
-        
         
         txtbookTitle.placeholder="Book Title"
         lblBookTitle.isHidden = true
@@ -195,13 +212,143 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         imageUploadCoverImage.addGestureRecognizer(tap)
         self.imageUploadCoverImage.isUserInteractionEnabled = true
-        
-        
-        
-        
-        
-        
     }
+    
+    func getBookById_API_Method() {
+        
+        
+        
+        let parameters: NSDictionary = [
+            "books_id":bookId]
+        
+        
+        ServiceManager.POSTServerRequest(String(kgetBookById), andParameters: parameters as! [String : String], success: {response in
+            print("response-------",response!)
+            //self.HideLoader()
+            if response is NSDictionary {
+                // let statusCode = response?["error"] as? Int
+                let message = response? ["message"] as? String
+                let pendingBookData = response?["response"] as? NSDictionary
+                
+                
+                if pendingBookData == nil || pendingBookData?.count == 0 {
+                }
+                else {
+                    let objPendingBook = AllPendingBookByBookID(getAllPendingBook: pendingBookData!)
+                    if objPendingBook.book_title == nil
+                    {
+                        self.txtbookTitle.text = ""
+                    }
+                    else{
+                        self.txtbookTitle.text =  objPendingBook.book_title
+                        
+                    }
+                    
+                    if objPendingBook.book_description == nil
+                    {
+                        
+                    }
+                    else{
+                        self.textViewBookDescription.text = objPendingBook.book_description
+                        self.textViewBookDescription.textColor = UIColor.black
+                    }
+                    if objPendingBook.author_name == nil
+                    {
+                        
+                        
+                    }
+                    else{
+                        self.txtBookAuthor.text = objPendingBook.author_name
+                    }
+                    
+                    
+                    if objPendingBook.category_id == nil
+                    {
+                    }
+                    else{
+                        for i in 0 ..< self.CategiesArr.count {
+                            
+                            if self.CategiesArr[i].id == objPendingBook.category_id
+                            {
+                                self.txtRecommended.text = self.CategiesArr[i].category_name
+                                self.category_Id = objPendingBook.category_id!
+                            }
+                        }
+                        
+                        
+                    }
+                    
+                    if objPendingBook.thubm_image == nil
+                    {
+                        
+                    }
+                    else{
+                        self.lblbookAssigmant.frame =  CGRect(x: self.lblbookAssigmant.frame.origin.x, y: 400, width: self.lblbookAssigmant.frame.width, height: self.lblbookAssigmant.frame.size.height)
+                        self.btnAdd.frame = CGRect(x: self.btnAdd.frame.origin.x, y: 400, width: self.btnAdd.frame.size.width, height: self.lblbookAssigmant.frame.size.height)
+                        self.imageUploadCoverImage.isHidden = false
+                        self.viewimage.isHidden = false
+                        // self.imageUploadCoverImage.image = selectedImage
+                        
+                        
+                        let escapedString = objPendingBook.thubm_image
+                        let fullURL = kImageUploadURLBooks + escapedString!
+                        let url = URL(string:fullURL)!
+                        
+                        DispatchQueue.main.async {
+                            
+                            self.imageUploadCoverImage?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "noimage") )
+                            self.coverImage = self.imageUploadCoverImage.image
+                        }
+//                        if objPendingBook.audio_url == nil
+//                        {
+//                            
+//                        }
+//                        else{
+//                            self.btnImageLink.isHidden = false
+//                            self.btnImageLink.setTitle(objPendingBook.audio_url, for: .normal)
+//                            
+//                            let stringUrl = "https://" + objPendingBook.audio_url!
+//                            let videoURL = URL(string:stringUrl)
+//                            self.filePathG = videoURL
+//                        }
+//                        
+//                        if objPendingBook.video_url == nil
+//                        {
+//                            
+//                        }
+//                        else{
+//                            self.btnImageLink.isHidden = false
+//                            self.btnImageLink.setTitle(objPendingBook.video_url, for: .normal)
+//                            
+//                            let stringUrl = "https://" + objPendingBook.video_url!
+//                            let videoURL = URL(string:stringUrl)
+//                            self.filePathG = videoURL
+//                        }
+//                        
+//                        if objPendingBook.pdf_url == nil
+//                        {
+//                            
+//                        }
+//                        else{
+//                            self.btnPdfLink.isHidden = false
+//                            self.btnPdfLink.setTitle(objPendingBook.pdf_url, for: .normal)
+//                            
+//                            let stringUrl = "https://" + objPendingBook.pdf_url!
+//                            let videoURL = URL(string:stringUrl)
+//                            self.filePathG = videoURL
+//                        }
+//                        
+                    }
+                }
+                
+            }
+        }, failure: { error in
+            //self.HideLoader()
+        })
+    }
+    
+    
+    
     
     
     
@@ -262,8 +409,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
     
     //..............link.....................
     
-    @IBAction func btnSaveForLater(_ sender: Any) {
-    }
+    
     @IBAction func btnRecommended(_ sender: Any) {
         activeDataArray = strRecommmended
         pickerview()
@@ -896,10 +1042,18 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         }
         
         
+        if statusvalue == "0"
+        {
+            SaveImageLater_API_Method(ServerFlag: ServerRestFlag)
+        }
+        else
+        {
+            SaveImageLaterByBookId_API_Method(ServerFlag: ServerRestFlag)
+        }
         
         
         
-        SaveImageLater_API_Method(ServerFlag: ServerRestFlag)
+        
         
     }
     
@@ -925,7 +1079,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             print("\(String(describing: json(from:arrtextValue as Any)))")
             
         }
-        
+ 
+               self.activityIndicator.startAnimating()
         
         
         
@@ -940,6 +1095,375 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             "questiondata":   jsonstr,
             "isbn_number" :   "",
             "status" :   "1",
+            "book_id" :  bookId,
+            "cover_url" :""
+        ]
+        print (coverImage as Any)
+        
+        if ServerFlag == 1
+        {
+            ServiceManager.POSTServerRequestWithImage1(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        nextViewController.indexValue = "0"
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                 self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+        }
+            
+            
+            
+        else if ServerFlag == 2
+        {
+            ServiceManager.POSTServerRequestWithImage2(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath : filePathG!, viedoPara: "video_url",  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                 self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        else if ServerFlag == 3
+        {
+            ServiceManager.POSTServerRequestWithImage3(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileDocPath : fileDocPath!, docPara: "pdf_url",  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+            
+        else if ServerFlag == 4
+        {
+            ServiceManager.POSTServerRequestWithImage4(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileAudioPath : fileAudioPath!, AudioPara: "audio_url",  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+               self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        else if ServerFlag == 5
+        {
+            
+            
+            ServiceManager.POSTServerRequestWithImage5(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url", FileDocPath: fileDocPath!, docPara: "pdf_url",  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        else if ServerFlag == 6
+        {
+            
+            
+            ServiceManager.POSTServerRequestWithImage6(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                 self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        else if ServerFlag == 7
+        {
+            
+            
+            ServiceManager.POSTServerRequestWithImage7(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        else if ServerFlag == 8
+        {
+            
+            
+            ServiceManager.POSTServerRequestWithImage8(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath: filePathG!, viedoPara: "video_url",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+                
+                
+                print("response-------",response!)
+                //self.HideLoader()
+                if response is NSDictionary {
+                    let statusCode = response?["error"] as? Int
+                    let message = response? ["message"] as? String
+                    let AllCategoryList = response?["data"] as? NSDictionary
+                    
+                    print("response-------",response!)
+                    
+                    
+                    if statusCode == 0
+                    {
+                        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+                        
+                        nextViewController.modalPresentationStyle = .overFullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                        
+                    else
+                    {
+                        
+                    }
+                    
+                    
+                    
+                    
+                }
+            }, failure: { error in
+                 self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()
+            })
+            
+        }
+        
+    }
+    
+    func SaveImageLater_API_Method(ServerFlag : Int) {
+        let    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
+        print (listOfTextFields.count)
+        for i in 0 ... listOfTextFields.count {
+            
+            if i < listOfTextFields.count && !(listOfTextFields[i].text!.isEmpty) {
+                arrtextValue.append(String(listOfTextFields[i].text!))
+            }
+            
+        }
+        var jsonstr = String()
+        if (arrtextValue.isEmpty)
+        {
+            jsonstr = ""
+        }
+        else
+        {
+            jsonstr = json(from: arrtextValue as Any)!
+            print("\(String(describing: json(from:arrtextValue as Any)))")
+            
+        }
+        
+        
+        
+        self.activityIndicator.startAnimating()
+                     
+        let dictionary: NSDictionary = [
+            "user_id"    : userId,
+            "category_id" : category_Id,
+            "book_title"  : txtbookTitle.text as Any,
+            "book_description" : textViewBookDescription.text as Any,
+            "author_name"  :  txtBookAuthor.text as Any,
+            "audio_url"   :   "",
+            "questiondata":   jsonstr,
+            "isbn_number" :   "",
+            "status" :   "0",
             "book_id" :  "",
             "cover_url" :""
         ]
@@ -980,8 +1504,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
         }
             
             
@@ -1020,8 +1544,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 3
@@ -1058,8 +1582,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
             
@@ -1097,8 +1621,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 5
@@ -1137,8 +1661,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 6
@@ -1177,8 +1701,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 7
@@ -1217,8 +1741,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 8
@@ -1257,14 +1781,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         
+        
+        
     }
-    
-    func SaveImageLater_API_Method(ServerFlag : Int) {
+    func SaveImageLaterByBookId_API_Method(ServerFlag : Int) {
         let    userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
         print (listOfTextFields.count)
         for i in 0 ... listOfTextFields.count {
@@ -1299,8 +1824,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             "audio_url"   :   "",
             "questiondata":   jsonstr,
             "isbn_number" :   "",
-            "status" :   "1",
-            "book_id" :  "",
+            "status" :   "0",
+            "book_id" :  bookId,
             "cover_url" :""
         ]
         print (coverImage as Any)
@@ -1340,15 +1865,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
         }
             
             
             
         else if ServerFlag == 2
         {
-            ServiceManager.POSTServerRequestWithImage2(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath : filePathG!, viedoPara: "video_url",  success: {response in
+            ServiceManager.POSTServerRequestWithImage2(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath : filePathG!, viedoPara: "video_url",  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1380,13 +1905,13 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 3
         {
-            ServiceManager.POSTServerRequestWithImage3(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileDocPath : fileDocPath!, docPara: "pdf_url",  success: {response in
+            ServiceManager.POSTServerRequestWithImage3(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileDocPath : fileDocPath!, docPara: "pdf_url",  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1418,14 +1943,14 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
             
         else if ServerFlag == 4
         {
-            ServiceManager.POSTServerRequestWithImage4(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileAudioPath : fileAudioPath!, AudioPara: "audio_url",  success: {response in
+            ServiceManager.POSTServerRequestWithImage4(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", FileAudioPath : fileAudioPath!, AudioPara: "audio_url",  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1457,15 +1982,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 5
         {
             
             
-            ServiceManager.POSTServerRequestWithImage5(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url", FileDocPath: fileDocPath!, docPara: "pdf_url",  success: {response in
+            ServiceManager.POSTServerRequestWithImage5(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url", FileDocPath: fileDocPath!, docPara: "pdf_url",  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1497,15 +2022,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 6
         {
             
             
-            ServiceManager.POSTServerRequestWithImage6(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+            ServiceManager.POSTServerRequestWithImage6(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",filePath: filePathG!, viedoPara: "video_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1537,15 +2062,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 7
         {
             
             
-            ServiceManager.POSTServerRequestWithImage7(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+            ServiceManager.POSTServerRequestWithImage7(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1577,15 +2102,15 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         else if ServerFlag == 8
         {
             
             
-            ServiceManager.POSTServerRequestWithImage8(kaddNewBook, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath: filePathG!, viedoPara: "video_url",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
+            ServiceManager.POSTServerRequestWithImage8(kupdateBookByid, andParameters: dictionary as! [String : String], andImage:coverImage , imagePara: "thubm_image", filePath: filePathG!, viedoPara: "video_url",FileDocPath : fileDocPath!, docPara: "pdf_url",FileAudioPath : fileAudioPath!, AudioPara: "audio_url" ,  success: {response in
                 
                 
                 print("response-------",response!)
@@ -1617,8 +2142,8 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
                     
                 }
             }, failure: { error in
-                //self.HideLoader()
-            })
+                self.activityIndicator.stopAnimating()
+                               self.activityIndicator.removeFromSuperview()            })
             
         }
         
@@ -1664,7 +2189,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
             
         }
     }
-
+    
     
     private func openImgPicker() {
         imagePickerController.sourceType = .savedPhotosAlbum
@@ -1672,7 +2197,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         imagePickerController.mediaTypes = ["public.movie"]
         present(imagePickerController, animated: true, completion: nil)
     }
-
+    
     fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
         return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})}
     
@@ -1807,7 +2332,7 @@ class UploadBookViewController: UIViewController ,UIScrollViewDelegate,UITextFie
         
         addQuestionTextField()
     }
-
+    
     class TextField: UITextField {
         
         let padding = UIEdgeInsets(top:5, left: 5, bottom: 0, right: 5)
@@ -1966,7 +2491,7 @@ extension UploadBookViewController:  UIImagePickerControllerDelegate, UINavigati
             imageUploadCoverImage.isHidden = false
             viewimage.isHidden = false
             // self.imageUploadCoverImage.image = selectedImage
-            coverImage = selectedImage
+           coverImage = selectedImage
             self.imageUploadCoverImage.image = coverImage
             print (imageUploadCoverImage.image as Any)
         }
@@ -1989,7 +2514,7 @@ extension UploadBookViewController:  UIImagePickerControllerDelegate, UINavigati
                 
                 let asset2 = AVURLAsset.init(url: url)
                 
-       
+                
                 
                 print(filePath1)
                 

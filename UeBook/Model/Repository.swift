@@ -156,6 +156,46 @@ class AllBookDescription : NSObject {
     }
 }
 
+
+class AllPendingBookByBookID : NSObject {
+   
+
+       var audio_url: String?
+       var author_name: String?
+       var book_description: String?
+       var book_image: String?
+       var book_title: String?
+       var category_id: String?
+       var id: String?
+       var pdf_url: String?
+       var thubm_image: String?
+       var user_id: String?
+        var video_url: String?
+
+
+    init(getAllPendingBook: NSDictionary) {
+       
+   
+        self.audio_url             =   getAllPendingBook["audio_url"] as? String
+        self.author_name           =   getAllPendingBook["author_name"] as? String
+        self.book_description      =   getAllPendingBook["book_description"] as? String
+        self.book_image            =   getAllPendingBook["book_image"] as? String
+        self.book_title            =   getAllPendingBook["book_title"] as? String
+        self.category_id           =   getAllPendingBook["category_id"] as? String
+        self.id                    =   getAllPendingBook["id"] as? String
+        self.pdf_url               =   getAllPendingBook["pdf_url"] as? String
+        self.thubm_image           =   getAllPendingBook["thubm_image"] as? String
+        self.user_id               =   getAllPendingBook["user_id"] as? String
+        self.video_url             =   getAllPendingBook["video_url"] as? String
+
+       
+    }
+}
+
+
+
+
+
 class Allreview {
     var ReviewId: String?
     var comment: String?
@@ -301,6 +341,11 @@ class AllUserDetails : NSObject {
         
         }
 }
+
+
+
+
+
 
 class  AllUserBooklist{
     var id: String?

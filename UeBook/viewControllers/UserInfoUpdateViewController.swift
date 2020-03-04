@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPickerViewDelegate , UIPickerViewDataSource   {
+class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPickerViewDelegate , UIPickerViewDataSource ,CLLocationManagerDelegate  {
     
     
-    
+    private let locationManager = LocationManager()
+    var locationManager1: CLLocationManager!
+
     @IBOutlet weak var userImage: UIImageView!
     var imagePicker = UIImagePickerController()
     
@@ -66,6 +70,11 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
         userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
 
         UserInfo_API_Method()
+            locationManager1 = CLLocationManager()
+            locationManager1.delegate = self
+            locationManager1.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager1.requestAlwaysAuthorization()
+            locationManager1.startUpdatingLocation()
         
         txtChangeUserName.delegate = self
               txtChangeUserName.placeholder="Change Username"
@@ -108,6 +117,126 @@ class UserInfoUpdateViewController: UIViewController ,UITextFieldDelegate, UIPic
 
         // Do any additional setup after loading the view.
     }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+        {
+
+            let location = locations.last! as CLLocation
+
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+
+            var loctionValue = String()
+            let geoCoder = CLGeocoder()
+            
+
+           // let location = CLLocation(latitude: l, longitude: touchCoordinate.longitude)
+            geoCoder.reverseGeocodeLocation(location, completionHandler:
+                {
+                    placemarks, error -> Void in
+                    var output = ""
+
+                    // Place details
+                    guard let placeMark = placemarks?.first else { return }
+                    // Location name
+//                    if let locationName = placeMark.locality {
+//                        print(locationName)
+//                        output = locationName
+//                    }
+//
+//                    // Street address
+//                    if let street = placeMark.thoroughfare {
+//                        print(street)
+//                         output = street
+//                    }
+//                    // City
+//                    if let city = placeMark.subAdministrativeArea {
+//                        print(city)
+//                        output = output + city
+//                    }
+//                    // Zip code
+//                    if let zip = placeMark.isoCountryCode {
+//                        print(zip)
+//                         output = output + zip
+//                    }
+                    // Country
+//                  if let thoroughfare = placeMark.thoroughfare {
+//
+//                       output = thoroughfare
+//                    print(thoroughfare)
+//
+//                  }
+//                    if let subThoroughfare = placeMark.subThoroughfare {
+//
+//                         output = subThoroughfare
+//                        print(subThoroughfare)
+//
+//
+//                    }
+//                    if let subAdministrativeArea = placeMark.subAdministrativeArea {
+//
+//                         output = subAdministrativeArea
+//                        print(subAdministrativeArea)
+//                    }
+                    if let name = placeMark.name {
+                      
+                         output = name
+                        print(name)
+                        
+                    }
+                    if let thoroughfare = placeMark.subAdministrativeArea {
+                                      
+                                         output = output + "," +  thoroughfare
+                                      print(thoroughfare)
+                                        
+                                    }
+                    if let subLocality = placeMark.subLocality {
+                                          
+                                           output = output + "," + subLocality
+                                          
+                                      }
+                    if let locality = placeMark.locality {
+                       // print(country)
+                         output = output + "," + locality
+                        
+                    }
+                    if let country = placeMark.country {
+                                        //  print(country)
+                                           output = output + "," + country
+                                          
+                                      }
+                   // address = addresses.get(0).getFeatureName()+" - "+addresses.get(0).getSubLocality()+" , "+addresses.get(0).getLocality()
+                    self.lblLoction.text = output
+                    
+                    
+                    
+                  //    address = addresses.get(0).getFeatureName()+" - "+addresses.get(0).getSubLocality()+" , "+addresses.get(0).getLocality()
+            })
+    //                guard let exposedLocation = self.locationManager.exposedLocation else {
+    //                           print("*** Error in \(#function): exposedLocation is nil")
+    //                           return
+    //                       }
+    //
+    //                       self.locationManager.getPlace(for: exposedLocation) { placemark in
+    //                           guard let placemark = placemark else { return }
+    //
+    //                           var output = ""
+    //                           if let country = placemark.country {
+    //                               output = output + country
+    //
+    //                           }
+    //                           if let state = placemark.administrativeArea {
+    //                               output = output + state
+    //                           }
+    //                           if let town = placemark.locality {
+    //                               output = output + town
+    //                           }
+    //
+    //                        self.lblLoction.text = output
+    //                       }
+    //        //
+          
+            
+        }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {    //delegate method
                 //activeDataArray = []

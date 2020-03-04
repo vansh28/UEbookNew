@@ -86,6 +86,8 @@
 		84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */; };
 		84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */; };
 		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
+		84BCEA2E240E73F000C5F300 /* PendingRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */; };
+		84BCEA30240E742400C5F300 /* pendingRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */; };
 		84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */; };
 		84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D85C822407916300B51CC2 /* MediaPlayer.framework */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
@@ -199,6 +201,8 @@
 		84BBBDE723F3C1FA003985C2 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		84BBBDE923F3C22B003985C2 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
+		84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRequestViewController.swift; sourceTree = "<group>"; };
+		84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pendingRequestTableViewCell.swift; sourceTree = "<group>"; };
 		84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookTableViewCell.swift; sourceTree = "<group>"; };
 		84D85C822407916300B51CC2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84DF09E223E164300025FAA9 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +377,7 @@
 				84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */,
 				84331D88240648E200D9BC3D /* Main.storyboard */,
 				8432D82E240D33DB003CAC6C /* pendingBookViewController.swift */,
+				84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */,
 				8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */,
 				8432D830240D340F003CAC6C /* PendingBookTableViewCell.swift */,
+				84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				8443273523E2A6C900AC233B /* BookDescriptionViewController.swift in Sources */,
 				843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */,
 				84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */,
+				84BCEA2E240E73F000C5F300 /* PendingRequestViewController.swift in Sources */,
 				840D67DE23D035CC00D0DAF6 /* ChatUserDetail.swift in Sources */,
 				84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */,
 				8432D82D240D06FD003CAC6C /* LocationManager.swift in Sources */,
@@ -763,6 +770,7 @@
 				843E8A4623F16CDB0061AAF8 /* BookMarkTableViewCell.swift in Sources */,
 				842B752823D18E14007E5C4A /* Viedo&ChatViewController.swift in Sources */,
 				847FA8D523F6C4DE00BBB988 /* HelpUSViewController.swift in Sources */,
+				84BCEA30240E742400C5F300 /* pendingRequestTableViewCell.swift in Sources */,
 				84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */,
 				8401CECA23FA5A15008BC88B /* ForgotPasswordViewController.swift in Sources */,
 				843EB3E723D57C84006773EF /* ChatUsTableViewCell.swift in Sources */,
@@ -941,7 +949,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				"DEBUG_INFORMATION_FORMAT[sdk=*]" = dwarf;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
@@ -970,7 +978,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

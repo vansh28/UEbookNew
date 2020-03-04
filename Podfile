@@ -13,6 +13,7 @@ target 'UeBook' do
       pod 'FBSDKShareKit/Swift'
       pod 'GoogleSignIn'
       pod 'AZTabBar'
+      
       pod 'SDWebImage/WebP'
       pod 'AlamofireImage', '~> 3.3'
       pod 'HCSStarRatingView', '~> 1.5'

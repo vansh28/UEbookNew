@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Description</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Description</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Description</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -103,6 +97,12 @@
 	<string>Play using while you are hiking</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to take pictures.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Description</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Description</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Description</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app requires to access your microphone to record video with your voice send via chat</string>
 	<key>NSPhotoLibraryUsageDescription</key>

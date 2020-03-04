@@ -226,8 +226,13 @@ class LoginViewController: UIViewController , UITextFieldDelegate ,GIDSignInDele
                                         let publisher_type = resposeArr!["publisher_type"] as? String
                                     
                                         
+                                        
+                                        let defaults = UserDefaults.standard
+                                        defaults.set(true, forKey: "isUserLoggedIn")
+                                        defaults.synchronize()
 
-                        UserDefaults.standard.set(1, forKey: "Save_User_Login")
+                       
+                                   //     UserDefaults.standard.set(1, forKey: "Save_User_Login")
                                         if #available(iOS 13.0, *) {
                                             //AppDelegate.methodForLogin()
                                         } else {

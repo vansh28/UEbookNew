@@ -130,32 +130,37 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
                 // Place details
                 guard let placeMark = placemarks?.first else { return }
                 // Location name
-                if let locationName = placeMark.locality {
-                    print(locationName)
-                    output = locationName
-                }
-                // Street address
-                if let street = placeMark.thoroughfare {
-                    print(street)
-                     output = street
-                }
-                // City
-                if let city = placeMark.subAdministrativeArea {
-                    print(city)
-                    output = output + city
-                }
-                // Zip code
-                if let zip = placeMark.isoCountryCode {
-                    print(zip)
-                     output = output + zip
-                }
-                // Country
-                if let country = placeMark.country {
-                    print(country)
-                     output = output + country
-                    
-                }
-                self.lblLoction.text = output
+                          if let name = placeMark.name {
+                            
+                               output = name
+                              print(name)
+                              
+                          }
+                          if let thoroughfare = placeMark.subAdministrativeArea {
+                                            
+                                               output = output + "," +  thoroughfare
+                                            print(thoroughfare)
+                                              
+                                          }
+                          if let subLocality = placeMark.subLocality {
+                                                
+                                                 output = output + "," + subLocality
+                                                
+                                            }
+                          if let locality = placeMark.locality {
+                             // print(country)
+                               output = output + "," + locality
+                              
+                          }
+                          if let country = placeMark.country {
+                                              //  print(country)
+                                                 output = output + "," + country
+                                                
+                                            }
+                         // address = addresses.get(0).getFeatureName()+" - "+addresses.get(0).getSubLocality()+" , "+addresses.get(0).getLocality()
+                          self.lblLoction.text = output
+                          
+                
                 
         })
 //                guard let exposedLocation = self.locationManager.exposedLocation else {
@@ -279,6 +284,7 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
         
         if(valueRow == "1")
         {
+             //valueRow = "2"
             if indexPath.row == 0
             {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -292,7 +298,7 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
                 
             else if indexPath.row == 1
             {
-                valueRow = "2"
+               // valueRow = "2"
                 globelImageArr = CompanyInfoImageArr
                 globelArr = CompanyInfoArr
                 tableView.reloadData()
@@ -300,7 +306,7 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
             }
             else if indexPath.row == 2
             {
-                valueRow = "2"
+              //  valueRow = "2"
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier:kUploadBookViewController ) as! UploadBookViewController
                 nextViewController.modalPresentationStyle = .overFullScreen
@@ -317,11 +323,20 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
             }
             else if indexPath.row == 4
             {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier:kPendingRequestViewController ) as! PendingRequestViewController
+                nextViewController.modalPresentationStyle = .overFullScreen
                 
+                self.present(nextViewController, animated:true, completion:nil)
+               
             }
             else if indexPath.row == 5
             {
-                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                               let nextViewController = storyBoard.instantiateViewController(withIdentifier:kpendingBookViewController ) as! pendingBookViewController
+                               nextViewController.modalPresentationStyle = .overFullScreen
+                               
+                               self.present(nextViewController, animated:true, completion:nil)
             }
             else  if indexPath.row == 6
             {
@@ -338,8 +353,10 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
         }
         else if (valueRow == "2")
         {
+            //valueRow = "1"
             if (indexPath.row == 1)
             {
+                
                 let textToShareValue = "This is UeBook app"
                 // let youtuber = textToShareValue
                 

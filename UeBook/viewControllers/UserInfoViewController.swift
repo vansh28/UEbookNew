@@ -108,8 +108,33 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
         else if flag == 2        {
             btnSendingRequest.isUserInteractionEnabled = false
         }
-       
+       else if flag == 3        {
+                 //btnSendingRequest.isUserInteractionEnabled = false
+                 AlertVC(alertMsg:"Your Friend Request is  rejected")
+            
+             }
     }
+    
+    func AlertVC(alertMsg:String) {
+        
+        let alert = UIAlertController(title: alertMsg, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     
     @IBAction func btnEmail(_ sender: Any) {
         let appearance = SCLAlertView.SCLAppearance(
@@ -443,6 +468,7 @@ class UserInfoViewController: UIViewController , UITableViewDataSource , UITable
                                         {
                                             self.btnSendingRequest.setTitle("REJECT", for: .normal)
                                             self.btnSendingRequest.isUserInteractionEnabled = true
+                                            self.flag = 3
 
                                             
                                         }

@@ -135,16 +135,19 @@ class BookMarkViewController: UIViewController , UITableViewDelegate, UITableVie
                             
                             self.tableView.isHidden = true
                            
-                            let label = UILabel(frame: CGRect(x: 120, y:self.tableView.frame.size.height/2, width: 200, height: 21))
-                            let color = UIColor(red: (95.0/255), green: (122.0/255), blue: (134.0/255), alpha: 1.0)
-
-                            label.textColor = color
-                          //  label.backgroundColor = .gray
-                            label.font = UIFont.boldSystemFont(ofSize:20.0)
-                           // label.center = CGPoint(x: 160, y: 285)
-                            label.textAlignment = .left
-                            label.text = "No Bookmark List"
-                            self.view.addSubview(label)
+//                            let label = UILabel(frame: CGRect(x: 120, y:self.tableView.frame.size.height/2, width: 200, height: 21))
+//                            let color = UIColor(red: (95.0/255), green: (122.0/255), blue: (134.0/255), alpha: 1.0)
+//
+//                            label.textColor = color
+//                          //  label.backgroundColor = .gray
+//                            label.font = UIFont.boldSystemFont(ofSize:20.0)
+//                           // label.center = CGPoint(x: 160, y: 285)
+//                            label.textAlignment = .left
+//                            label.text = "No Bookmark List"
+//                            self.view.addSubview(label)
+//
+                            
+                            self.AlertVC(alertMsg:"No Bookmark List")
                 
                          }
                           else
@@ -170,7 +173,25 @@ class BookMarkViewController: UIViewController , UITableViewDelegate, UITableVie
             //self.HideLoader()
         })
     }
-    
+    func AlertVC(alertMsg:String) {
+        
+        let alert = UIAlertController(title: alertMsg, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     /*
     // MARK: - Navigation
