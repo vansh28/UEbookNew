@@ -541,3 +541,50 @@ struct SendAnswerData {
     }
 }
 
+
+class  AllGroupList{
+    var id: String?
+    var name: String?
+    var group_image: String?
+    
+    var userid: String?
+    var groupuserid: String?
+    var status: String?
+    
+    var created_at: String?
+    var updated_at: String?
+    var type: String?
+    
+    var removegroupuserid: String?
+    var messagetype: String?
+    var message: String?
+    
+    var unreadmessage: String?
+    var groupid: String?
+    var message_date: String?
+        
+init(getAllGroupList: NSDictionary) {
+    
+    self.id                            = getAllGroupList["id"] as? String
+    self.name                       = getAllGroupList["name"] as? String
+    self.group_image                        = getAllGroupList["group_image"] as? String
+    
+    self.userid                  = getAllGroupList["userid"] as? String
+    self.groupuserid                           = getAllGroupList["groupuserid"] as? String
+    self.status                     = getAllGroupList["status"] as? String
+    
+    self.created_at                  = getAllGroupList["created_at"] as? String
+    self.updated_at                           = getAllGroupList["updated_at"] as? String
+    self.type                     = getAllGroupList["type"] as? String
+    
+    self.removegroupuserid                  = getAllGroupList["removegroupuserid"] as? String
+    self.messagetype                           = getAllGroupList["messagetype"] as? String
+    self.message                           = getAllGroupList["message"] as? String
+    
+    self.unreadmessage                  = getAllGroupList["unreadmessage"] as? String
+    self.groupid                           = getAllGroupList["groupid"] as? String
+    self.message_date                           = getAllGroupList["message_date"] as? String
+    }
+}
+
+

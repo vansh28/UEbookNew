@@ -59,12 +59,16 @@
 		843E8A4423F12EFD0061AAF8 /* SWRevealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8A4323F12EFD0061AAF8 /* SWRevealViewController.swift */; };
 		843E8A4623F16CDB0061AAF8 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8A4523F16CDB0061AAF8 /* BookMarkTableViewCell.swift */; };
 		843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8A4723F18DFC0061AAF8 /* NotepadTableViewCell.swift */; };
+		843E9FA8240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */; };
+		843E9FAA240FC503002B1E4E /* ChatHistortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */; };
+		843E9FAC240FC517002B1E4E /* GroupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */; };
+		843E9FAF240FC821002B1E4E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FAE240FC821002B1E4E /* TabView.swift */; };
+		843E9FB1240FC846002B1E4E /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FB0240FC846002B1E4E /* ViewPager.swift */; };
+		843E9FB3240FC85B002B1E4E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FB2240FC85B002B1E4E /* Utils.swift */; };
+		843E9FB5240FE21C002B1E4E /* GroupChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FB4240FE21C002B1E4E /* GroupChatTableViewCell.swift */; };
 		843EB3E523D57C13006773EF /* ChatUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EB3E423D57C13006773EF /* ChatUSViewController.swift */; };
 		843EB3E723D57C84006773EF /* ChatUsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EB3E623D57C84006773EF /* ChatUsTableViewCell.swift */; };
 		8443273523E2A6C900AC233B /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443273423E2A6C900AC233B /* BookDescriptionViewController.swift */; };
-		84471CEA23DEA9B600F6F1F9 /*  ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CE923DEA9B600F6F1F9 /*  ViewPager.swift */; };
-		84471CEF23DEAAC100F6F1F9 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CEE23DEAAC100F6F1F9 /* TabView.swift */; };
-		84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CF023DEAB1D00F6F1F9 /* Utils.swift */; };
 		84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */; };
 		8456CD8823DAB44800155540 /* ImagePAgingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */; };
 		847FA8D123F6777B00BBB988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */; };
@@ -171,12 +175,16 @@
 		843E8A4323F12EFD0061AAF8 /* SWRevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRevealViewController.swift; sourceTree = "<group>"; };
 		843E8A4523F16CDB0061AAF8 /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		843E8A4723F18DFC0061AAF8 /* NotepadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadTableViewCell.swift; sourceTree = "<group>"; };
+		843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTapViewPagerViewController.swift; sourceTree = "<group>"; };
+		843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistortyViewController.swift; sourceTree = "<group>"; };
+		843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatViewController.swift; sourceTree = "<group>"; };
+		843E9FAE240FC821002B1E4E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		843E9FB0240FC846002B1E4E /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
+		843E9FB2240FC85B002B1E4E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		843E9FB4240FE21C002B1E4E /* GroupChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatTableViewCell.swift; sourceTree = "<group>"; };
 		843EB3E423D57C13006773EF /* ChatUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUSViewController.swift; sourceTree = "<group>"; };
 		843EB3E623D57C84006773EF /* ChatUsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUsTableViewCell.swift; sourceTree = "<group>"; };
 		8443273423E2A6C900AC233B /* BookDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionViewController.swift; sourceTree = "<group>"; };
-		84471CE923DEA9B600F6F1F9 /*  ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ViewPager.swift"; sourceTree = "<group>"; };
-		84471CEE23DEAAC100F6F1F9 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
-		84471CF023DEAB1D00F6F1F9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewController.swift; sourceTree = "<group>"; };
 		844860D223E7E56C00BA48CD /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePAgingViewController.swift; sourceTree = "<group>"; };
@@ -339,14 +347,13 @@
 		842B752E23D1D65B007E5C4A /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				843E9F93240FA570002B1E4E /* ChatviewController */,
 				843C793923E43AF3002641AA /* View */,
 				843C793623E3F25B002641AA /* TableCell */,
-				84471CEB23DEAA8500F6F1F9 /* TapView */,
 				8415F97823D97682001D84BE /* HomePage */,
 				8403AC3923D70996008F3A4C /* ContactList */,
 				842B752C23D1CFC7007E5C4A /* RecivecallViewController.swift */,
 				842B752F23D1D69D007E5C4A /* ViedoCallReciveViewController.swift */,
-				843EB3E423D57C13006773EF /* ChatUSViewController.swift */,
 				842B753323D1DC96007E5C4A /* call-recieve.gif */,
 				842B06E223D6CF840062162A /* ChatDesinViewController.swift */,
 				842B06E423D6D0DE0062162A /* cellCollectionViewCell.swift */,
@@ -396,6 +403,7 @@
 				8409E9D3240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift */,
 				8432D830240D340F003CAC6C /* PendingBookTableViewCell.swift */,
 				84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */,
+				843E9FB4240FE21C002B1E4E /* GroupChatTableViewCell.swift */,
 			);
 			path = TableCell;
 			sourceTree = "<group>";
@@ -410,14 +418,26 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		84471CEB23DEAA8500F6F1F9 /* TapView */ = {
+		843E9F93240FA570002B1E4E /* ChatviewController */ = {
 			isa = PBXGroup;
 			children = (
-				84471CE923DEA9B600F6F1F9 /*  ViewPager.swift */,
-				84471CEE23DEAAC100F6F1F9 /* TabView.swift */,
-				84471CF023DEAB1D00F6F1F9 /* Utils.swift */,
+				843E9FAD240FC7F5002B1E4E /* PagerTabLibary */,
+				843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */,
+				843EB3E423D57C13006773EF /* ChatUSViewController.swift */,
+				843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */,
+				843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */,
 			);
-			path = TapView;
+			path = ChatviewController;
+			sourceTree = "<group>";
+		};
+		843E9FAD240FC7F5002B1E4E /* PagerTabLibary */ = {
+			isa = PBXGroup;
+			children = (
+				843E9FAE240FC821002B1E4E /* TabView.swift */,
+				843E9FB0240FC846002B1E4E /* ViewPager.swift */,
+				843E9FB2240FC85B002B1E4E /* Utils.swift */,
+			);
+			path = PagerTabLibary;
 			sourceTree = "<group>";
 		};
 		84A5687823E9748D0027888B /* Common */ = {
@@ -706,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8415F97A23D976B8001D84BE /* HomeCollectionViewCell.swift in Sources */,
+				843E9FB1240FC846002B1E4E /* ViewPager.swift in Sources */,
 				843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */,
 				840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */,
 				8403C57F24050440008BD334 /* SelfSizedTableView.swift in Sources */,
@@ -717,7 +738,6 @@
 				84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */,
 				84BCEA2E240E73F000C5F300 /* PendingRequestViewController.swift in Sources */,
 				840D67DE23D035CC00D0DAF6 /* ChatUserDetail.swift in Sources */,
-				84471CF123DEAB1D00F6F1F9 /* Utils.swift in Sources */,
 				8432D82D240D06FD003CAC6C /* LocationManager.swift in Sources */,
 				842B06E323D6CF840062162A /* ChatDesinViewController.swift in Sources */,
 				8415F97723D97082001D84BE /* HomeViewController.swift in Sources */,
@@ -725,6 +745,7 @@
 				842B752B23D1C8D4007E5C4A /* CallReciveViewController.swift in Sources */,
 				842B753223D1DC24007E5C4A /* iOSDevCenters+GIF.swift in Sources */,
 				8432D831240D340F003CAC6C /* PendingBookTableViewCell.swift in Sources */,
+				843E9FAC240FC517002B1E4E /* GroupChatViewController.swift in Sources */,
 				84B8B28D23D5BFA80062B8B9 /* Spinner.swift in Sources */,
 				840D67DC23D035CC00D0DAF6 /* SceneDelegate.swift in Sources */,
 				842B752D23D1CFC7007E5C4A /* RecivecallViewController.swift in Sources */,
@@ -732,9 +753,9 @@
 				842B06E523D6D0DE0062162A /* cellCollectionViewCell.swift in Sources */,
 				8409E9D2240550AE00FDBDC7 /* BookAssignmentViewController.swift in Sources */,
 				84B8B28F23D5BFF60062B8B9 /* BaseCells.swift in Sources */,
+				843E9FB5240FE21C002B1E4E /* GroupChatTableViewCell.swift in Sources */,
 				843E8A4423F12EFD0061AAF8 /* SWRevealViewController.swift in Sources */,
 				843D8A6223EAD6E600E3365E /* Response.swift in Sources */,
-				84471CEF23DEAAC100F6F1F9 /* TabView.swift in Sources */,
 				84B8B28A23D5BF580062B8B9 /* Chat.swift in Sources */,
 				8432D82F240D33DB003CAC6C /* pendingBookViewController.swift in Sources */,
 				84F29DD02408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift in Sources */,
@@ -752,19 +773,22 @@
 				84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */,
 				843E8A3E23F129400061AAF8 /* CategoriesViewController.swift in Sources */,
 				84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */,
+				843E9FB3240FC85B002B1E4E /* Utils.swift in Sources */,
 				8403AC3623D6F403008F3A4C /* Constant.swift in Sources */,
 				843E8A3C23F129210061AAF8 /* BookMarkViewController.swift in Sources */,
 				84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */,
 				8415F97523D96478001D84BE /* RoundedView.swift in Sources */,
 				847FA8D323F6B71700BBB988 /* ContactUSViewController.swift in Sources */,
-				84471CEA23DEA9B600F6F1F9 /*  ViewPager.swift in Sources */,
+				843E9FA8240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift in Sources */,
 				8410BC1C23F2CE9200A2390D /* EditUserProfileTableViewCell.swift in Sources */,
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
 				84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */,
 				84A5687523E973E70027888B /* LoginViewController.swift in Sources */,
 				8409E9D4240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift in Sources */,
+				843E9FAA240FC503002B1E4E /* ChatHistortyViewController.swift in Sources */,
 				843C793B23E43B11002641AA /* StarsView.swift in Sources */,
 				8415F97C23D9A661001D84BE /* UploadBookViewController.swift in Sources */,
+				843E9FAF240FC821002B1E4E /* TabView.swift in Sources */,
 				84B8B29323D5C0760062B8B9 /* ChatCell.swift in Sources */,
 				84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */,
 				843E8A4623F16CDB0061AAF8 /* BookMarkTableViewCell.swift in Sources */,

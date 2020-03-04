@@ -57,6 +57,14 @@ let kgetPendingBookByUser                =     kBaseUrl +     "getPendingBookByU
 let kgetBookById                         =     kBaseUrl +     "getBookById"
 let kgetAllRequestbyUser                 =     kBaseUrl +     "getAllRequestbyUser"
 let kacceptedRequest                     =     kBaseUrl +     "acceptedRequest"
+
+
+// chating api
+
+let kgroupList                           =      kBaseUrl + "groupList"
+let kgetGroupChatLists                   =      kBaseUrl  + "getGroupChatLists"
+
+
 //Idenfier
 
 let kBookDescriptionViewController        =     "BookDescriptionViewController"
@@ -87,3 +95,6 @@ let kRecordingViewController              =     "RecordingViewController"
 let kImageZoomInZoomOutViewController     =      "ImageZoomInZoomOutViewController"
 let kpendingBookViewController            = "pendingBookViewController"
 let kPendingRequestViewController         =  "PendingRequestViewController"
+let kChatHistortyViewController           = "ChatHistortyViewController"
+let kChatTapViewPagerViewController       =  "ChatTapViewPagerViewController"
+let kGroupChatViewController              = "GroupChatViewController"
