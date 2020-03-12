@@ -17,6 +17,9 @@ class ChatUsTableViewCell: UITableViewCell {
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     
+    
+    @IBOutlet weak var imageCamFileAudio: UIImageView!
+    @IBOutlet weak var lblUnReadMessageCount: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

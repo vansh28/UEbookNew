@@ -11,75 +11,36 @@ import UIKit
 class contactListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
 
 
-    var chatArr = [AllUserListClass]()
-
-    
-    lazy var faButton: UIButton = {
-        let button = UIButton(frame: .zero)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        let color = UIColor(red: (95.0/255), green: (122.0/255), blue: (134.0/255), alpha: 1.0)
-
-        button.backgroundColor = color
-       // button.setTitle("+", for: .normal)
-        button.setImage(#imageLiteral(resourceName: "chat"), for:.normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+    var chatArr = [AllUserContactListClass]()
 
 
-        button.addTarget(self, action: #selector(fabTapped(_:)), for: .touchUpInside)
-        return button
-    }()
-    
+    @IBOutlet weak var btnCreateGroup: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var userId = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
            userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
-               Register_API_Method()
+               PhoneContactlist_API_Method(userId: userId)
        
                tableView.rowHeight = 100
                tableView.delegate = self
                tableView.dataSource = self
                
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let view = UIApplication.shared.keyWindow {
-            view.addSubview(faButton)
-            setupButton()
-        }
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if let view = UIApplication.shared.keyWindow, faButton.isDescendant(of: view) {
-            faButton.removeFromSuperview()
-        }
-    }
-
-    @objc func fabTapped(_ button: UIButton) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                       let nextViewController = storyBoard.instantiateViewController(withIdentifier: kChatUSViewController) as! ChatUSViewController
-                       //nextViewController.valueNote = "1"
-
-        nextViewController.modalPresentationStyle = .overFullScreen
-        self.present(nextViewController, animated:true, completion:nil)
-        print("button tapped")
-    }
-    func setupButton() {
-            NSLayoutConstraint.activate([
-                faButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                faButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
-                faButton.heightAnchor.constraint(equalToConstant: 60),
-                faButton.widthAnchor.constraint(equalToConstant: 60)
-                ])
-            faButton.layer.cornerRadius = 30
-            faButton.shadowOpacity = 0.5
-            faButton.layer.masksToBounds = true
-    //        faButton.layer.borderColor = UIColor.lightGray.cgColor
-    //        faButton.layer.borderWidth = 4
-        }
     
+    @IBAction func btnCreateGroup(_ sender: Any) {
+                    let CreateGroupVC = self.storyboard?.instantiateViewController(withIdentifier: kCreateGroupViewController) as! CreateGroupViewController
+
+                    
+                    CreateGroupVC.modalPresentationStyle = .overFullScreen
+
+                    self.present(CreateGroupVC, animated: true, completion: nil)
+                    
+    }
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -100,22 +61,17 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
         
         cell?.userName.text = chatArr[indexPath.row].name
         cell?.userPublisherType.text = chatArr[indexPath.row].publisher_type
-        DispatchQueue.main.async {
-                           
-            
-            self.getData(from: url) { data, response, error in
-            guard let data = data, error == nil else {
-                cell?.imageView?.image = #imageLiteral(resourceName: "scam_dum.png")
-                return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                
-                cell?.imageView?.image = UIImage(data: data)
-            
-                }
-            }
-        }
+                 
+                 cell?.userImageView.layer.cornerRadius = (cell?.userImageView.frame.height)!/2
+                 
+             
+                 
+                 DispatchQueue.main.async {
+                     cell?.userImageView?.af_setImage(withURL:url , placeholderImage:#imageLiteral(resourceName: "user_default") )
+                     
+                     
+                 }
+        
         return cell!
         
     }
@@ -128,12 +84,13 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
-    func Register_API_Method()
+    func PhoneContactlist_API_Method(userId: String)
     {
        
 
         let dictionary: NSDictionary = [
-            "user_id" : userId
+            "user_id" : userId,
+            "is_all_users_list":"No"
             
         ]
         ServiceManager.POSTServerRequest(String(kuser_list), andParameters: dictionary as! [String : String], success: {response in
@@ -159,7 +116,7 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
 
                     for dataCategory in userList! {
                         
-                        self.chatArr.append(AllUserListClass(getAllUserListData: dataCategory as! NSDictionary))
+                        self.chatArr.append(AllUserContactListClass(getAllUserListData: dataCategory as! NSDictionary))
                     }
                     self.tableView.reloadData()
                 }

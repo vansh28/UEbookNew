@@ -8,6 +8,8 @@
 
 import UIKit
 import AlamofireImage
+import AVFoundation
+
 
 class HomeViewController: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource {
     
@@ -143,8 +145,15 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
     }
     
    
-    
+ 
     @IBAction func btnChat(_ sender: Any) {
+        let BookdetailVC = self.storyboard?.instantiateViewController(withIdentifier: kChatTapViewPagerViewController) as! ChatTapViewPagerViewController
+
+               
+                BookdetailVC.modalPresentationStyle = .overFullScreen
+
+        //        self.navigationController?.pushViewController(BookdetailVC, animated: true)
+                self.present(BookdetailVC, animated: true, completion: nil)
     }
     
     

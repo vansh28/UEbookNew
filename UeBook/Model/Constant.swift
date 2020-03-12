@@ -17,6 +17,8 @@ let kBaseUrl                           =  "http://dnddemo.com/ebooks/api/v1/"
 let kCreateUser                          =     kBaseUrl +  "createUser"
 let kUserLogin                           =     kBaseUrl +  "userLogin"
 
+let kChatTextBackColor                  =     UIColor(red: 229/255, green: 253/255, blue: 201/255, alpha: 1)
+
 
 
 
@@ -63,6 +65,7 @@ let kacceptedRequest                     =     kBaseUrl +     "acceptedRequest"
 
 let kgroupList                           =      kBaseUrl + "groupList"
 let kgetGroupChatLists                   =      kBaseUrl  + "getGroupChatLists"
+let kaddEditGroups                       =      kBaseUrl  + "addEditGroups"
 
 
 //Idenfier
@@ -82,9 +85,7 @@ let kUserInfoViewController               =    "UserInfoViewController"
 let kUserInfoUpdateViewController         =    "UserInfoUpdateViewController"
 let kBooksByTypesViewController           =    "BooksByTypesViewController"
 let kUploadBookViewController             =    "UploadBookViewController"
-let kcontactListViewController            =    "contactListViewController"
 let kHelpUSViewController                 =    "HelpUSViewController"
-let kContactUSViewController              =    "ContactUSViewController"
 let kForgotPasswordViewController         =    "ForgotPasswordViewController"
 let kReadBookViewController               =    "ReadBookViewController"
 let kChatUSViewController                 =    "ChatUSViewController"
@@ -95,6 +96,23 @@ let kRecordingViewController              =     "RecordingViewController"
 let kImageZoomInZoomOutViewController     =      "ImageZoomInZoomOutViewController"
 let kpendingBookViewController            = "pendingBookViewController"
 let kPendingRequestViewController         =  "PendingRequestViewController"
+
+//Chating View Controller
 let kChatHistortyViewController           = "ChatHistortyViewController"
 let kChatTapViewPagerViewController       =  "ChatTapViewPagerViewController"
 let kGroupChatViewController              = "GroupChatViewController"
+let kContactUSViewController              =    "ContactUSViewController"
+
+let kTelephoneBookViewController          = "TelephoneBookViewController"
+let kContactListTapViewPagerViewController = "ContactListTapViewPagerViewController"
+let kcontactListViewController            =    "contactListViewController"
+let kCreateGroupViewController            =     "CreateGroupViewController"
+let kPopUpViewController                  =    "PopUpViewController"
+//......................................................//
+let kMESSAGE_TEXT             =            "text"
+let kMESSAGE_EMOJI            =            "emoji"
+let kMESSAGE_PHOTO            =            "image"
+let kMESSAGE_VIDEO            =            "video"
+let kMESSAGE_AUDIO            =            "audio"
+let kMESSAGE_LOCATION         =            "location"
+let kMESSAGE_DocFile          =            "docfile"

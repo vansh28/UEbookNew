@@ -32,30 +32,33 @@ var navController : UINavigationController?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-           let defaults = UserDefaults.standard
-           let isUserLoggedIn = defaults.bool(forKey: "isUserLoggedIn")
-
-           if(!isUserLoggedIn) {
-               self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: kLoginViewController)
-           } else {
-            
-            
-        let vc = SWRevealViewController()
-             let navigationController = UINavigationController(rootViewController: vc)
-             self.window?.rootViewController = navigationController
-
-//               self.window?.rootViewController = storyboard.instantiateInitialViewController()
-//            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: kSWRevealViewController) as! SWRevealViewController
+      //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        
+        
+                
+               
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //
-//                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                                         let objViewController = storyboard.instantiateViewController(withIdentifier: kSWRevealViewController) as? SWRevealViewController
-//                                         let loginNav = UINavigationController(rootViewController: objViewController!)
-//                                         self.window?.backgroundColor = UIColor.white
-//                                         self.window?.rootViewController = loginNav
+//           let defaults = UserDefaults.standard
+//           let isUserLoggedIn = defaults.bool(forKey: "isUserLoggedIn")
 //
-           }
+//           if(!isUserLoggedIn) {
+//               self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: kFirstPageViewController)
+//           } else {
+//            
+//            
+//                     self.window = UIWindow(frame: UIScreen.main.bounds)
+//
+//
+//                      let initialViewController = storyboard.instantiateViewController(withIdentifier: kSWRevealViewController)
+//
+//                        self.window?.rootViewController = initialViewController
+//                        self.window?.makeKeyAndVisible()
+//
+//                        return true
+//
+//           }
 
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
@@ -108,8 +111,7 @@ var navController : UINavigationController?
 //        else{
 //            self.methodForLogout()
 //        }
-        
-        
+       
    
         
         guard let launchOptions = launchOptions else { return false }
@@ -119,7 +121,8 @@ var navController : UINavigationController?
         
       
      }
-    
+ 
+
     
   //..................gmail And Google..........
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,

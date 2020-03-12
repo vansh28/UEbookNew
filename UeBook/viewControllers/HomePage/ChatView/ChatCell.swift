@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ChatCell: LKBaseCollectionViewCell {
     
@@ -65,8 +66,49 @@ class ChatCell: LKBaseCollectionViewCell {
                  }.resume()
          }
      }
- //
+    func thumbnail(path: String) -> UIImage {
+
+            let asset = AVURLAsset(url: URL(fileURLWithPath: path), options: nil)
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.appliesPreferredTrackTransform = true
+
+            var time: CMTime = asset.duration
+            time.value = CMTimeValue(0)
+            var actualTime = CMTimeMake(value: 0, timescale: 0)
+
+            if let cgImage = try? generator.copyCGImage(at: time, actualTime: &actualTime) {
+                return UIImage(cgImage: cgImage)
+            }
+
+            return UIImage()
+        }
+
+    func thumbnail2(url: URL) -> UIImage {
+            let asset = AVAsset(url: url) //2
+
+            //let asset = AVURLAsset(url: , options: nil)
+            let generator = AVAssetImageGenerator(asset: asset)
+            generator.appliesPreferredTrackTransform = true
+
+            var time: CMTime = asset.duration
+            time.value = CMTimeValue(0)
+            var actualTime = CMTimeMake(value: 0, timescale: 0)
+
+            if let cgImage = try? generator.copyCGImage(at: time, actualTime: &actualTime) {
+                return UIImage(cgImage: cgImage)
+            }
+
+            return UIImage()
+        }
     
+        //---------------------------------------------------------------------------------------------------------------------------------------------
+         func duration(path: String) -> Int {
+
+            let asset = AVURLAsset(url: URL(fileURLWithPath: path), options: nil)
+            return Int(round(CMTimeGetSeconds(asset.duration)))
+        }
+    
+
     
     func fetchProfileImage(from url: URL) {
         
@@ -92,6 +134,11 @@ class ChatCell: LKBaseCollectionViewCell {
                 }.resume()
         }
     }
+    
+    
+    
+    
+    
     
     static let grayBubbleImage = UIImage(named: "bubble_gray")!.resizableImage(withCapInsets: UIEdgeInsets(top: 22, left: 26, bottom: 22, right: 26)).withRenderingMode(.alwaysTemplate)
     static let blueBubbleImage = UIImage(named: "bubble_blue")!.resizableImage(withCapInsets: UIEdgeInsets(top: 22, left: 26, bottom: 22, right: 26)).withRenderingMode(.alwaysTemplate)

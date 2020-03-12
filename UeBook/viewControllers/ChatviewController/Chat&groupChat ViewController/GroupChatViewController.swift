@@ -13,6 +13,15 @@ class GroupChatViewController: UIViewController ,UITableViewDelegate,UITableView
     @IBOutlet weak var tableView: UITableView!
    var userId = String()
     var arrGroupChat = [AllGroupList]()
+    lazy var refreshControl: UIRefreshControl = {
+           let refreshControl = UIRefreshControl()
+           refreshControl.addTarget(self, action:
+                        #selector(ChatUSViewController.handleRefresh(_:)),
+                                    for: UIControl.Event.valueChanged)
+           refreshControl.tintColor = UIColor.red
+           
+           return refreshControl
+       }()
     override func viewDidLoad() {
         super.viewDidLoad()
         userId = UserDefaults.standard.string(forKey: "Save_User_ID")!
@@ -20,9 +29,18 @@ class GroupChatViewController: UIViewController ,UITableViewDelegate,UITableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 90
-
+        self.tableView.addSubview(self.refreshControl)
         // Do any additional setup after loading the view.
     }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        
+        GroupChat_API_Method(userId: userId)
+
+        self.tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        
                return arrGroupChat.count

@@ -344,6 +344,10 @@ class EditProfileViewController: UIViewController ,UITableViewDataSource, UITabl
             }
             else  if indexPath.row == 7
             {
+                let defaults = UserDefaults.standard
+                                                      defaults.set(false, forKey: "isUserLoggedIn")
+                                                      defaults.synchronize()
+
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: kFirstPageViewController) as! FirstPageViewController
                 nextViewController.modalPresentationStyle = .overFullScreen

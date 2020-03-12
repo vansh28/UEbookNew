@@ -46,6 +46,8 @@
 		84331D8A240648E200D9BC3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84331D88240648E200D9BC3D /* Main.storyboard */; };
 		843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */; };
 		843C793B23E43B11002641AA /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C793A23E43B11002641AA /* StarsView.swift */; };
+		843C8B992412164700965AB1 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C8B982412164700965AB1 /* CreateGroupViewController.swift */; };
+		843C8B9C241216E400965AB1 /* CreateGroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C8B9B241216E400965AB1 /* CreateGroupCollectionViewCell.swift */; };
 		843D8A5B23EABC2F00E3365E /* libPods-UeBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D8A5A23EABC2F00E3365E /* libPods-UeBook.a */; };
 		843D8A6223EAD6E600E3365E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D8A6123EAD6E600E3365E /* Response.swift */; };
 		843D8A6A23EAF78400E3365E /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843D8A6923EAF78400E3365E /* LocalAuthentication.framework */; };
@@ -60,7 +62,6 @@
 		843E8A4623F16CDB0061AAF8 /* BookMarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8A4523F16CDB0061AAF8 /* BookMarkTableViewCell.swift */; };
 		843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8A4723F18DFC0061AAF8 /* NotepadTableViewCell.swift */; };
 		843E9FA8240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */; };
-		843E9FAA240FC503002B1E4E /* ChatHistortyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */; };
 		843E9FAC240FC517002B1E4E /* GroupChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */; };
 		843E9FAF240FC821002B1E4E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FAE240FC821002B1E4E /* TabView.swift */; };
 		843E9FB1240FC846002B1E4E /* ViewPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E9FB0240FC846002B1E4E /* ViewPager.swift */; };
@@ -71,6 +72,7 @@
 		8443273523E2A6C900AC233B /* BookDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8443273423E2A6C900AC233B /* BookDescriptionViewController.swift */; };
 		84471CF323DEABE300F6F1F9 /* ReadBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */; };
 		8456CD8823DAB44800155540 /* ImagePAgingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */; };
+		84687A042416255D0013B229 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84687A032416255D0013B229 /* PopUpViewController.swift */; };
 		847FA8D123F6777B00BBB988 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */; };
 		847FA8D323F6B71700BBB988 /* ContactUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */; };
 		847FA8D523F6C4DE00BBB988 /* HelpUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */; };
@@ -80,6 +82,7 @@
 		84A568A223E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
 		84A568A323E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
 		84A568A423E97A810027888B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84A568A023E97A810027888B /* LaunchScreen.storyboard */; };
+		84B43FAF2418D0B50000235B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B43FAE2418D0B50000235B /* Video.swift */; };
 		84B8B28A23D5BF580062B8B9 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B28923D5BF580062B8B9 /* Chat.swift */; };
 		84B8B28D23D5BFA80062B8B9 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B28C23D5BFA80062B8B9 /* Spinner.swift */; };
 		84B8B28F23D5BFF60062B8B9 /* BaseCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B28E23D5BFF60062B8B9 /* BaseCells.swift */; };
@@ -92,6 +95,8 @@
 		84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */; };
 		84BCEA2E240E73F000C5F300 /* PendingRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */; };
 		84BCEA30240E742400C5F300 /* pendingRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */; };
+		84C1F5B62410F98A00D03A56 /* ContactListTapViewPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5B52410F98A00D03A56 /* ContactListTapViewPagerViewController.swift */; };
+		84C1F5BA2410F9C900D03A56 /* TelephoneBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C1F5B92410F9C900D03A56 /* TelephoneBookViewController.swift */; };
 		84CB4ED623FAA4BA00B750A0 /* ReadBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */; };
 		84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D85C822407916300B51CC2 /* MediaPlayer.framework */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
@@ -162,6 +167,8 @@
 		84331D89240648E200D9BC3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = UeBook/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		843C793723E3F292002641AA /* BookDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		843C793A23E43B11002641AA /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		843C8B982412164700965AB1 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		843C8B9B241216E400965AB1 /* CreateGroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		843D8A5A23EABC2F00E3365E /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843D8A6123EAD6E600E3365E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		843D8A6923EAF78400E3365E /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -175,8 +182,7 @@
 		843E8A4323F12EFD0061AAF8 /* SWRevealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWRevealViewController.swift; sourceTree = "<group>"; };
 		843E8A4523F16CDB0061AAF8 /* BookMarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableViewCell.swift; sourceTree = "<group>"; };
 		843E8A4723F18DFC0061AAF8 /* NotepadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotepadTableViewCell.swift; sourceTree = "<group>"; };
-		843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTapViewPagerViewController.swift; sourceTree = "<group>"; };
-		843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHistortyViewController.swift; sourceTree = "<group>"; };
+		843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatTapViewPagerViewController.swift; path = "../Chat&groupChat/ChatTapViewPagerViewController.swift"; sourceTree = "<group>"; };
 		843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatViewController.swift; sourceTree = "<group>"; };
 		843E9FAE240FC821002B1E4E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		843E9FB0240FC846002B1E4E /* ViewPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPager.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 		84471CF223DEABE300F6F1F9 /* ReadBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookViewController.swift; sourceTree = "<group>"; };
 		844860D223E7E56C00BA48CD /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8456CD8723DAB44800155540 /* ImagePAgingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePAgingViewController.swift; sourceTree = "<group>"; };
+		84687A032416255D0013B229 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		847FA8D023F6777B00BBB988 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		847FA8D223F6B71700BBB988 /* ContactUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUSViewController.swift; sourceTree = "<group>"; };
 		847FA8D423F6C4DE00BBB988 /* HelpUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpUSViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +202,7 @@
 		84A5687423E973E70027888B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84A5687623E974070027888B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		84A568A123E97A810027888B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84B43FAE2418D0B50000235B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		84B8B27C23D5A7050062B8B9 /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8B27E23D5A7650062B8B9 /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B8B28423D5B2980062B8B9 /* libPods-UeBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-UeBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,6 +219,8 @@
 		84BBBDEB23F3F83F003985C2 /* UserInfoUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoUpdateViewController.swift; sourceTree = "<group>"; };
 		84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingRequestViewController.swift; sourceTree = "<group>"; };
 		84BCEA2F240E742400C5F300 /* pendingRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pendingRequestTableViewCell.swift; sourceTree = "<group>"; };
+		84C1F5B52410F98A00D03A56 /* ContactListTapViewPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTapViewPagerViewController.swift; sourceTree = "<group>"; };
+		84C1F5B92410F9C900D03A56 /* TelephoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelephoneBookViewController.swift; sourceTree = "<group>"; };
 		84CB4ED523FAA4BA00B750A0 /* ReadBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadBookTableViewCell.swift; sourceTree = "<group>"; };
 		84D85C822407916300B51CC2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84DF09E223E164300025FAA9 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
@@ -265,7 +275,6 @@
 			isa = PBXGroup;
 			children = (
 				840D67DD23D035CC00D0DAF6 /* ChatUserDetail.swift */,
-				8403AC3A23D709CA008F3A4C /* contactListViewController.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -344,9 +353,22 @@
 			path = HomePage;
 			sourceTree = "<group>";
 		};
+		84204452241106FD005F3EB8 /* Chat&groupChat ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */,
+				843EB3E423D57C13006773EF /* ChatUSViewController.swift */,
+				843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */,
+				843C8B982412164700965AB1 /* CreateGroupViewController.swift */,
+			);
+			path = "Chat&groupChat ViewController";
+			sourceTree = "<group>";
+		};
 		842B752E23D1D65B007E5C4A /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84687A022416252E0013B229 /* PopViewController */,
+				843C8B9A241216B400965AB1 /* CollectionViewCell */,
 				843E9F93240FA570002B1E4E /* ChatviewController */,
 				843C793923E43AF3002641AA /* View */,
 				843C793623E3F25B002641AA /* TableCell */,
@@ -385,6 +407,7 @@
 				84331D88240648E200D9BC3D /* Main.storyboard */,
 				8432D82E240D33DB003CAC6C /* pendingBookViewController.swift */,
 				84BCEA2D240E73F000C5F300 /* PendingRequestViewController.swift */,
+				84B43FAE2418D0B50000235B /* Video.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -418,14 +441,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		843C8B9A241216B400965AB1 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				843C8B9B241216E400965AB1 /* CreateGroupCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		843E9F93240FA570002B1E4E /* ChatviewController */ = {
 			isa = PBXGroup;
 			children = (
+				84204452241106FD005F3EB8 /* Chat&groupChat ViewController */,
 				843E9FAD240FC7F5002B1E4E /* PagerTabLibary */,
-				843E9FA7240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift */,
-				843EB3E423D57C13006773EF /* ChatUSViewController.swift */,
-				843E9FA9240FC503002B1E4E /* ChatHistortyViewController.swift */,
-				843E9FAB240FC517002B1E4E /* GroupChatViewController.swift */,
+				84C1F5B22410F90C00D03A56 /* Contact List */,
 			);
 			path = ChatviewController;
 			sourceTree = "<group>";
@@ -438,6 +467,14 @@
 				843E9FB2240FC85B002B1E4E /* Utils.swift */,
 			);
 			path = PagerTabLibary;
+			sourceTree = "<group>";
+		};
+		84687A022416252E0013B229 /* PopViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84687A032416255D0013B229 /* PopUpViewController.swift */,
+			);
+			path = PopViewController;
 			sourceTree = "<group>";
 		};
 		84A5687823E9748D0027888B /* Common */ = {
@@ -481,6 +518,16 @@
 				84B8B29823D5C2150062B8B9 /* Chat.geojson */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		84C1F5B22410F90C00D03A56 /* Contact List */ = {
+			isa = PBXGroup;
+			children = (
+				84C1F5B52410F98A00D03A56 /* ContactListTapViewPagerViewController.swift */,
+				8403AC3A23D709CA008F3A4C /* contactListViewController.swift */,
+				84C1F5B92410F9C900D03A56 /* TelephoneBookViewController.swift */,
+			);
+			path = "Contact List";
 			sourceTree = "<group>";
 		};
 		D982CD89955A597D7D9DFF8A /* Frameworks */ = {
@@ -729,11 +776,13 @@
 				843E9FB1240FC846002B1E4E /* ViewPager.swift in Sources */,
 				843E8A4823F18DFC0061AAF8 /* NotepadTableViewCell.swift in Sources */,
 				840A2FD223F54E2E003212D5 /* BooksByTypesViewController.swift in Sources */,
+				84C1F5B62410F98A00D03A56 /* ContactListTapViewPagerViewController.swift in Sources */,
 				8403C57F24050440008BD334 /* SelfSizedTableView.swift in Sources */,
 				8403AC3823D701AD008F3A4C /* Repository.swift in Sources */,
 				8403AC3B23D709CA008F3A4C /* contactListViewController.swift in Sources */,
 				842B753023D1D69D007E5C4A /* ViedoCallReciveViewController.swift in Sources */,
 				8443273523E2A6C900AC233B /* BookDescriptionViewController.swift in Sources */,
+				843C8B9C241216E400965AB1 /* CreateGroupCollectionViewCell.swift in Sources */,
 				843C793823E3F292002641AA /* BookDescriptionTableViewCell.swift in Sources */,
 				84BBBDE823F3C1FA003985C2 /* UserInfoViewController.swift in Sources */,
 				84BCEA2E240E73F000C5F300 /* PendingRequestViewController.swift in Sources */,
@@ -759,6 +808,7 @@
 				84B8B28A23D5BF580062B8B9 /* Chat.swift in Sources */,
 				8432D82F240D33DB003CAC6C /* pendingBookViewController.swift in Sources */,
 				84F29DD02408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift in Sources */,
+				843C8B992412164700965AB1 /* CreateGroupViewController.swift in Sources */,
 				8410BC1823F27F4F00A2390D /* AddNotesViewController.swift in Sources */,
 				84B8B29623D5C1100062B8B9 /* UIView + Ext .swift in Sources */,
 				84A5687723E974070027888B /* RegisterViewController.swift in Sources */,
@@ -773,19 +823,21 @@
 				84BBBDEA23F3C22B003985C2 /* UserInfoTableViewCell.swift in Sources */,
 				843E8A3E23F129400061AAF8 /* CategoriesViewController.swift in Sources */,
 				84A5687323E92FD50027888B /* FirstPageViewController.swift in Sources */,
+				84C1F5BA2410F9C900D03A56 /* TelephoneBookViewController.swift in Sources */,
 				843E9FB3240FC85B002B1E4E /* Utils.swift in Sources */,
 				8403AC3623D6F403008F3A4C /* Constant.swift in Sources */,
 				843E8A3C23F129210061AAF8 /* BookMarkViewController.swift in Sources */,
 				84BBBDEC23F3F840003985C2 /* UserInfoUpdateViewController.swift in Sources */,
 				8415F97523D96478001D84BE /* RoundedView.swift in Sources */,
 				847FA8D323F6B71700BBB988 /* ContactUSViewController.swift in Sources */,
+				84687A042416255D0013B229 /* PopUpViewController.swift in Sources */,
 				843E9FA8240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift in Sources */,
 				8410BC1C23F2CE9200A2390D /* EditUserProfileTableViewCell.swift in Sources */,
+				84B43FAF2418D0B50000235B /* Video.swift in Sources */,
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
 				84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */,
 				84A5687523E973E70027888B /* LoginViewController.swift in Sources */,
 				8409E9D4240550DD00FDBDC7 /* BookAssignmentTableViewCell.swift in Sources */,
-				843E9FAA240FC503002B1E4E /* ChatHistortyViewController.swift in Sources */,
 				843C793B23E43B11002641AA /* StarsView.swift in Sources */,
 				8415F97C23D9A661001D84BE /* UploadBookViewController.swift in Sources */,
 				843E9FAF240FC821002B1E4E /* TabView.swift in Sources */,
@@ -973,7 +1025,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				"DEBUG_INFORMATION_FORMAT[sdk=*]" = dwarf;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
@@ -1002,7 +1054,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.3;
+				CURRENT_PROJECT_VERSION = 1.4;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

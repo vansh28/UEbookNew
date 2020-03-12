@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class AllUserListClass {
+class AllUserContactListClass{
+    
     var userId: String?
     var name: String?
     var email: String?
@@ -38,31 +39,40 @@ class AllUserListClass {
        
     }
 }
-class AllChatListClass {
-    var id: String?
-    var sender: String?
-    var receiver: String?
-    var channelId: String?
-    var type: String?
-    var created: String?
-    var message: String?
-   
-    
 
-    init(getChatListData: NSDictionary) {
+class AllGroupListClass {
+    var userId: String?
+    var name: String?
+    var email: String?
+    var phone: String?
+    var channelId: String?
+    var url: String?
+    var publisher_type: String?
+    var device_token: String?
+    var device_type: String?
+    var avatar: String?
+    
+    init(getAllGroupListClass: NSDictionary) {
         
-        self.id                = getChatListData["id"] as? String
-        self.sender            = getChatListData["sender"] as? String
-        self.receiver           = getChatListData["receiver"] as? String
-        self.channelId           = getChatListData["channelId"] as? String
-        self.type       = getChatListData["type"] as? String
-        self.created             = getChatListData["created"] as? String
-        self.message  = getChatListData["message"] as? String
-        
+        self.userId          = getAllGroupListClass["userId"] as? String
+        self.name            = getAllGroupListClass["name"] as? String
+        self.email           = getAllGroupListClass["email"] as? String
+        self.phone           = getAllGroupListClass["phone"] as? String
+        self.channelId       = getAllGroupListClass["channelId"] as? String
+        self.url             = getAllGroupListClass["url"] as? String
+        self.publisher_type  = getAllGroupListClass["publisher_type"] as? String
+        self.device_token    = getAllGroupListClass["device_token"] as? String
+        self.device_type     = getAllGroupListClass["device_type"] as? String
+        self.avatar          = getAllGroupListClass["avatar"] as? String
+
         
        
     }
 }
+
+
+
+
 
 class AllpopularBook {
     var id: String?
@@ -92,6 +102,9 @@ class AllpopularBook {
        
     }
 }
+
+
+
 
 
 class AllBookDescription : NSObject {
@@ -191,7 +204,6 @@ class AllPendingBookByBookID : NSObject {
        
     }
 }
-
 
 
 
@@ -588,3 +600,116 @@ init(getAllGroupList: NSDictionary) {
 }
 
 
+class AllChatListClass {
+
+    var channelId : String!
+    var chid : String!
+    var created : String!
+    var deletedMsgFromUser : String!
+    var id : String!
+    var isActive : String!
+    var isDeleted : String!
+    var isReciver : String!
+    var messCount : MessCount!
+    var message : String!
+    var modified : String!
+    var readMsg : String!
+    var recDetail : RecDetail!
+    var receiver : String!
+    var sendDetail : SendDetail!
+    var sender : String!
+    var type : String!
+
+
+    /**
+     * Instantiate the instance using the passed dictionary values to set the properties values
+     */
+    init(getChatListClass: NSDictionary){
+        channelId = getChatListClass["channel_id"] as? String
+        chid = getChatListClass["chid"] as? String
+        created = getChatListClass["created"] as? String
+        deletedMsgFromUser = getChatListClass["deleted_msg_from_user"] as? String
+        id = getChatListClass["id"] as? String
+        isActive = getChatListClass["is_active"] as? String
+        isDeleted = getChatListClass["is_deleted"] as? String
+        isReciver = getChatListClass["is_reciver"] as? String
+        message = getChatListClass["message"] as? String
+        modified = getChatListClass["modified"] as? String
+        readMsg = getChatListClass["read_msg"] as? String
+        receiver = getChatListClass["receiver"] as? String
+        sender = getChatListClass["sender"] as? String
+        type = getChatListClass["type"] as? String
+        if let messCountData = getChatListClass["mess_count"] as? [String:Any]{
+            messCount = MessCount(fromDictionary: messCountData)
+        }
+        if let recDetailData = getChatListClass["rec_detail"] as? [String:Any]{
+            recDetail = RecDetail(fromDictionary: recDetailData)
+        }
+        if let sendDetailData = getChatListClass["send_detail"] as? [String:Any]{
+            sendDetail = SendDetail(fromDictionary: sendDetailData)
+        }
+    }
+}
+class SendDetail {
+ 
+    
+
+        var aboutMe : String!
+        var deviceToken : String!
+        var deviceType : String!
+        var email : String!
+        var id : String!
+        var publisherType : String!
+        var url : String!
+        var userName : String!
+
+
+        /**
+         * Instantiate the instance using the passed dictionary values to set the properties values
+         */
+        init(fromDictionary dictionary: [String:Any]){
+            aboutMe = dictionary["about_me"] as? String
+            deviceToken = dictionary["device_token"] as? String
+            deviceType = dictionary["device_type"] as? String
+            email = dictionary["email"] as? String
+            id = dictionary["id"] as? String
+            publisherType = dictionary["publisher_type"] as? String
+            url = dictionary["url"] as? String
+            userName = dictionary["user_name"] as? String
+        }
+}
+class RecDetail {
+
+    var aboutMe : String!
+    var deviceToken : String!
+    var deviceType : String!
+    var email : String!
+    var id : String!
+    var publisherType : String!
+    var url : String!
+    var userName : String!
+
+    init(fromDictionary dictionary: [String:Any]){
+        aboutMe = dictionary["about_me"] as? String
+        deviceToken = dictionary["device_token"] as? String
+        deviceType = dictionary["device_type"] as? String
+        email = dictionary["email"] as? String
+        id = dictionary["id"] as? String
+        publisherType = dictionary["publisher_type"] as? String
+        url = dictionary["url"] as? String
+        userName = dictionary["user_name"] as? String
+    }
+}
+class MessCount : NSObject{
+
+    var totalMessagecount : String!
+
+
+    /**
+     * Instantiate the instance using the passed dictionary values to set the properties values
+     */
+    init(fromDictionary dictionary: [String:Any]){
+        totalMessagecount = dictionary["totalMessagecount"] as? String
+    }
+
+}

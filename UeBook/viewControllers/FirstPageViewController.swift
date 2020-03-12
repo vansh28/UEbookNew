@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstPageViewController: UIViewController {
+   class FirstPageViewController: UIViewController {
     
     
     
@@ -16,8 +16,13 @@ class FirstPageViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-   scrollView.contentSize = CGSize(width:view.frame.width, height: 750)
-        // Do any additional setup after loading the view.
+        self.navigationHide()
+
+        
+            scrollView.contentSize = CGSize(width:view.frame.width, height: 750)
+   
+        
+  
     }
     
 
