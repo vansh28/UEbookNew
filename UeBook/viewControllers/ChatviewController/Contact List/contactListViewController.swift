@@ -80,6 +80,7 @@ class contactListViewController: UIViewController,UITableViewDelegate,UITableVie
           
           let next = self.storyboard?.instantiateViewController(withIdentifier: "ChatUserDetail") as! ChatUserDetail
                  self.present(next, animated: true, completion: nil)
+        
       }
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()

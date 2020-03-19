@@ -13,8 +13,10 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
   
     
     var chatArr = [AllChatListClass]()
-
+    var senderID = String()
     var userId = String()
+    var ChatContactName = String()
+    var userProfileURL = String()
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -90,7 +92,10 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         
         if chatArr[indexPath.row].sendDetail.id == userId
         {
+             cell?.lblUnReadMessageCount.isHidden = true
             cell?.userName.text = chatArr[indexPath.row].recDetail.userName
+           // ChatContactName = chatArr[indexPath.row].recDetail.userName
+
             
             cell?.UserImage.layer.cornerRadius = (cell?.UserImage.frame.height)!/2
             
@@ -109,6 +114,7 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
         {
             
             cell?.userName.text = chatArr[indexPath.row].sendDetail.userName
+        //    ChatContactName = chatArr[indexPath.row].sendDetail.userName
             let escapedString = chatArr[indexPath.row].sendDetail.url
             let fullURL = kImageUploadURL + escapedString!
             let url = URL(string:fullURL)!
@@ -119,7 +125,7 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
                 
                 
             }
-        }
+        
        
         if chatArr[indexPath.row].messCount.totalMessagecount == "0"
         {
@@ -138,7 +144,7 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
             cell?.lblDate.textColor = UIColor.red
            // cell?.lblMessage.textColor =  UIColor.black
         }
-        
+        }
         if chatArr[indexPath.row].type == "text"
         {
             cell?.lblMessage.text = chatArr[indexPath.row].message
@@ -186,19 +192,40 @@ class ChatUSViewController: UIViewController ,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? ChatUsTableViewCell
-
+     
+        if chatArr[indexPath.row].sendDetail.id == userId
+               {
+                    ChatContactName = chatArr[indexPath.row].recDetail.userName
+                   self.senderID = self.chatArr[indexPath.row].recDetail.id
+                   let escapedString = chatArr[indexPath.row].recDetail.url
+                   let fullURL = kImageUploadURL + escapedString!
+                   userProfileURL = fullURL
+               }
+               else
+               {
+                ChatContactName = chatArr[indexPath.row].sendDetail.userName
+                self.senderID = chatArr[indexPath.row].sendDetail.id
+                let escapedString = chatArr[indexPath.row].sendDetail.url
+                let fullURL = kImageUploadURL + escapedString!
+                userProfileURL = fullURL
+        
+               }
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                                 let nextViewController = storyBoard.instantiateViewController(withIdentifier:"ChatUserDetail") as! ChatUserDetail
                       
         nextViewController.channelId = chatArr[indexPath.row].channelId
-        nextViewController.sendTO     = chatArr[indexPath.row].sendDetail.id
-                 //nextViewController.modalPresentationStyle = .overFullScreen
+        nextViewController.sendTO     = senderID
+        nextViewController.ChatContactName = ChatContactName
+        nextViewController.userProfileURL = userProfileURL
+        nextViewController.modalPresentationStyle = .overFullScreen
                  self.present(nextViewController, animated:true, completion:nil)
                  print("button tapped")
         
             let mycolor = UIColor(red: (107.0/255), green: (132.0/255), blue: (145.0/255), alpha: 1.0)
                cell?.lblUnReadMessageCount.isHidden = true
                cell?.lblDate.textColor = mycolor
+        
+       
        
     }
 

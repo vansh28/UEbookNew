@@ -101,6 +101,7 @@
 		84D85C832407916300B51CC2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D85C822407916300B51CC2 /* MediaPlayer.framework */; };
 		84DF09E323E164300025FAA9 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DF09E223E164300025FAA9 /* RecordingViewController.swift */; };
 		84F29DD02408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */; };
+		84F88154242378C60097E1EF /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F88153242378C60097E1EF /* PushNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +229,7 @@
 		84DF09E723E188B00025FAA9 /* libAlamofire.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAlamofire.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84DF09E923E188B50025FAA9 /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84F29DCF2408EC2B009F5D3F /* ImageZoomInZoomOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomInZoomOutViewController.swift; sourceTree = "<group>"; };
+		84F88153242378C60097E1EF /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		F5986E0C7FBA491A92FB0020 /* Pods-UeBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UeBook.debug.xcconfig"; path = "Target Support Files/Pods-UeBook/Pods-UeBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -483,6 +485,7 @@
 				840D67D923D035CC00D0DAF6 /* AppDelegate.swift */,
 				840D67E223D035D000D0DAF6 /* Assets.xcassets */,
 				8432D82C240D06FD003CAC6C /* LocationManager.swift */,
+				84F88153242378C60097E1EF /* PushNotificationManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				84687A042416255D0013B229 /* PopUpViewController.swift in Sources */,
 				843E9FA8240FC4E1002B1E4E /* ChatTapViewPagerViewController.swift in Sources */,
 				8410BC1C23F2CE9200A2390D /* EditUserProfileTableViewCell.swift in Sources */,
+				84F88154242378C60097E1EF /* PushNotificationManager.swift in Sources */,
 				84B43FAF2418D0B50000235B /* Video.swift in Sources */,
 				8403AC3D23D709E0008F3A4C /* ContactTableViewCell.swift in Sources */,
 				84BA06EE2403C54300A78FF5 /* WebDocmentViewController.swift in Sources */,
@@ -1025,7 +1029,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
 				"DEBUG_INFORMATION_FORMAT[sdk=*]" = dwarf;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
@@ -1040,7 +1044,7 @@
 					"@executable_path/Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Uebook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seo.UEbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1054,7 +1058,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = UeBook/UeBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.4;
+				CURRENT_PROJECT_VERSION = 1.5;
 				DEVELOPMENT_TEAM = HDTDJ67NPX;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1067,7 +1071,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Uebook;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Seo.UEbook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -42,7 +42,7 @@ class ImageZoomInZoomOutViewController: UIViewController ,UIScrollViewDelegate ,
         let vWidth = self.view.frame.width
         let vHeight = self.view.frame.height
         scrollImg.minimumZoomScale = 1.0
-        scrollImg.maximumZoomScale = 10.0
+        scrollImg.maximumZoomScale = 100
         scrollImg.delegate = self
         scrollImg.frame = CGRect(x: 10, y:80, width: vWidth-40, height: vHeight-120)
         scrollImg.backgroundColor = UIColor(red: 90, green: 90, blue: 90, alpha: 0.90)
@@ -120,8 +120,7 @@ class ImageZoomInZoomOutViewController: UIViewController ,UIScrollViewDelegate ,
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.ImgeView
     }
-
-    /*
+ /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

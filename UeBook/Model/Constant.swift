@@ -18,7 +18,9 @@ let kCreateUser                          =     kBaseUrl +  "createUser"
 let kUserLogin                           =     kBaseUrl +  "userLogin"
 
 let kChatTextBackColor                  =     UIColor(red: 229/255, green: 253/255, blue: 201/255, alpha: 1)
-
+let kAppColor = UIColor(red: 95/255, green: 121/255, blue: 134/255, alpha: 1)
+let ktransparentColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+let kwhiteSmoke = UIColor(red: 245.0/255, green: 245.0/255, blue: 245.0/255, alpha: 1)
 
 
 

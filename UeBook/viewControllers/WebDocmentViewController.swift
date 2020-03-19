@@ -25,7 +25,7 @@ class WebDocmentViewController: UIViewController , WKNavigationDelegate {
         let xAxis = self.view.center.x // or use (view.frame.size.width / 2) // or use (faqWebView.frame.size.width / 2)
         let yAxis = self.view.center.y
         
-        let frame = CGRect(x: xAxis, y: yAxis, width: 45, height: 45)
+        let frame = CGRect(x: xAxis - 25, y: yAxis - 25, width: 50, height:50)
 
             self.activityIndicator = NVActivityIndicatorView(frame:frame)
             self.activityIndicator.type = . ballClipRotateMultiple // add your type

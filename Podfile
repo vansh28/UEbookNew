@@ -5,7 +5,16 @@ target 'UeBook' do
       pod 'MessageKit'
       pod 'Scaledrone', '~> 0.3.0'
       pod 'Firebase/Analytics'
-      pod 'Firebase/Messaging'
+      
+        pod 'Firebase/Core'
+        pod 'Firebase/Auth'
+        pod 'Firebase/AdMob'
+        pod 'Firebase/Database'
+        pod 'Firebase/Messaging'
+        pod 'Firebase/Storage'
+        pod 'Firebase/Firestore'
+              
+      
       pod 'IQKeyboardManagerSwift', '~> 6.0'
       pod 'JitsiMeetSDK'
       pod 'FBSDKCoreKit/Swift'
@@ -13,6 +22,9 @@ target 'UeBook' do
       pod 'FBSDKShareKit/Swift'
       pod 'GoogleSignIn'
       pod 'AZTabBar'
+      pod 'ISEmojiView'
+
+      
       
       pod 'SDWebImage/WebP'
       pod 'AlamofireImage', '~> 3.3'

@@ -31,59 +31,37 @@ var navController : UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let pushManager = PushNotificationManager(userID: "currently_logged_in_user_id")
+        pushManager.registerForPushNotifications()
         
-      //  let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        
-        
-                
-               
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//
-//           let defaults = UserDefaults.standard
-//           let isUserLoggedIn = defaults.bool(forKey: "isUserLoggedIn")
-//
-//           if(!isUserLoggedIn) {
-//               self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: kFirstPageViewController)
-//           } else {
-//            
-//            
-//                     self.window = UIWindow(frame: UIScreen.main.bounds)
-//
-//
-//                      let initialViewController = storyboard.instantiateViewController(withIdentifier: kSWRevealViewController)
-//
-//                        self.window?.rootViewController = initialViewController
-//                        self.window?.makeKeyAndVisible()
-//
-//                        return true
-//
-//           }
-
-        if #available(iOS 10.0, *) {
-          // For iOS 10 display notification (sent via APNS)
-          UNUserNotificationCenter.current().delegate = self
-
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-          UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-        } else {
-          let settings: UIUserNotificationSettings =
-          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-          application.registerUserNotificationSettings(settings)
-        }
-
-        application.registerForRemoteNotifications()
-
-        Messaging.messaging().delegate = self
         FirebaseApp.configure()
-        
-        
+        ///return true
+
+
+//        if #available(iOS 10.0, *) {
+//          // For iOS 10 display notification (sent via APNS)
+//          UNUserNotificationCenter.current().delegate = self
+//
+//          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//          UNUserNotificationCenter.current().requestAuthorization(
+//            options: authOptions,
+//            completionHandler: {_, _ in })
+//        } else {
+//          let settings: UIUserNotificationSettings =
+//          UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//          application.registerUserNotificationSettings(settings)
+//        }
+//
+//        application.registerForRemoteNotifications()
+//
+//        Messaging.messaging().delegate = self
+//        FirebaseApp.configure()
+//
+//
         IQKeyboardManager.shared.enable = true
         GIDSignIn.sharedInstance().clientID = "554579271036"
         GIDSignIn.sharedInstance().delegate = self
-        
+
         
                
         ApplicationDelegate.shared.application(

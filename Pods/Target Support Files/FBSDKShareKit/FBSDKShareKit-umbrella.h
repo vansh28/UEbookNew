@@ -14,6 +14,7 @@
 #import "FBSDKShareKit/FBSDKAppInviteContent.h"
 #import "FBSDKShareKit/FBSDKCameraEffectArguments.h"
 #import "FBSDKShareKit/FBSDKCameraEffectTextures.h"
+#import "FBSDKShareKit/FBSDKCoreKitImport.h"
 #import "FBSDKShareKit/FBSDKDeviceShareButton.h"
 #import "FBSDKShareKit/FBSDKDeviceShareViewController.h"
 #import "FBSDKShareKit/FBSDKGameRequestContent.h"
