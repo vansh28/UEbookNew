@@ -928,7 +928,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "62"
                   endingLineNumber = "62"
-                  offsetFromSymbolStart = "204">
+                  offsetFromSymbolStart = "178">
                </Location>
                <Location
                   uuid = "7C6C3590-EA6B-4369-8C8B-3116C1A6F37C - a73bc85828e05ddc"
@@ -943,7 +943,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
                   endingLineNumber = "63"
-                  offsetFromSymbolStart = "408">
+                  offsetFromSymbolStart = "458">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1244,7 +1244,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "132"
                   endingLineNumber = "132"
-                  offsetFromSymbolStart = "604">
+                  offsetFromSymbolStart = "639">
                </Location>
                <Location
                   uuid = "8A10ACA8-6668-424A-9C1C-033627767921 - 133d158dae10f12b"
@@ -1259,7 +1259,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "133"
                   endingLineNumber = "133"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "177">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1420,7 +1420,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "399"
                   endingLineNumber = "399"
-                  offsetFromSymbolStart = "856">
+                  offsetFromSymbolStart = "904">
                </Location>
                <Location
                   uuid = "443D4CCF-C6A7-4B61-97CF-7823C665B610 - 9c3e9d83df9d202a"
@@ -1435,7 +1435,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "400"
                   endingLineNumber = "400"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "149">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1724,7 +1724,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "697"
                   endingLineNumber = "697"
-                  offsetFromSymbolStart = "96">
+                  offsetFromSymbolStart = "85">
                </Location>
                <Location
                   uuid = "F4D91EE7-A068-4F10-A720-D3AECFBA6977 - d808c62badd17fc9"
@@ -1739,7 +1739,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "697"
                   endingLineNumber = "697"
-                  offsetFromSymbolStart = "528">
+                  offsetFromSymbolStart = "505">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1932,7 +1932,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "424"
                   endingLineNumber = "424"
-                  offsetFromSymbolStart = "464">
+                  offsetFromSymbolStart = "443">
                </Location>
                <Location
                   uuid = "F955E1A6-C3E9-49C8-8826-E9D44CF272C0 - 7d26f45fb5be3ea7"
@@ -1947,7 +1947,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "425"
                   endingLineNumber = "425"
-                  offsetFromSymbolStart = "72">
+                  offsetFromSymbolStart = "19">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2204,7 +2204,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1474"
                   endingLineNumber = "1474"
-                  offsetFromSymbolStart = "6364">
+                  offsetFromSymbolStart = "7422">
                </Location>
                <Location
                   uuid = "6AB6448F-1C04-4CAC-B867-BE2319670C56 - 3dfea446aa501b99"
@@ -2219,7 +2219,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1477"
                   endingLineNumber = "1477"
-                  offsetFromSymbolStart = "184">
+                  offsetFromSymbolStart = "203">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2444,7 +2444,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "89"
                   endingLineNumber = "89"
-                  offsetFromSymbolStart = "472">
+                  offsetFromSymbolStart = "406">
                </Location>
                <Location
                   uuid = "A01C3804-3E3C-4065-AD45-E7FC81D25537 - 3dacec880b5c9db4"
@@ -2459,7 +2459,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
                   endingLineNumber = "90"
-                  offsetFromSymbolStart = "160">
+                  offsetFromSymbolStart = "175">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2540,7 +2540,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "427"
                   endingLineNumber = "427"
-                  offsetFromSymbolStart = "856">
+                  offsetFromSymbolStart = "902">
                </Location>
                <Location
                   uuid = "284EC27B-6B4B-4A0E-90D1-6491262AD4E3 - 3537c7866c9a84c5"
@@ -2555,7 +2555,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "428"
                   endingLineNumber = "428"
-                  offsetFromSymbolStart = "136">
+                  offsetFromSymbolStart = "163">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2653,70 +2653,6 @@
             startingLineNumber = "262"
             endingLineNumber = "262"
             landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14B7465F-E0ED-44C6-A07A-02AA7CA59BD1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "CreateGroup_API_Method()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C95BA247-4E69-4765-B697-9D6CF8EE4251"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "CreateGroup_API_Method()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05B95456-5141-410D-AD3D-7FEA7418392B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "CreateGroup_API_Method()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "16AA8296-7D8E-4674-9A27-37D389C1A719"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "CreateGroup_API_Method()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2876,7 +2812,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1160"
                   endingLineNumber = "1160"
-                  offsetFromSymbolStart = "1664">
+                  offsetFromSymbolStart = "1891">
                </Location>
                <Location
                   uuid = "50602917-80E1-4C47-8B15-99E6BF073F2B - 7af0e4533aa2d7c"
@@ -2891,7 +2827,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1161"
                   endingLineNumber = "1161"
-                  offsetFromSymbolStart = "64">
+                  offsetFromSymbolStart = "39">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3068,8 +3004,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "PushNotificationManager"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "45D8C772-B1EE-48BA-95ED-0D88E607BEDD - e6604a5364907a34"
@@ -3084,7 +3020,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   uuid = "45D8C772-B1EE-48BA-95ED-0D88E607BEDD - 746d15274c112ec"
@@ -3099,7 +3035,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
                   endingLineNumber = "16"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "42">
                </Location>
                <Location
                   uuid = "45D8C772-B1EE-48BA-95ED-0D88E607BEDD - 6b9c43995edf397b"
@@ -3114,25 +3050,9 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "44">
+                  offsetFromSymbolStart = "16">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D05F95C3-3567-4259-B5AE-D024CA89B723"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "unknown"
-            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3154,38 +3074,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "98BF6000-C1E4-45EC-8611-CE9A2302F74A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "updateFirestorePushTokenIfNeeded()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6C3456EA-9330-4182-9ADF-ACB50D16A582"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "updateFirestorePushTokenIfNeeded()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0478F3CC-F000-4A24-A6AA-414AB04101FC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -3196,54 +3084,6 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4B85A68A-F477-40AF-B4DB-DBFD07125EB2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "registerForPushNotifications()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E4AEBE44-683A-4DC7-A43E-F44830465B55"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "registerForPushNotifications()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D7FC04CC-2FB8-4D97-9A07-44F9E75BF183"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "registerForPushNotifications()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3282,32 +3122,188 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "38D03A0B-828D-40A9-87B8-72802A2E24D0"
+            uuid = "827640C8-3DAB-496E-9BE4-A4C428A4687C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UeBook/Common/PushNotificationManager.swift"
+            filePath = "UeBook/viewControllers/ChatviewController/Chat&amp;groupChat ViewController/GroupChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "updateFirestorePushTokenIfNeeded()"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "GroupChat_API_Method(userId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C98A435E-7A60-4FBA-B8A4-79E6DA950C33"
+            uuid = "135E79C5-A1C1-401D-B21D-E5408194F93E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UeBook/viewControllers/ChatviewController/Chat&amp;groupChat ViewController/ChatUSViewController.swift"
+            filePath = "UeBook/viewControllers/ChatviewController/Chat&amp;groupChat ViewController/GroupChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "GroupChat_API_Method(userId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAF31606-6908-429D-A1D4-454E79732DF2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "CreateGroup_API_Method()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "PopUpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - 33f77b79db8eede6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.groupID.getter : Swift.String"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "139">
+               </Location>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - a8fa477f50a7ddfa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.groupID.setter : Swift.String"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "150">
+               </Location>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - f9e16ab8c29e39e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.groupID.modify : Swift.String"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - bee831e84f4d05fa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.groupID.modify : Swift.String with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - ccf526065e86de8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; UeBook.PopUpViewController"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "369">
+               </Location>
+               <Location
+                  uuid = "68D899A3-4B4E-45C1-A1D5-1A384099F106 - ddd9509caef2980e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UeBook.PopUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;UeBook.PopUpViewController&gt;"
+                  moduleName = "UeBook"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Documents/IOSprojects/UeBookNew/UeBook/UeBook/viewControllers/PopViewController/PopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "307">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAA9332A-6BC6-4F77-80AF-EEF0945A1231"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/viewControllers/ChatviewController/Chat&amp;groupChat ViewController/GroupChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "GroupChat_API_Method(userId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0F8D5AD-0993-4216-A331-8BD9498396EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UeBook/Common/PushNotificationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "messaging(_:didReceive:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

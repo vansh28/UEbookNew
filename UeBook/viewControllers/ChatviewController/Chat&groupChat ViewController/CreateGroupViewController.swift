@@ -150,7 +150,7 @@ class CreateGroupViewController: UIViewController ,UITableViewDelegate ,UITableV
         
         
         let dictionary: NSDictionary = [
-            "user_id" : "79",
+            "user_id" : userId,
             "is_all_users_list":"No"
             
         ]
@@ -247,7 +247,7 @@ class CreateGroupViewController: UIViewController ,UITableViewDelegate ,UITableV
 
                 groupArr.append(contactArr[indexPath.row])
 
-                arrGroupID.append(contactArr[indexPath.row].userId!)
+                 arrGroupID.append(contactArr[indexPath.row].userId!)
                     strGroupID = arrGroupID.joined(separator: ",")
 
                 

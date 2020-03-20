@@ -68,6 +68,33 @@ class GroupChatViewController: UIViewController ,UITableViewDelegate,UITableView
                return cell!
                
            }
+    
+
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? ChatUsTableViewCell
+
+
+         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                                 let nextViewController = storyBoard.instantiateViewController(withIdentifier:"ChatUserDetail") as! ChatUserDetail
+
+        nextViewController.channelId = arrGroupChat[indexPath.row].id!
+//         nextViewController.sendTO     = senderID
+      //    nextViewController.ChatContactName = ChatContactName
+//         nextViewController.userProfileURL = userProfileURL
+         nextViewController.modalPresentationStyle = .overFullScreen
+                  self.present(nextViewController, animated:true, completion:nil)
+                  print("button tapped")
+
+             let mycolor = UIColor(red: (107.0/255), green: (132.0/255), blue: (145.0/255), alpha: 1.0)
+                cell?.lblUnReadMessageCount.isHidden = true
+                cell?.lblDate.textColor = mycolor
+
+
+//
+     }
+    
+    
        
     func GroupChat_API_Method(userId: String) {
             

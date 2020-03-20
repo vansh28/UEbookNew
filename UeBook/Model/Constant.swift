@@ -69,7 +69,6 @@ let kgroupList                           =      kBaseUrl + "groupList"
 let kgetGroupChatLists                   =      kBaseUrl  + "getGroupChatLists"
 let kaddEditGroups                       =      kBaseUrl  + "addEditGroups"
 
-
 //Idenfier
 
 let kBookDescriptionViewController        =     "BookDescriptionViewController"
